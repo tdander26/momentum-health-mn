@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Anna Payne, DC | Momentum Health & Wellness Minnesota</title>
+  <meta name="description" content="Meet Dr. Anna Payne, DC — chiropractor and functional medicine doctor at Momentum Health & Wellness Minnesota in Elk River, MN. Applied Kinesiology certified, Webster trained, and committed to root-cause care.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://momentumhealthwellnessmn.com/dr-anna-payne" />
+  <meta property="og:title" content="Dr. Anna Payne, DC | Momentum Health & Wellness Minnesota" />
+  <meta property="og:description" content="Chiropractor and functional medicine doctor in Elk River, MN. Applied Kinesiology certified, Webster trained, and passionate about root-cause care." />
+  <meta property="og:image" content="https://momentumhealthwellnessmn.com/images/og-image.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1a1a1a;
+      background: #fff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    :root {
+      --gold:       #C9A84C;
+      --gold-light: #E8C97A;
+      --gold-dark:  #A07830;
+      --black:      #0d0d0d;
+      --charcoal:   #1c1c1c;
+      --gray-900:   #111827;
+      --gray-700:   #374151;
+      --gray-500:   #6B7280;
+      --gray-200:   #E5E7EB;
+      --gray-100:   #F9FAFB;
+      --white:      #ffffff;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .section-label {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 12px;
+    }
+    .section-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+      font-weight: 700; line-height: 1.2; color: var(--gray-900);
+    }
+    .gold-divider { width: 48px; height: 3px; background: var(--gold); border-radius: 2px; margin: 20px 0 0; }
+    .btn {
+      display: inline-block; padding: 14px 34px; font-size: 0.88rem;
+      font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+      text-decoration: none; border-radius: 3px; cursor: pointer;
+      transition: all 0.25s ease; border: 2px solid transparent;
+    }
+    .btn-gold { background: var(--gold); color: var(--black); }
+    .btn-gold:hover { background: var(--gold-dark); color: var(--white); }
+    .btn-outline { border-color: var(--gold); color: var(--gold); background: transparent; }
+    .btn-outline:hover { background: var(--gold); color: var(--black); }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(13,13,13,0.96); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,168,76,0.15); padding: 0 24px;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px;
+    }
+    .nav-logo { text-decoration: none; }
+    .nav-logo-main { display: block; font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--white); font-weight: 700; }
+    .nav-logo-sub { display: block; font-size: 0.68rem; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { color: #ccc; text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links .btn { padding: 9px 22px; font-size: 0.8rem; }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--white); border-radius: 2px; transition: all 0.3s; }
+    .mobile-menu { display: none; background: #0d0d0d; border-top: 1px solid rgba(201,168,76,0.1); padding: 16px 24px 24px; }
+    .mobile-menu ul { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+    .mobile-menu a { display: block; padding: 10px 0; color: #ccc; text-decoration: none; font-size: 0.95rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .mobile-menu a.btn { margin-top: 12px; text-align: center; border-bottom: none; }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: var(--black);
+      padding: 140px 24px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 60% 40%, rgba(201,168,76,0.08) 0%, transparent 70%);
+    }
+    .hero-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+      position: relative;
+    }
+    .hero-eyebrow {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 20px;
+    }
+    .hero-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 700; line-height: 1.1; color: var(--white);
+      margin-bottom: 8px;
+    }
+    .hero-title {
+      font-size: 1.05rem; color: var(--gold); font-weight: 500; margin-bottom: 24px;
+    }
+    .hero-desc {
+      font-size: 1rem; color: #bbb; line-height: 1.75; margin-bottom: 32px;
+    }
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-photo-area {
+      display: flex; justify-content: center; align-items: center;
+    }
+    .hero-photo-placeholder {
+      width: 360px; height: 420px;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+      border: 2px solid rgba(201,168,76,0.3);
+      border-radius: 12px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 12px; color: #555;
+    }
+    .hero-photo-placeholder .initials {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem; font-weight: 700; color: var(--gold); opacity: 0.5;
+    }
+    .hero-photo-placeholder .ph-text { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; }
+    .hero-photo-img {
+      width: 360px; height: 420px;
+      border-radius: 12px; object-fit: cover; object-position: center top;
+      border: 2px solid rgba(201,168,76,0.3);
+    }
+
+    /* ─── QUICK STATS ─── */
+    .stats-bar {
+      background: var(--gold);
+      padding: 28px 24px;
+    }
+    .stats-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+    }
+    .stat-item { text-align: center; }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--black); }
+    .stat-lbl { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(13,13,13,0.65); margin-top: 4px; }
+
+    /* ─── SECTION BASE ─── */
+    section { padding: 96px 24px; }
+    section.dark { background: var(--gray-900); }
+    section.light-bg { background: var(--gray-100); }
+
+    /* ─── ABOUT SECTION ─── */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+    .about-body p { font-size: 1rem; color: var(--gray-700); line-height: 1.8; margin-bottom: 20px; }
+    .about-body p:last-child { margin-bottom: 0; }
+    .pill-wrap { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+    .pill {
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 7px 16px; border-radius: 20px;
+      background: rgba(201,168,76,0.1); color: var(--gold-dark);
+      border: 1px solid rgba(201,168,76,0.25);
+    }
+    .aside-card {
+      background: var(--gray-900); color: var(--white);
+      border-radius: 12px; padding: 36px; position: sticky; top: 88px;
+    }
+    .aside-card h3 {
+      font-family: 'Playfair Display', serif; font-size: 1.25rem; margin-bottom: 24px;
+      color: var(--white); border-bottom: 1px solid rgba(201,168,76,0.2); padding-bottom: 16px;
+    }
+    .aside-row { display: flex; gap: 14px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .aside-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .aside-icon { font-size: 1.1rem; margin-top: 2px; flex-shrink: 0; }
+    .aside-text strong { display: block; font-size: 0.88rem; color: var(--white); margin-bottom: 2px; }
+    .aside-text span { font-size: 0.78rem; color: #888; }
+    .aside-cta { margin-top: 28px; }
+    .aside-cta a { display: block; text-align: center; }
+
+    /* ─── CREDENTIALS ─── */
+    .cred-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .cred-card {
+      background: var(--white); border: 1px solid var(--gray-200);
+      border-radius: 12px; padding: 28px 24px;
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .cred-card:hover { box-shadow: 0 12px 36px rgba(0,0,0,0.08); transform: translateY(-3px); }
+    .cred-icon { font-size: 1.6rem; margin-bottom: 14px; }
+    .cred-title { font-weight: 700; font-size: 0.95rem; color: var(--gray-900); margin-bottom: 6px; }
+    .cred-body { font-size: 0.82rem; color: var(--gray-500); line-height: 1.65; }
+    .cred-year { font-size: 0.72rem; font-weight: 600; color: var(--gold); margin-top: 10px; display: block; letter-spacing: 0.08em; text-transform: uppercase; }
+
+    /* ─── TIMELINE ─── */
+    .timeline { position: relative; padding-left: 32px; }
+    .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--gold), rgba(201,168,76,0.1)); }
+    .tl-item { position: relative; margin-bottom: 40px; }
+    .tl-item:last-child { margin-bottom: 0; }
+    .tl-dot {
+      position: absolute; left: -37px; top: 4px;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--gold); border: 2px solid var(--white);
+      box-shadow: 0 0 0 3px rgba(201,168,76,0.2);
+    }
+    .tl-date { font-size: 0.72rem; font-weight: 600; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+    .tl-title { font-weight: 700; font-size: 1rem; color: var(--gray-900); margin-bottom: 4px; }
+    .tl-org { font-size: 0.85rem; color: var(--gold-dark); font-weight: 600; margin-bottom: 8px; }
+    .tl-desc { font-size: 0.88rem; color: var(--gray-500); line-height: 1.7; }
+    .tl-desc li { margin-left: 16px; margin-top: 4px; }
+
+    /* ─── TRAINING TABLE ─── */
+    .training-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .training-item {
+      display: flex; align-items: center; gap: 14px;
+      background: rgba(201,168,76,0.04); border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 8px; padding: 14px 18px;
+    }
+    .training-bullet { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+    .training-name { font-size: 0.88rem; font-weight: 500; color: var(--gray-700); flex: 1; }
+    .training-date { font-size: 0.75rem; color: var(--gray-500); white-space: nowrap; }
+
+    /* ─── PHILOSOPHY ─── */
+    .philosophy-wrap { max-width: 760px; margin: 0 auto; text-align: center; }
+    .philosophy-quote {
+      font-family: 'Playfair Display', serif; font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+      font-style: italic; color: var(--white); line-height: 1.65;
+      padding: 0 24px; margin-bottom: 32px;
+    }
+    .philosophy-quote::before { content: '\201C'; color: var(--gold); font-size: 3rem; line-height: 0; vertical-align: -0.5em; margin-right: 4px; }
+    .philosophy-quote::after { content: '\201D'; color: var(--gold); font-size: 3rem; line-height: 0; vertical-align: -0.5em; margin-left: 4px; }
+    .philosophy-sub { font-size: 0.88rem; color: #888; }
+
+    /* ─── CTA BANNER ─── */
+    .cta-banner { background: var(--gold); padding: 72px 24px; text-align: center; }
+    .cta-banner h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; color: var(--black); margin-bottom: 14px; }
+    .cta-banner p { font-size: 1rem; color: rgba(13,13,13,0.7); margin-bottom: 32px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-dark { background: var(--black); color: var(--white); border-color: var(--black); }
+    .btn-dark:hover { background: #333; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #050505; border-top: 1px solid rgba(201,168,76,0.15);
+      padding: 48px 24px 32px;
+    }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px;
+    }
+    .footer-brand-name { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--white); margin-bottom: 4px; }
+    .footer-brand-sub { font-size: 0.72rem; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { color: #888; text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-copy { font-size: 0.75rem; color: #555; margin-top: 32px; text-align: center; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06); max-width: 1100px; margin-left: auto; margin-right: auto; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero-photo-area { order: -1; }
+      .hero-photo-placeholder, .hero-photo-img { width: 100%; max-width: 320px; height: 300px; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .aside-card { position: static; }
+      .cred-grid { grid-template-columns: 1fr 1fr; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .training-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .mobile-menu.open { display: block; }
+    }
+    @media (max-width: 560px) {
+      .cred-grid { grid-template-columns: 1fr; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      section { padding: 64px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <span class="nav-logo-main">Momentum Health</span>
+      <span class="nav-logo-sub">& Wellness Minnesota</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#focus">Conditions</a></li>
+      <li><a href="/#doctors">Our Doctors</a></li>
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#contact">Contact</a></li>
+      <li><a href="https://momentum-health.janeapp.com/" target="_blank" rel="noopener" class="btn btn-gold">Book Now</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="/" class="mobile-link">Home</a></li>
+      <li><a href="/#about" class="mobile-link">About</a></li>
+      <li><a href="/#doctors" class="mobile-link">Our Doctors</a></li>
+      <li><a href="/#contact" class="mobile-link">Contact</a></li>
+      <li><a href="https://momentum-health.janeapp.com/" target="_blank" rel="noopener" class="btn btn-gold mobile-link">Book Now</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-inner container">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Momentum Health & Wellness MN &nbsp;·&nbsp; Elk River, MN</p>
+      <h1 class="hero-name">Dr. Anna Payne, DC</h1>
+      <p class="hero-title">Doctor of Chiropractic &nbsp;·&nbsp; Applied Kinesiologist &nbsp;·&nbsp; Webster Certified</p>
+      <p class="hero-desc">
+        Dr. Anna Payne brings a rigorous academic foundation, extensive clinical training, and a genuine passion for root-cause health care to Momentum Health & Wellness Minnesota. Her approach blends chiropractic excellence with applied kinesiology and functional health — addressing the whole person, not just the complaint.
+      </p>
+      <div class="hero-ctas">
+        <a href="https://momentum-health.janeapp.com/" target="_blank" rel="noopener" class="btn btn-gold">Book an Appointment</a>
+        <a href="/#contact" class="btn btn-outline">Ask a Question</a>
+      </div>
+    </div>
+    <div class="hero-photo-area">
+      <div class="hero-photo-placeholder">
+        <span class="initials">AP</span>
+        <span class="ph-text">Dr. Anna Payne</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── QUICK STATS ─── -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-num">3+</div>
+      <div class="stat-lbl">Years Clinical Training</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">100hr</div>
+      <div class="stat-lbl">Applied Kinesiology Certified</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">14+</div>
+      <div class="stat-lbl">Seminars Completed</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">10×</div>
+      <div class="stat-lbl">President's List Honoree</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── ABOUT ─── -->
+<section>
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-body">
+        <span class="section-label">About Dr. Payne</span>
+        <h2 class="section-heading">Rooted in Science.<br>Driven by Purpose.</h2>
+        <div class="gold-divider" style="margin-bottom: 32px;"></div>
+
+        <p>
+          Dr. Anna Payne grew up in Detroit Lakes, Minnesota, and pursued a Bachelor of Science in Business Administration at North Dakota State University — including a semester abroad through the National Student Exchange Program at the University of Hawaii at Manoa. It was a combination of academic discipline and a deep curiosity about human health that led her to Life University College of Chiropractic in Marietta, Georgia.
+        </p>
+        <p>
+          At Life University, Dr. Payne distinguished herself academically — earning a spot on the President's List (3.75+ GPA) for ten terms and the Dean's List for two additional terms. She founded and led the Functional Health Club on campus, attended over a dozen advanced technique seminars, and completed a 100-hour Applied Kinesiology certification series before graduating.
+        </p>
+        <p>
+          Her clinical training included student internships at Life University's on-campus clinics (CCHOP & CHOP), where she performed new patient exams, developed care plans, and administered chiropractic adjustments and functional kinesiology. She also served as a student intern at Wave of Light Chiropractic in Myrtle Beach, SC — where she expanded her skills with insight scans, digital x-ray, cold laser therapy, and advanced adjusting techniques.
+        </p>
+        <p>
+          In June 2024, Dr. Payne participated in a mission trip to Sayulita, Mexico with Nikau Women, providing high-volume chiropractic care to underserved rural communities — an experience that deepened her commitment to accessible, meaningful health care.
+        </p>
+        <p>
+          Dr. Payne is Webster Technique certified through the ICPA (International Chiropractic Pediatric Association), making her well-equipped to support prenatal and pediatric patients. She is excited to bring her training, energy, and passion for root-cause health to the Elk River community as part of the Momentum Health & Wellness team.
+        </p>
+
+        <div class="pill-wrap">
+          <span class="pill">Applied Kinesiology</span>
+          <span class="pill">Webster Certified</span>
+          <span class="pill">Prenatal & Pediatric</span>
+          <span class="pill">Functional Health</span>
+          <span class="pill">Cold Laser Therapy</span>
+          <span class="pill">Gonstead Technique</span>
+          <span class="pill">Sacro-Occipital Technique</span>
+          <span class="pill">APEX Blood Chemistry</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="aside-card">
+          <h3>At a Glance</h3>
+          <div class="aside-row">
+            <div class="aside-icon">🎓</div>
+            <div class="aside-text">
+              <strong>Doctor of Chiropractic</strong>
+              <span>Life University College of Chiropractic, Marietta, GA</span>
+            </div>
+          </div>
+          <div class="aside-row">
+            <div class="aside-icon">📚</div>
+            <div class="aside-text">
+              <strong>B.S. Business Administration</strong>
+              <span>North Dakota State University, 2022</span>
+            </div>
+          </div>
+          <div class="aside-row">
+            <div class="aside-icon">🏆</div>
+            <div class="aside-text">
+              <strong>President's List — 10 Terms</strong>
+              <span>3.75+ GPA, Life University</span>
+            </div>
+          </div>
+          <div class="aside-row">
+            <div class="aside-icon">✅</div>
+            <div class="aside-text">
+              <strong>Applied Kinesiology — 100 Hr Certified</strong>
+              <span>Completed April 2025</span>
+            </div>
+          </div>
+          <div class="aside-row">
+            <div class="aside-icon">👶</div>
+            <div class="aside-text">
+              <strong>Webster Technique — ICPA Certified</strong>
+              <span>Prenatal & Pediatric Chiropractic</span>
+            </div>
+          </div>
+          <div class="aside-row">
+            <div class="aside-icon">🌍</div>
+            <div class="aside-text">
+              <strong>Mission Trip — Sayulita, Mexico</strong>
+              <span>Nikau Women, June 2024</span>
+            </div>
+          </div>
+          <div class="aside-row">
+            <div class="aside-icon">📍</div>
+            <div class="aside-text">
+              <strong>Location</strong>
+              <span>Elk River, MN</span>
+            </div>
+          </div>
+          <div class="aside-cta">
+            <a href="https://momentum-health.janeapp.com/" target="_blank" rel="noopener" class="btn btn-gold" style="width:100%; text-align:center; display:block;">Book with Dr. Payne</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CREDENTIALS ─── -->
+<section class="light-bg">
+  <div class="container">
+    <div style="text-align:center; margin-bottom: 56px;">
+      <span class="section-label">Certifications & Training</span>
+      <h2 class="section-heading">Built for Results</h2>
+      <div class="gold-divider" style="margin: 20px auto 0;"></div>
+    </div>
+    <div class="cred-grid">
+      <div class="cred-card">
+        <div class="cred-icon">🧠</div>
+        <div class="cred-title">Applied Kinesiology — 100 Hour Series</div>
+        <div class="cred-body">Completed the full ICAK 100-hour certification program, enabling advanced muscle testing, organ-system assessment, and functional health evaluation.</div>
+        <span class="cred-year">Certified April 2025</span>
+      </div>
+      <div class="cred-card">
+        <div class="cred-icon">👶</div>
+        <div class="cred-title">Webster Technique — ICPA Certified</div>
+        <div class="cred-body">Certified through the International Chiropractic Pediatric Association to perform Webster Technique for prenatal and pediatric chiropractic care.</div>
+        <span class="cred-year">Certified August 2025</span>
+      </div>
+      <div class="cred-card">
+        <div class="cred-icon">🔬</div>
+        <div class="cred-title">APEX Fundamentals of Functional Blood Chemistry</div>
+        <div class="cred-body">Training in functional interpretation of blood chemistry panels — identifying patterns and imbalances that conventional labs often overlook.</div>
+        <span class="cred-year">January 2025</span>
+      </div>
+      <div class="cred-card">
+        <div class="cred-icon">⚡</div>
+        <div class="cred-title">Activator Methods — Basic Certification</div>
+        <div class="cred-body">Certified in Activator Methods, a low-force instrument-assisted chiropractic technique suitable for all ages and conditions.</div>
+        <span class="cred-year">June 2025</span>
+      </div>
+      <div class="cred-card">
+        <div class="cred-icon">🦴</div>
+        <div class="cred-title">National Board Examinations (Parts I–IV + PT)</div>
+        <div class="cred-body">Successfully completed all five National Board Examinations required for chiropractic licensure in the United States.</div>
+        <span class="cred-year">2023 – 2025</span>
+      </div>
+      <div class="cred-card">
+        <div class="cred-icon">❤️</div>
+        <div class="cred-title">CPR Certified</div>
+        <div class="cred-body">Current Cardiopulmonary Resuscitation (CPR) certification for patient safety.</div>
+        <span class="cred-year">Fall 2024</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── EXPERIENCE TIMELINE ─── -->
+<section>
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 72px;">
+      <div>
+        <span class="section-label">Clinical Experience</span>
+        <h2 class="section-heading" style="margin-bottom: 48px;">Time in the Clinic</h2>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-date">Oct 2025 – Present</div>
+            <div class="tl-title">Student Intern</div>
+            <div class="tl-org">Wave of Light Chiropractic — Myrtle Beach, SC</div>
+            <div class="tl-desc">
+              <ul>
+                <li>New patient exams including insight scans, history, and digital x-ray</li>
+                <li>Chiropractic adjustments using multiple techniques with proper documentation</li>
+                <li>Class 3 cold laser therapy for various musculoskeletal conditions</li>
+                <li>Patient communication and appointment scheduling support</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-date">Aug 2024 – Sep 2025</div>
+            <div class="tl-title">Student Intern</div>
+            <div class="tl-org">Life University Clinics (CCHOP & CHOP) — Marietta, GA</div>
+            <div class="tl-desc">
+              <ul>
+                <li>New patient exams and individualized care plan development</li>
+                <li>Chiropractic adjustments and functional kinesiology</li>
+                <li>Proper documentation and clinical charting</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-date">June 2024</div>
+            <div class="tl-title">Mission Trip — Chiropractic Care</div>
+            <div class="tl-org">Nikau Women — Sayulita, Mexico</div>
+            <div class="tl-desc">Provided high-volume chiropractic care to underserved rural communities in Mexico.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-date">May – Sep 2022</div>
+            <div class="tl-title">Chiropractic Assistant</div>
+            <div class="tl-org">Peak Spine and Wellness — Fargo, ND</div>
+            <div class="tl-desc">Administrative and patient coordination duties for a newly opened clinic — scheduling, payments, communications, and file organization.</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <span class="section-label">Education</span>
+        <h2 class="section-heading" style="margin-bottom: 48px;">Academic Foundation</h2>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-date">Fall 2022 – 2026</div>
+            <div class="tl-title">Doctor of Chiropractic</div>
+            <div class="tl-org">Life University College of Chiropractic — Marietta, GA</div>
+            <div class="tl-desc">
+              President's List 10 terms · Dean's List 2 terms<br>
+              Founder & President, Functional Health Club<br>
+              Applied Kinesiology 100-Hour Series · Webster ICPA Training
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-date">Aug 2018 – May 2022</div>
+            <div class="tl-title">B.S. Business Administration</div>
+            <div class="tl-org">North Dakota State University — Fargo, ND</div>
+            <div class="tl-desc">
+              National Student Exchange — University of Hawaii at Manoa (Spring 2020)
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 56px;">
+          <span class="section-label">Memberships</span>
+          <h3 style="font-family:'Playfair Display',serif; font-size:1.3rem; color:var(--gray-900); margin-bottom: 20px;">Professional Organizations</h3>
+          <div class="tl-item" style="padding-left: 0; margin-bottom: 16px;">
+            <div style="display:flex; align-items:center; gap:12px; padding: 14px 18px; background: var(--gray-100); border-radius: 8px; border-left: 3px solid var(--gold);">
+              <span style="font-size:1.1rem;">🏅</span>
+              <div>
+                <div style="font-weight:700; font-size:0.9rem; color:var(--gray-900);">International Chiropractic Applied Kinesiology</div>
+                <div style="font-size:0.78rem; color:var(--gray-500);">Student Member</div>
+              </div>
+            </div>
+          </div>
+          <div class="tl-item" style="padding-left: 0;">
+            <div style="display:flex; align-items:center; gap:12px; padding: 14px 18px; background: var(--gray-100); border-radius: 8px; border-left: 3px solid var(--gold);">
+              <span style="font-size:1.1rem;">👶</span>
+              <div>
+                <div style="font-weight:700; font-size:0.9rem; color:var(--gray-900);">International Chiropractic Pediatric Association (ICPA)</div>
+                <div style="font-size:0.78rem; color:var(--gray-500);">Student Member</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SEMINAR TRAINING ─── -->
+<section class="light-bg">
+  <div class="container">
+    <div style="text-align:center; margin-bottom: 48px;">
+      <span class="section-label">Continuing Education</span>
+      <h2 class="section-heading">Seminar Training</h2>
+      <div class="gold-divider" style="margin: 20px auto 0;"></div>
+      <p style="font-size:0.95rem; color:var(--gray-500); margin-top:16px; max-width:520px; margin-left:auto; margin-right:auto;">
+        Dr. Payne has invested deeply in advanced technique training — going well beyond the standard chiropractic curriculum.
+      </p>
+    </div>
+    <div class="training-grid">
+      <div class="training-item">
+        <div class="training-bullet"></div>
+        <div class="training-name">Gonstead Technique</div>
+        <div class="training-date">Nov 2022</div>
+      </div>
+      <div class="training-item">
+        <div class="training-bullet"></div>
+        <div class="training-name">Wellness Way Training</div>
+        <div class="training-date">Jan 2023</div>
+      </div>
+      <div class="training-item">
+        <div class="training-bullet"></div>
+        <div class="training-name">Birth Education — Dr. Shannon Good</div>
+        <div class="training-date">Mar 2023</div>
+      </div>
+      <div class="training-item">
+        <div class="training-bullet"></div>
+        <div class="training-name">Level Up Training</div>
+        <div class="training-date">Apr 2023</div>
+      </div>
+      <div class="training-item">
+        <div class="training-bullet"></div>
+        <div class="training-name">Kairos Adjusting Seminar</div>
+        <div class="training-date">Aug 2023</div>
+      </div>
+      <div class="training-item">
+        <div class="training-bullet"></div>
+        <div class="training-name">Syntropy Adjusting Seminar — Module A</div>
+        <div class="training-date">Nov 2023</div>
+      </div>
+      <div class="training-item">
+        <div class="training-bullet"></div>
+        <div class="training-name">Syntropy Adjusting Seminar — Module C</div>
+        <div class="training-date">Apr 2024</div>
+      </div>
+      <div class="training-item">
+        <div class="training-bullet"></div>
+        <div class="training-name">Adjusting Basics & Philosophy — Dr. Eric Russell</div>
+        <div class="training-date">Apr 2024</div>
+      </div>
+      <div class="training-item">
+        <div class="training-bullet"></div>
+        <div class="training-name">Nikau Women Adjusting Seminar</div>
+        <div class="training-date">May 2024</div>
+      </div>
+      <div class="training-item">
+        <div class="training-bullet"></div>
+        <div class="training-name">Sacro-Occipital Technique (SOT) Seminar</div>
+        <div class="training-date">Aug 2024</div>
+      </div>
+      <div class="training-item">
+        <div class="training-bullet"></div>
+        <div class="training-name">Relentless — Chiropractic Business & Technique</div>
+        <div class="training-date">Sep 2024</div>
+      </div>
+      <div class="training-item">
+        <div class="training-bullet"></div>
+        <div class="training-name">Applied Kinesiology 100-Hour Certification Series</div>
+        <div class="training-date">Sep 2024 – Apr 2025</div>
+      </div>
+      <div class="training-item">
+        <div class="training-bullet"></div>
+        <div class="training-name">APEX Fundamentals of Functional Blood Chemistry</div>
+        <div class="training-date">Jan 2025</div>
+      </div>
+      <div class="training-item">
+        <div class="training-bullet"></div>
+        <div class="training-name">Webster Technique — ICPA</div>
+        <div class="training-date">Aug 2025</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PHILOSOPHY ─── -->
+<section class="dark">
+  <div class="container">
+    <div class="philosophy-wrap">
+      <span class="section-label" style="display:block; text-align:center; margin-bottom:24px;">Philosophy</span>
+      <p class="philosophy-quote">
+        Every patient's story matters — and lasting health requires addressing root causes, not just managing symptoms.
+      </p>
+      <p class="philosophy-sub">
+        Dr. Anna Payne believes in the body's innate ability to heal when given the right support. Her practice combines advanced diagnostic skills with a compassionate, whole-person approach to care.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA ─── -->
+<div class="cta-banner">
+  <div class="container">
+    <h2>Ready to Work with Dr. Payne?</h2>
+    <p>New patients are welcome. Book your first appointment online or reach out with questions.</p>
+    <div class="cta-btns">
+      <a href="https://momentum-health.janeapp.com/" target="_blank" rel="noopener" class="btn btn-dark">Book an Appointment</a>
+      <a href="/#contact" class="btn btn-outline" style="border-color:var(--black); color:var(--black);">Contact Us</a>
+    </div>
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-inner container">
+    <div>
+      <div class="footer-brand-name">Momentum Health & Wellness MN</div>
+      <div class="footer-brand-sub">Elk River, Minnesota</div>
+    </div>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/#doctors">Our Doctors</a>
+      <a href="/#services">Services</a>
+      <a href="/#contact">Contact</a>
+      <a href="https://momentum-health.janeapp.com/" target="_blank" rel="noopener">Book Now</a>
+    </div>
+  </div>
+  <p class="footer-copy">© 2026 Momentum Health & Wellness Minnesota. All rights reserved. &nbsp;·&nbsp; (763) 760-9176 &nbsp;·&nbsp; doc@drtoddanderson.com</p>
+</footer>
+
+<script>
+  // Mobile nav
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+  });
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  });
+</script>
+</body>
+</html>
