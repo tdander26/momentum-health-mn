@@ -218,6 +218,66 @@
     .schedule-alt a { color: var(--gold); font-weight: 600; text-decoration: none; }
     .schedule-alt a:hover { color: var(--gold-light); text-decoration: underline; }
 
+    /* ─── REVIEWS ─── */
+    .reviews { padding: 80px 24px; background: var(--black); border-top: 1px solid var(--border); }
+    .reviews-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 860px; margin: 0 auto; }
+    .review-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 28px 24px;
+      transition: border-color 0.2s;
+    }
+    .review-card:hover { border-color: var(--border-gold); }
+    .review-stars { color: var(--gold); font-size: 1rem; letter-spacing: 2px; margin-bottom: 14px; }
+    .review-text { font-size: 0.88rem; color: #bbb; line-height: 1.8; margin-bottom: 18px; font-style: italic; }
+    .review-text::before { content: '\201C'; color: var(--gold); font-size: 1.4rem; line-height: 0; vertical-align: -0.3em; margin-right: 3px; }
+    .review-text::after { content: '\201D'; color: var(--gold); font-size: 1.4rem; line-height: 0; vertical-align: -0.3em; margin-left: 3px; }
+    .review-author { display: flex; align-items: center; gap: 12px; }
+    .review-avatar {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: var(--card2); border: 1px solid var(--border-gold);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; font-weight: 700; color: var(--gold); flex-shrink: 0;
+    }
+    .review-name { font-weight: 700; font-size: 0.88rem; color: var(--white); }
+    .review-source { font-size: 0.72rem; color: #555; margin-top: 2px; }
+    .review-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--gold); background: rgba(201,168,76,0.08); border: 1px solid var(--border-gold);
+      border-radius: 20px; padding: 4px 12px; margin-bottom: 10px;
+    }
+
+    /* ─── FAQ ─── */
+    .faq { padding: 80px 24px; background: var(--charcoal); border-top: 1px solid var(--border); }
+    .faq-list { max-width: 700px; margin: 0 auto; }
+    .faq-item {
+      border-bottom: 1px solid var(--border); padding: 24px 0;
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q {
+      font-weight: 700; font-size: 0.98rem; color: var(--white);
+      cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+      gap: 16px;
+    }
+    .faq-q .faq-icon { color: var(--gold); font-size: 1.2rem; flex-shrink: 0; transition: transform 0.2s; }
+    .faq-a { font-size: 0.88rem; color: var(--muted); line-height: 1.8; margin-top: 14px; display: none; }
+    .faq-item.open .faq-a { display: block; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    /* ─── STICKY CTA (mobile) ─── */
+    .sticky-cta {
+      display: none;
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+      background: var(--gold); padding: 14px 24px;
+      box-shadow: 0 -4px 24px rgba(0,0,0,0.5);
+    }
+    .sticky-cta a {
+      display: block; text-align: center; text-decoration: none;
+      font-weight: 700; font-size: 0.92rem; color: var(--black);
+      letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    @media (max-width: 720px) { .sticky-cta { display: block; } }
+
     /* ─── FOOTER ─── */
     footer {
       background: #080808; border-top: 1px solid var(--border-gold);
@@ -418,6 +478,115 @@
   </div>
 </section>
 
+<!-- ─── REVIEWS ─── -->
+<section class="reviews">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Real Patients. Real Results.</span>
+      <h2 class="section-heading">What Patients Are Saying</h2>
+      <p>These aren't curated testimonials — they're Google reviews from people who were told their labs were "normal" and finally got real answers.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-badge">✓ Verified Google Review</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">I saw many doctors, many tests and even a brain scan. They could not find anything wrong with me — everything came back "normal" per their standards. After seeing Dr. Todd… I am sitting here writing this in tears of how grateful I am. After a year and a half of suffering I now feel like myself again.</p>
+        <div class="review-author">
+          <div class="review-avatar">FD</div>
+          <div>
+            <div class="review-name">Family Deonnei</div>
+            <div class="review-source">Google Review · 5 Stars</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-badge">✓ Verified Google Review</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">I started going to Dr. Anderson to fix my chronic fatigue and joint pain. I had been dealing with both for over 7 years and had gone to many, many PCPs with absolutely no changes. With Dr. Anderson, the joint pain and fatigue were gone within a few weeks. Honestly, if you have any issues you have given up on, go see Dr. Anderson.</p>
+        <div class="review-author">
+          <div class="review-avatar">AL</div>
+          <div>
+            <div class="review-name">Alicia Lang</div>
+            <div class="review-source">Google Review · 5 Stars</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-badge">✓ Verified Google Review</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">This is not your typical doctor where you are prescribed a medication after sitting in a waiting room for hours. He actually spends time with you and figures out what is going on in a natural and holistic way instead of tagging you with a diagnosis and giving you a generic one-size-fits-all treatment. My treatment felt very individualized.</p>
+        <div class="review-author">
+          <div class="review-avatar">WS</div>
+          <div>
+            <div class="review-name">William Schuler</div>
+            <div class="review-source">Google Review · 5 Stars</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-badge">✓ Verified Google Review</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">I was told my inflammation marker was high and I was insulin resistant, but not much was done to help me. Up until working with Todd, doctors gave me the run around and I felt they truly were not listening to me as a patient. I am beyond thankful. I am finally able to get back to the things I was doing before my body went crazy on me.</p>
+        <div class="review-author">
+          <div class="review-avatar">DD</div>
+          <div>
+            <div class="review-name">Desiree Daniels</div>
+            <div class="review-source">Google Review · 5 Stars</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQ ─── -->
+<section class="faq">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Common Questions</span>
+      <h2 class="section-heading">What to Expect</h2>
+      <p>A few things people usually ask before booking.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          What happens on the free consultation call?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">It's a straightforward 15-minute phone call. You share what's been going on with your health, we listen, and we tell you honestly whether we think we can help — and what that would look like. No pressure, no pitch.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Is this covered by insurance?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Functional medicine and chiropractic services may be partially covered depending on your plan. We'll discuss specifics on the call or at your first visit. Many patients find the out-of-pocket cost is far less than years of co-pays for care that wasn't working.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          What conditions do you work with?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">We work with a wide range of chronic conditions — thyroid dysfunction, gut issues (IBS, leaky gut, SIBO), hormonal imbalances, autoimmunity, chronic fatigue, chronic pain, fibromyalgia, insulin resistance, anxiety/depression, and more. If you've been told your labs are "normal" but you still feel terrible, that's exactly who we help.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Do I need to come in person?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Our clinic is in Elk River, MN and in-person visits allow us to do the most thorough assessment — including Applied Kinesiology muscle testing. Some consultations and follow-ups can be done remotely. We'll figure out what makes sense for your situation on the call.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          How is this different from my regular doctor?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Conventional medicine is excellent for acute problems and emergencies. We focus on chronic conditions that have root causes — things like gut dysfunction, nutritional deficiencies, hormonal imbalances, and structural issues that conventional labs often miss. We spend real time with you and look at the whole picture, not just your chief complaint.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ─── SCHEDULE ─── -->
 <section class="schedule" id="schedule">
   <div class="container">
@@ -456,5 +625,16 @@
   <p class="footer-copy">© 2026 Momentum Health & Wellness Minnesota. All rights reserved.</p>
 </footer>
 
+<!-- ─── STICKY MOBILE CTA ─── -->
+<div class="sticky-cta">
+  <a href="#schedule">📅 Schedule My Free Consultation</a>
+</div>
+
+<script>
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    item.classList.toggle('open');
+  }
+</script>
 </body>
 </html>
