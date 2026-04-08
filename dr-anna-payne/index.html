@@ -12,7 +12,11 @@
   <meta property="og:title" content="Dr. Anna Payne, DC | Momentum Health & Wellness Minnesota" />
   <meta property="og:description" content="Chiropractor and functional medicine doctor in Elk River, MN. Applied Kinesiology certified, Webster trained, and passionate about root-cause care." />
   <meta property="og:image" content="https://momentumhealthwellnessmn.com/images/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
+  <link rel="canonical" href="https://momentumhealthwellnessmn.com/dr-anna-payne/" />
+  <link rel="icon" href="/images/og-image.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
@@ -38,7 +42,7 @@
       --gray-100:   #F9FAFB;
       --white:      #ffffff;
     }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
     .section-label {
       font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em;
       text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 12px;
@@ -49,6 +53,17 @@
       font-weight: 700; line-height: 1.2; color: var(--gray-900);
     }
     .gold-divider { width: 48px; height: 3px; background: var(--gold); border-radius: 2px; margin: 20px 0 0; }
+    .skip-link {
+      position: absolute; top: -100%; left: 16px; z-index: 9999;
+      background: var(--gold); color: var(--black); padding: 12px 24px;
+      font-size: 0.9rem; font-weight: 600; text-decoration: none;
+      border-radius: 0 0 4px 4px; transition: top 0.2s ease;
+    }
+    .skip-link:focus { top: 0; }
+    a:focus-visible, button:focus-visible, input:focus-visible,
+    select:focus-visible, textarea:focus-visible, .btn:focus-visible {
+      outline: 2px solid var(--gold); outline-offset: 2px;
+    }
     .btn {
       display: inline-block; padding: 14px 34px; font-size: 0.88rem;
       font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
@@ -285,6 +300,8 @@
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <!-- ─── NAV ─── -->
 <nav>
   <div class="nav-inner">
@@ -316,7 +333,7 @@
 </nav>
 
 <!-- ─── HERO ─── -->
-<section class="hero">
+<section class="hero" id="main-content">
   <div class="hero-inner container">
     <div class="hero-content">
       <p class="hero-eyebrow">Momentum Health & Wellness MN &nbsp;·&nbsp; Elk River, MN</p>

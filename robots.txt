@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /free-consult/
+
+Sitemap: https://momentumhealthwellnessmn.com/sitemap.xml

@@ -6,6 +6,8 @@
   <title>Free Consultation | Momentum Health & Wellness Minnesota</title>
   <meta name="description" content="Struggling with thyroid issues, gut problems, hormones, or chronic conditions? Schedule a free phone consultation with Dr. Todd Anderson at Momentum Health & Wellness in Elk River, MN.">
   <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href="https://momentumhealthwellnessmn.com/free-consult/" />
+  <link rel="icon" href="/images/og-image.png" type="image/png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -48,6 +50,16 @@
     .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
     .gold-divider { width: 56px; height: 3px; background: var(--gold); border-radius: 2px; }
     .gold-divider.center { margin: 0 auto; }
+    .skip-link {
+      position: absolute; top: -100%; left: 16px; z-index: 9999;
+      background: var(--gold); color: var(--black); padding: 12px 24px;
+      font-size: 0.9rem; font-weight: 600; text-decoration: none;
+      border-radius: 0 0 4px 4px; transition: top 0.2s ease;
+    }
+    .skip-link:focus { top: 0; }
+    a:focus-visible, button:focus-visible, .btn:focus-visible {
+      outline: 2px solid var(--gold); outline-offset: 2px;
+    }
     .section-label {
       font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em;
       text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 12px;
@@ -276,6 +288,12 @@
       font-weight: 700; font-size: 0.92rem; color: var(--black);
       letter-spacing: 0.06em; text-transform: uppercase;
     }
+    .sticky-cta-dismiss {
+      position: absolute; top: 8px; right: 12px; background: none; border: none;
+      font-size: 1.1rem; color: var(--black); cursor: pointer; padding: 4px 8px;
+      line-height: 1; opacity: 0.6;
+    }
+    .sticky-cta-dismiss:hover { opacity: 1; }
     @media (max-width: 720px) { .sticky-cta { display: block; } }
 
     /* ─── FOOTER ─── */
@@ -307,6 +325,8 @@
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <!-- ─── TOP BAR ─── -->
 <div class="top-bar">
   <p>📍 Elk River, MN &nbsp;·&nbsp; Now Accepting New Patients &nbsp;·&nbsp; <a href="sms:+17637609176&body=I'd like to schedule a free consultation.">Text us: (763) 760-9176</a></p>
@@ -324,7 +344,7 @@
 </nav>
 
 <!-- ─── HERO ─── -->
-<section class="hero">
+<section class="hero" id="main-content">
   <div class="container">
     <p class="hero-eyebrow">Free Phone Consultation — No Obligation</p>
     <h1>
@@ -356,21 +376,21 @@
       <p>These aren't random — they're signals. And they almost always have a root cause that can be identified and addressed.</p>
     </div>
     <div class="symptom-grid">
-      <div class="symptom-item"><span class="symptom-icon">🦋</span><span class="symptom-name">Thyroid Problems</span></div>
-      <div class="symptom-item"><span class="symptom-icon">🛡️</span><span class="symptom-name">Autoimmunity</span></div>
-      <div class="symptom-item"><span class="symptom-icon">🔥</span><span class="symptom-name">Digestive Problems</span></div>
-      <div class="symptom-item"><span class="symptom-icon">🧠</span><span class="symptom-name">Anxiety, Depression, ADD</span></div>
-      <div class="symptom-item"><span class="symptom-icon">💢</span><span class="symptom-name">Fibromyalgia</span></div>
-      <div class="symptom-item"><span class="symptom-icon">⚖️</span><span class="symptom-name">Hormonal Disruptions</span></div>
-      <div class="symptom-item"><span class="symptom-icon">😴</span><span class="symptom-name">Fatigue & Low Energy</span></div>
-      <div class="symptom-item"><span class="symptom-icon">💇</span><span class="symptom-name">Trouble Losing Weight / Hair Loss</span></div>
-      <div class="symptom-item"><span class="symptom-icon">🤕</span><span class="symptom-name">Headaches</span></div>
-      <div class="symptom-item"><span class="symptom-icon">🌙</span><span class="symptom-name">Sleep Issues</span></div>
-      <div class="symptom-item"><span class="symptom-icon">⚡</span><span class="symptom-name">Chronic Pain</span></div>
-      <div class="symptom-item"><span class="symptom-icon">🌀</span><span class="symptom-name">Bloating, IBS, Reflux, Nausea</span></div>
-      <div class="symptom-item"><span class="symptom-icon">🌡️</span><span class="symptom-name">PMS, Irregular Cycles, Hot Flashes</span></div>
-      <div class="symptom-item"><span class="symptom-icon">🧬</span><span class="symptom-name">Insulin Resistance / Blood Sugar</span></div>
-      <div class="symptom-item"><span class="symptom-icon">❓</span><span class="symptom-name">"Normal Labs" — Still Feel Terrible</span></div>
+      <div class="symptom-item"><span class="symptom-icon" aria-hidden="true">🦋</span><span class="symptom-name">Thyroid Problems</span></div>
+      <div class="symptom-item"><span class="symptom-icon" aria-hidden="true">🛡️</span><span class="symptom-name">Autoimmunity</span></div>
+      <div class="symptom-item"><span class="symptom-icon" aria-hidden="true">🔥</span><span class="symptom-name">Digestive Problems</span></div>
+      <div class="symptom-item"><span class="symptom-icon" aria-hidden="true">🧠</span><span class="symptom-name">Anxiety, Depression, ADD</span></div>
+      <div class="symptom-item"><span class="symptom-icon" aria-hidden="true">💢</span><span class="symptom-name">Fibromyalgia</span></div>
+      <div class="symptom-item"><span class="symptom-icon" aria-hidden="true">⚖️</span><span class="symptom-name">Hormonal Disruptions</span></div>
+      <div class="symptom-item"><span class="symptom-icon" aria-hidden="true">😴</span><span class="symptom-name">Fatigue & Low Energy</span></div>
+      <div class="symptom-item"><span class="symptom-icon" aria-hidden="true">💇</span><span class="symptom-name">Trouble Losing Weight / Hair Loss</span></div>
+      <div class="symptom-item"><span class="symptom-icon" aria-hidden="true">🤕</span><span class="symptom-name">Headaches</span></div>
+      <div class="symptom-item"><span class="symptom-icon" aria-hidden="true">🌙</span><span class="symptom-name">Sleep Issues</span></div>
+      <div class="symptom-item"><span class="symptom-icon" aria-hidden="true">⚡</span><span class="symptom-name">Chronic Pain</span></div>
+      <div class="symptom-item"><span class="symptom-icon" aria-hidden="true">🌀</span><span class="symptom-name">Bloating, IBS, Reflux, Nausea</span></div>
+      <div class="symptom-item"><span class="symptom-icon" aria-hidden="true">🌡️</span><span class="symptom-name">PMS, Irregular Cycles, Hot Flashes</span></div>
+      <div class="symptom-item"><span class="symptom-icon" aria-hidden="true">🧬</span><span class="symptom-name">Insulin Resistance / Blood Sugar</span></div>
+      <div class="symptom-item"><span class="symptom-icon" aria-hidden="true">❓</span><span class="symptom-name">"Normal Labs" — Still Feel Terrible</span></div>
     </div>
     <div class="symptoms-cta">
       <a href="#schedule" class="btn btn-gold">Yes — I Want Real Answers</a>
@@ -389,7 +409,7 @@
     </div>
 
     <div class="thyroid-example">
-      <img src="/images/thyroid-example.jpg" alt="Thyroid dysfunction diagram — Symptom, Dysfunction, Driver, Correction" />
+      <img src="/images/thyroid-example.jpg" alt="Thyroid dysfunction diagram — Symptom, Dysfunction, Driver, Correction" loading="lazy" />
       <div class="thyroid-caption">
         Thyroid example: the <strong style="color:#fff;">symptom</strong> (weight gain) traces back through dysfunction → driver → correction. We find the driver — not just manage the symptom.
       </div>
@@ -397,17 +417,17 @@
 
     <div class="steps">
       <div class="step">
-        <span class="step-emoji">🔍</span>
+        <span class="step-emoji" aria-hidden="true">🔍</span>
         <h3>Find</h3>
         <p>We can't fix what we can't find. Through a complete history, functional blood work review, and Applied Kinesiology, we identify the actual driver of your dysfunction — not just the symptom.</p>
       </div>
       <div class="step">
-        <span class="step-emoji">🛠</span>
+        <span class="step-emoji" aria-hidden="true">🛠</span>
         <h3>Fix</h3>
         <p>Fixing chronic conditions requires specific, targeted interventions — not a shotgun approach. Dietary adjustments, targeted supplementation, and care tailored to your body's unique patterns.</p>
       </div>
       <div class="step">
-        <span class="step-emoji">👍</span>
+        <span class="step-emoji" aria-hidden="true">👍</span>
         <h3>Stabilize</h3>
         <p>We recommend lifestyle changes that keep problems from coming back. Our goal is to give you the tools to thrive — and honestly, to never need to see us again (even though we enjoy working with you).</p>
       </div>
@@ -425,28 +445,28 @@
     </div>
     <div class="why-grid">
       <div class="why-item">
-        <div class="why-icon">🕐</div>
+        <div class="why-icon" aria-hidden="true">🕐</div>
         <div>
           <div class="why-title">Time With Your Doctor</div>
           <div class="why-desc">No 7-minute appointments. We take the time to understand your full health story — not just your chief complaint.</div>
         </div>
       </div>
       <div class="why-item">
-        <div class="why-icon">🔬</div>
+        <div class="why-icon" aria-hidden="true">🔬</div>
         <div>
           <div class="why-title">Functional Blood Work</div>
           <div class="why-desc">We read labs with functional ranges — not just pathological cutoffs. Patterns that conventional medicine misses, we catch.</div>
         </div>
       </div>
       <div class="why-item">
-        <div class="why-icon">🧠</div>
+        <div class="why-icon" aria-hidden="true">🧠</div>
         <div>
           <div class="why-title">Applied Kinesiology</div>
           <div class="why-desc">A whole-body assessment system used to identify functional imbalances — from organ systems to structural patterns.</div>
         </div>
       </div>
       <div class="why-item">
-        <div class="why-icon">🌿</div>
+        <div class="why-icon" aria-hidden="true">🌿</div>
         <div>
           <div class="why-title">Natural, Root-Cause Care</div>
           <div class="why-desc">We address why you feel the way you do — through diet, lifestyle, targeted supplementation, and chiropractic care.</div>
@@ -461,7 +481,7 @@
   <div class="container">
     <div class="doctor-inner">
       <div class="doctor-photo">
-        <img src="/images/dr-todd-anderson.jpg" alt="Dr. Todd Anderson, DC" />
+        <img src="/images/dr-todd-anderson.jpg" alt="Dr. Todd Anderson, DC" loading="lazy" />
       </div>
       <div>
         <div class="doctor-label">Your Doctor</div>
@@ -639,8 +659,9 @@
 </footer>
 
 <!-- ─── STICKY MOBILE CTA ─── -->
-<div class="sticky-cta">
-  <a href="#schedule">📅 Schedule My Free Consultation</a>
+<div class="sticky-cta" id="sticky-cta">
+  <button class="sticky-cta-dismiss" onclick="document.getElementById('sticky-cta').style.display='none'" aria-label="Dismiss">&times;</button>
+  <a href="#schedule">Schedule My Free Consultation</a>
 </div>
 
 <script>
