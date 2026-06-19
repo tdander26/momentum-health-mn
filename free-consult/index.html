@@ -610,8 +610,8 @@
       <a href="#tidycal" class="btn btn-outline" style="font-size:0.95rem;">📞 Free Phone Consult First</a>
     </div>
     <div class="tidycal-wrap" id="tidycal">
-      <div class="tidycal-embed" data-path="doc2/npconsult"></div>
-      <script src="https://asset-tidycal.b-cdn.net/js/embed.js" async></script>
+      <!-- Momentum booking widget (intro call). Loader script is before </body>. -->
+      <div class="booking-inline" data-url="https://momentum-booking.web.app/?type=intro-call" style="min-width:320px;height:640px;"></div>
       <div class="schedule-alt">
         <p>Prefer to reach out directly?</p>
         <p>
@@ -649,5 +649,8 @@
     item.classList.toggle('open');
   }
 </script>
+
+<!-- Momentum booking widget loader -->
+<script src="https://momentum-booking.web.app/embed.js" async></script>
 </body>
 </html>
