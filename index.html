@@ -357,17 +357,65 @@
       overflow: hidden;
       position: relative;
     }
-    .about-card-img-placeholder {
+    .about-ethos {
       position: absolute;
       inset: 0;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      color: var(--gray-500);
-      background: linear-gradient(135deg, #f0ede8 0%, #e8e4dc 100%);
+      padding: 46px 42px;
+      background: radial-gradient(ellipse 95% 70% at 28% 22%, rgba(201,168,76,0.12) 0%, transparent 60%), var(--black);
+      overflow: hidden;
     }
+    .about-ethos::before {
+      content: 'M';
+      position: absolute;
+      right: -8px; bottom: -54px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 15rem;
+      line-height: 1;
+      color: rgba(201,168,76,0.06);
+      pointer-events: none;
+    }
+    .about-ethos-label {
+      position: relative;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 22px;
+    }
+    .about-ethos-quote {
+      position: relative;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: clamp(1.6rem, 2.3vw, 2.05rem);
+      line-height: 1.28;
+      color: var(--white);
+      margin: 0;
+    }
+    .about-ethos-quote em { color: var(--gold); font-style: italic; }
+    .about-ethos-divider {
+      position: relative;
+      width: 56px; height: 3px;
+      background: var(--gold);
+      border-radius: 2px;
+      margin: 26px 0 20px;
+    }
+    .about-ethos-steps {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #d8c790;
+    }
+    .about-ethos-steps .dot { color: var(--gold); font-weight: 700; }
     .about-accent-box {
       position: absolute;
       bottom: -24px; right: -24px;
@@ -1263,9 +1311,13 @@
     <div class="about-grid">
       <div class="about-visual">
         <div class="about-card-img">
-          <div class="about-card-img-placeholder">
-            <!-- Replace with practice photo -->
-            Office / Team Photo
+          <div class="about-ethos">
+            <span class="about-ethos-label">Our Ethos</span>
+            <p class="about-ethos-quote">Creating <em>momentum</em> for long-standing <em>change</em>.</p>
+            <div class="about-ethos-divider"></div>
+            <div class="about-ethos-steps">
+              <span>Find</span><span class="dot">&middot;</span><span>Fix</span><span class="dot">&middot;</span><span>Stabilize</span>
+            </div>
           </div>
         </div>
         <div class="about-accent-box">
