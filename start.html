@@ -52,6 +52,9 @@
     .addr-ac .ac-item { padding: 10px 14px; cursor: pointer; font-size: 0.88rem; color: var(--gray-700); border-top: 1px solid var(--gray-100); }
     .addr-ac .ac-item:first-child { border-top: none; }
     .addr-ac .ac-item:hover { background: var(--gray-100); }
+    .prov-or { margin: 20px 0 10px; font-size: 0.88rem; color: var(--gray-500); }
+    .prov-row { display: flex; gap: 12px; flex-wrap: wrap; }
+    .prov-row .btn { flex: 1; min-width: 150px; text-align: center; padding: 12px 18px; font-size: 0.9rem; }
   </style>
   <noscript>
     <style>
@@ -116,7 +119,7 @@
         <div class="wiz-panel" id="schedule">
           <p class="eyebrow">Step 1 of 3</p>
           <h2 tabindex="-1">Let's get your first visit on the calendar!</h2>
-          <p>Tap below and Jane will show you the first available opening across <strong>both of our providers</strong>, so you get the soonest spot we have. Pick whatever works best and it goes straight onto our schedule. These visits fill up fast, so grabbing a time now is the move!</p>
+          <p>Grab the <strong>first available opening</strong> across both of our providers for the soonest spot, or pick a specific doctor below. Whatever you choose goes straight onto our schedule. These visits fill up fast, so booking now is the move!</p>
 
           <!-- INLINE JANE EMBED (built but OFF by default behind USE_INLINE_JANE; format unverified for this account) -->
           <div class="booking-embed-wrap" id="janeInline" hidden>
@@ -125,10 +128,16 @@
 
           <!-- FALLBACK: deep-link out to Jane in a new tab (default path) -->
           <div id="janeLinkOut">
-            <a class="btn btn-gold btn-book" id="janeBookBtn" href="#" target="_blank" rel="noopener" aria-label="Pick your time (opens secure scheduling by Jane)">
+            <a class="btn btn-gold btn-book" id="janeBookBtn" href="https://momentum-health.janeapp.com/#/discipline/1/treatment/1" target="_blank" rel="noopener" aria-label="Book the first available opening (opens secure scheduling by Jane)">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              Pick Your Time
+              Book the First Available
             </a>
+            <p class="book-note">The soonest opening across both providers. Recommended.</p>
+            <p class="prov-or">Or choose a specific provider:</p>
+            <div class="prov-row">
+              <a class="btn btn-outline-dark" href="https://momentum-health.janeapp.com/#/staff_member/1/treatment/1" target="_blank" rel="noopener">Dr. Todd Anderson</a>
+              <a class="btn btn-outline-dark" href="https://momentum-health.janeapp.com/#/staff_member/8/treatment/1" target="_blank" rel="noopener">Dr. Anna Payne</a>
+            </div>
             <p class="book-note">Free to reschedule anytime. Secure scheduling by <strong>Jane</strong>.</p>
           </div>
 
