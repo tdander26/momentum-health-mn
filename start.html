@@ -25,15 +25,25 @@
     .addon-search { margin-bottom: 10px; }
     .addon-list { max-height: 300px; overflow-y: auto; border: 1px solid var(--gray-200); border-radius: 8px; }
     .addon-group-head { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold-dark); font-weight: 700; padding: 12px 14px 4px; background: var(--gray-100); }
-    .addon-item { display: flex; align-items: center; gap: 16px; padding: 11px 16px; cursor: pointer; font-size: 0.9rem; color: var(--gray-700); border-top: 1px solid var(--gray-200); }
+    .addon-item { display: flex; align-items: center; padding: 11px 16px; cursor: pointer; font-size: 0.9rem; color: var(--gray-700); border-top: 1px solid var(--gray-200); }
     .addon-item:hover { background: var(--gray-100); }
-    .addon-item input { width: 18px; height: 18px; flex: none; margin: 0; }
-    .addon-item .pr { flex: none; width: 50px; text-align: left; font-weight: 700; color: var(--gold-dark); }
+    .addon-item input { width: 18px; height: 18px; flex: none; margin: 0 16px 0 0; }
+    .addon-item .pr { flex: none; width: 42px; text-align: left; font-weight: 700; color: var(--gold-dark); margin-right: 18px; }
     .addon-item .nm { flex: 1; }
+    .addon-item.in-panel { cursor: default; }
+    .addon-item.in-panel:hover { background: transparent; }
+    .addon-item .ip-check { flex: none; width: 18px; margin-right: 16px; text-align: center; color: var(--gold-dark); font-weight: 700; }
+    .addon-item.in-panel .nm { color: var(--gray-500); }
+    .addon-item .ip-tag { flex: none; font-size: 0.7rem; font-weight: 600; color: var(--gold-dark); margin-left: 12px; white-space: nowrap; }
     .pc-check { display: flex; align-items: center; gap: 11px; cursor: pointer; margin: 0 0 6px; color: var(--gray-900); font-size: 0.98rem; }
     .pc-check input { width: 18px; height: 18px; flex: none; margin: 0; }
     .addon-empty { padding: 16px 14px; color: var(--gray-500); font-size: 0.9rem; }
-    .addon-summary { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; padding: 11px 15px; background: rgba(201,168,76,0.14); border-radius: 8px; font-weight: 600; color: var(--gray-900); font-size: 0.95rem; }
+    .addon-summary { margin-top: 12px; padding: 13px 16px; background: rgba(201,168,76,0.12); border-radius: 8px; }
+    .addon-summary .sum-row { display: flex; justify-content: space-between; align-items: baseline; font-size: 0.92rem; color: var(--gray-700); padding: 3px 0; }
+    .addon-summary .sum-row > span:last-child { font-weight: 600; color: var(--gray-900); }
+    .addon-summary .sum-panel-off { color: var(--gray-500) !important; font-weight: 500 !important; }
+    .addon-summary .sum-total { border-top: 1px solid rgba(201,168,76,0.45); margin-top: 6px; padding-top: 8px; font-size: 1.02rem; }
+    .addon-summary .sum-total > span { font-weight: 700; color: var(--gray-900); }
     .addon-note { font-size: 0.8rem; color: var(--gray-500); margin: 8px 0 0; line-height: 1.5; }
   </style>
   <noscript>
@@ -202,14 +212,15 @@
 
             <div class="wiz-field">
               <label>Want to add any specific tests? <span style="font-weight:400;color:var(--gray-500);">(optional)</span></label>
-              <span class="help">About 99% of patients just go with the New Patient Panel above, so this is totally optional. Search or browse to add anything extra, and we'll go over it together at your visit.</span>
+              <span class="help">About 99% of patients just go with the New Patient Panel above, so this is totally optional. Search or browse to add anything extra. Tests already in your panel are marked "Included," so nothing gets ordered twice. We'll go over it together at your visit.</span>
               <input type="text" id="addonSearch" class="addon-search" placeholder="Search add-on tests (e.g. testosterone, b12)" aria-label="Search add-on tests" />
               <div id="addonList" class="addon-list"></div>
-              <div id="addonSummary" class="addon-summary" hidden>
-                <span id="addonCount">0 selected</span>
-                <span id="addonTotal">Add-ons: $0</span>
+              <div id="addonSummary" class="addon-summary">
+                <div class="sum-row"><span>New Patient Panel</span><span id="sumPanel">$216.30</span></div>
+                <div class="sum-row" id="sumAddonRow" hidden><span id="sumAddonLabel">Add-ons</span><span id="sumAddon">+$0.00</span></div>
+                <div class="sum-row sum-total"><span>Estimated total</span><span id="sumTotal">$216.30</span></div>
               </div>
-              <p class="addon-note">Prices are per test. A 3% service fee and the $8 draw fee are added to your final total when your order is placed.</p>
+              <p class="addon-note">Each test's listed price is the base; the 3% service fee is applied in your total. A separate $8 draw fee is paid at your appointment.</p>
               <label for="fldTests" style="margin-top:16px;">Anything else not listed? <span style="font-weight:400;color:var(--gray-500);">(optional)</span></label>
               <textarea id="fldTests" name="additionalTests" rows="2" maxlength="1000" placeholder="Type any other request here"></textarea>
             </div>
@@ -232,7 +243,7 @@
           <p class="eyebrow">Step 3 of 3</p>
           <h2 tabindex="-1">You're all set! 🎉</h2>
           <p>Your first visit is booked and your lab order is on its way. We're genuinely excited to meet you!</p>
-          <p>Keep an eye out for an email from Evexia to pay for your labs. That payment is what finalizes the order, and it loves to hide in your spam folder, so check there too.</p>
+          <p>Please give us <strong>1-2 business days</strong> to complete your order on our end. Then look out for an email with your next steps, including a payment link from <strong>Evexia</strong> to finalize your labs. (It likes to hide in spam, so peek there too.)</p>
 
           <a class="btn btn-gold" href="lab-instructions.html">Read Your Lab Instructions</a>
           <p class="book-note">Bookmark this page. It answers almost every question that comes up.</p>
@@ -638,14 +649,40 @@
       { g: 'Screening & Other', n: 'EBV Antibody Profile', p: 52 },
       { g: 'Screening & Other', n: 'Cryptococcus Antibodies', p: 28 },
       { g: 'Screening & Other', n: 'HNK1 (CD57) Profile', p: 80 },
-      { g: 'Screening & Other', n: 'D-Dimer', p: 30 }
+      { g: 'Screening & Other', n: 'D-Dimer', p: 30 },
+      // Already in the New Patient Panel — shown (greyed, not selectable) so
+      // patients see they're covered and we never double-order:
+      { g: 'Heart & Metabolic', n: 'Complete Blood Count (CBC)', inPanel: true },
+      { g: 'Heart & Metabolic', n: 'Comprehensive Metabolic Panel', inPanel: true },
+      { g: 'Heart & Metabolic', n: 'Lipid Panel', inPanel: true },
+      { g: 'Heart & Metabolic', n: 'Glucose', inPanel: true },
+      { g: 'Heart & Metabolic', n: 'Hemoglobin A1C', inPanel: true },
+      { g: 'Heart & Metabolic', n: 'Insulin', inPanel: true },
+      { g: 'Heart & Metabolic', n: 'Uric Acid', inPanel: true },
+      { g: 'Heart & Metabolic', n: 'GGT', inPanel: true },
+      { g: 'Heart & Metabolic', n: 'Phosphorus', inPanel: true },
+      { g: 'Heart & Metabolic', n: 'LDH', inPanel: true },
+      { g: 'Thyroid', n: 'TSH', inPanel: true },
+      { g: 'Thyroid', n: 'Free T4 (Thyroxine)', inPanel: true },
+      { g: 'Thyroid', n: 'Free T3', inPanel: true },
+      { g: 'Thyroid', n: 'Total T3', inPanel: true },
+      { g: 'Thyroid', n: 'T3 Uptake', inPanel: true },
+      { g: 'Inflammation & Autoimmune', n: 'CRP (high-sensitivity)', inPanel: true },
+      { g: 'Inflammation & Autoimmune', n: 'Homocysteine', inPanel: true },
+      { g: 'Inflammation & Autoimmune', n: 'ANA', inPanel: true },
+      { g: 'Vitamins, Minerals & Anemia', n: 'Vitamin D', inPanel: true },
+      { g: 'Vitamins, Minerals & Anemia', n: 'Iron', inPanel: true },
+      { g: 'Vitamins, Minerals & Anemia', n: 'Magnesium', inPanel: true }
     ];
     var selected = {};
     var list = document.getElementById('addonList');
     var search = document.getElementById('addonSearch');
-    var summary = document.getElementById('addonSummary');
-    var countEl = document.getElementById('addonCount');
-    var totalEl = document.getElementById('addonTotal');
+    var panelChk = document.getElementById('panelChk');
+    var sumPanel = document.getElementById('sumPanel');
+    var sumAddonRow = document.getElementById('sumAddonRow');
+    var sumAddonLabel = document.getElementById('sumAddonLabel');
+    var sumAddon = document.getElementById('sumAddon');
+    var sumTotal = document.getElementById('sumTotal');
     if (!list) { return; }
     function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
     function render(filter) {
@@ -659,19 +696,33 @@
       if (!order.length) { list.innerHTML = '<div class="addon-empty">No tests match that search.</div>'; return; }
       var html = '';
       order.forEach(function (g) {
+        groups[g].sort(function (x, y) { return (ADDONS[x].inPanel ? 1 : 0) - (ADDONS[y].inPanel ? 1 : 0); });
         html += '<div class="addon-group-head">' + esc(g) + '</div>';
         groups[g].forEach(function (i) {
           var a = ADDONS[i];
-          html += '<label class="addon-item"><input type="checkbox" data-i="' + i + '"' + (selected[i] ? ' checked' : '') + ' /><span class="pr">$' + a.p + '</span><span class="nm">' + esc(a.n) + '</span></label>';
+          if (a.inPanel) {
+            html += '<div class="addon-item in-panel"><span class="ip-check">&#10003;</span><span class="nm">' + esc(a.n) + '</span><span class="ip-tag">Included in your panel</span></div>';
+          } else {
+            html += '<label class="addon-item"><input type="checkbox" data-i="' + i + '"' + (selected[i] ? ' checked' : '') + ' /><span class="pr">$' + a.p + '</span><span class="nm">' + esc(a.n) + '</span></label>';
+          }
         });
       });
       list.innerHTML = html;
     }
+    var PANEL_BASE = 210, SERVICE = 1.03;
+    function money(x) { return '$' + (Math.round(x * 100) / 100).toFixed(2); }
     function recalc() {
-      var n = 0, t = 0;
-      Object.keys(selected).forEach(function (i) { if (selected[i]) { n++; t += ADDONS[i].p; } });
-      if (n) { summary.hidden = false; countEl.textContent = n + (n === 1 ? ' test selected' : ' tests selected'); totalEl.textContent = 'Add-ons: $' + t; }
-      else { summary.hidden = true; }
+      var n = 0, addonsSum = 0;
+      Object.keys(selected).forEach(function (i) { if (selected[i]) { n++; addonsSum += ADDONS[i].p; } });
+      var panelOn = !panelChk || panelChk.checked;
+      if (panelOn) { sumPanel.textContent = money(PANEL_BASE * SERVICE); sumPanel.className = ''; }
+      else { sumPanel.textContent = 'Not included'; sumPanel.className = 'sum-panel-off'; }
+      if (n > 0) {
+        sumAddonRow.hidden = false;
+        sumAddonLabel.textContent = 'Add-ons (' + n + ')';
+        sumAddon.textContent = '+' + money(addonsSum * SERVICE);
+      } else { sumAddonRow.hidden = true; }
+      sumTotal.textContent = money(((panelOn ? PANEL_BASE : 0) + addonsSum) * SERVICE);
     }
     list.addEventListener('change', function (e) {
       if (!e.target || e.target.type !== 'checkbox') { return; }
@@ -679,7 +730,9 @@
       recalc();
     });
     search.addEventListener('input', function () { render(search.value); });
+    if (panelChk) { panelChk.addEventListener('change', recalc); }
     render('');
+    recalc();
     window.__getAddons = function () {
       var picked = [], total = 0;
       Object.keys(selected).forEach(function (i) { if (selected[i]) { picked.push(ADDONS[i].n + ' ($' + ADDONS[i].p + ')'); total += ADDONS[i].p; } });
