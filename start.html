@@ -40,11 +40,18 @@
     .addon-empty { padding: 16px 14px; color: var(--gray-500); font-size: 0.9rem; }
     .addon-summary { margin-top: 12px; padding: 13px 16px; background: rgba(201,168,76,0.12); border-radius: 8px; }
     .addon-summary .sum-row { display: flex; justify-content: space-between; align-items: baseline; font-size: 0.92rem; color: var(--gray-700); padding: 3px 0; }
+    .addon-summary .sum-row[hidden] { display: none; }
     .addon-summary .sum-row > span:last-child { font-weight: 600; color: var(--gray-900); }
     .addon-summary .sum-panel-off { color: var(--gray-500) !important; font-weight: 500 !important; }
     .addon-summary .sum-total { border-top: 1px solid rgba(201,168,76,0.45); margin-top: 6px; padding-top: 8px; font-size: 1.02rem; }
     .addon-summary .sum-total > span { font-weight: 700; color: var(--gray-900); }
     .addon-note { font-size: 0.8rem; color: var(--gray-500); margin: 8px 0 0; line-height: 1.5; }
+    .addr-wrap { position: relative; }
+    .addr-ac { position: absolute; top: 100%; left: 0; right: 0; z-index: 30; background: #fff; border: 1px solid var(--gray-200); border-top: none; border-radius: 0 0 8px 8px; box-shadow: 0 10px 24px rgba(0,0,0,0.12); max-height: 230px; overflow-y: auto; }
+    .addr-ac[hidden] { display: none; }
+    .addr-ac .ac-item { padding: 10px 14px; cursor: pointer; font-size: 0.88rem; color: var(--gray-700); border-top: 1px solid var(--gray-100); }
+    .addr-ac .ac-item:first-child { border-top: none; }
+    .addr-ac .ac-item:hover { background: var(--gray-100); }
   </style>
   <noscript>
     <style>
@@ -144,7 +151,7 @@
 
           <div class="wiz-panelcard">
             <label class="pc-check"><input type="checkbox" id="panelChk" checked /><span>Include the <strong>New Patient Panel</strong></span></label>
-            <p class="pc-sub">Ordering your labs gets you our comprehensive New Patient Panel, the same starting workup about 99% of our patients do. It covers <strong>over 50 biomarkers</strong> across your blood count, metabolism, thyroid, inflammation, iron, blood sugar, and more.</p>
+            <p class="pc-sub">Ordering your labs gets you our comprehensive New Patient Panel, the same starting workup about 99% of our patients do. It covers <strong>over 60 biomarkers</strong> across your blood count, metabolism, thyroid, inflammation, iron, blood sugar, and more.</p>
             <details class="wiz-acc">
               <summary>See everything that's included</summary>
               <div class="wiz-acc-body">
@@ -155,11 +162,11 @@
                 <h5>Lipid Panel</h5>
                 <p>Your full cholesterol breakdown. Helps spot metabolic syndrome, thyroid issues, and inflammation.</p>
                 <h5>Thyroid Panel</h5>
-                <p>TSH, T4, T3, Free T3 and T4, Free Thyroxine Index, and T3 Uptake. The thyroid often shows trouble before other systems do.</p>
+                <p>TSH, T4, T3, Free T3 and T4, Free Thyroxine Index, T3 Uptake, Reverse T3, thyroid antibodies (TPO and thyroglobulin), and TBG. A complete thyroid picture, since the thyroid often shows trouble before other systems do.</p>
                 <h5>Vitamin D + Inflammation</h5>
                 <p>Vitamin D, Homocysteine, and CRP, markers tied to methylation and cardiovascular health.</p>
                 <h5>Anemia Panel</h5>
-                <p>Iron, TIBC, iron saturation, and transferrin, for a deeper look at your iron status.</p>
+                <p>Iron, TIBC, UIBC, iron saturation, and ferritin, for a complete look at your iron status.</p>
                 <h5>Key Extras</h5>
                 <p>Magnesium, Hemoglobin A1C, Insulin, and ANA. A1C and insulin round out your blood-sugar picture, and ANA screens for autoimmune activity.</p>
               </div>
@@ -197,7 +204,10 @@
               <label id="addrLabel">Mailing address</label>
               <span class="help" id="helpAddr">Some lab options can come to your home, so we keep this on file.</span>
               <div class="wiz-addr" role="group" aria-labelledby="addrLabel" aria-describedby="helpAddr">
-                <input class="full" type="text" id="fldStreet" name="street" placeholder="Street address" aria-label="Street address" autocomplete="street-address" required aria-describedby="errStreet" />
+                <div class="full addr-wrap">
+                  <input type="text" id="fldStreet" name="street" placeholder="Street address" aria-label="Street address" autocomplete="off" required aria-describedby="errStreet" />
+                  <div id="addrAC" class="addr-ac" hidden></div>
+                </div>
                 <span class="wiz-err full" id="errStreet">We'll need your street address.</span>
                 <input type="text" id="fldCity" name="city" placeholder="City" aria-label="City" autocomplete="address-level2" required aria-describedby="errCity" />
                 <span class="wiz-err" id="errCity">We'll need your city.</span>
@@ -626,21 +636,15 @@
       { g: 'Hormones', n: 'Prolactin', p: 9 },
       { g: 'Hormones', n: 'AMH (Anti-Mullerian Hormone)', p: 53 },
       { g: 'Hormones', n: 'hCG, Quantitative', p: 9 },
-      { g: 'Thyroid', n: 'Reverse T3', p: 23 },
-      { g: 'Thyroid', n: 'Thyroid Antibodies (TPO + Thyroglobulin)', p: 14 },
-      { g: 'Thyroid', n: 'TBG (Thyroxine-binding Globulin)', p: 16 },
       { g: 'Heart & Metabolic', n: 'NMR LipoProfile (with lipids)', p: 40 },
       { g: 'Heart & Metabolic', n: 'Lipoprotein-PLA2 (PLAC)', p: 30 },
       { g: 'Heart & Metabolic', n: 'C-Peptide', p: 13 },
       { g: 'Heart & Metabolic', n: 'Cystatin C', p: 30 },
-      { g: 'Heart & Metabolic', n: 'Bilirubin, Direct', p: 4 },
       { g: 'Inflammation & Autoimmune', n: 'ESR (Sedimentation Rate)', p: 7 },
       { g: 'Inflammation & Autoimmune', n: 'Rheumatoid Factor (RF)', p: 8 },
       { g: 'Inflammation & Autoimmune', n: 'Celiac Antibodies Profile', p: 80 },
       { g: 'Inflammation & Autoimmune', n: 'Intrinsic Factor Antibodies', p: 20 },
       { g: 'Vitamins, Minerals & Anemia', n: 'Vitamin B12', p: 9 },
-      { g: 'Vitamins, Minerals & Anemia', n: 'Ferritin', p: 7 },
-      { g: 'Vitamins, Minerals & Anemia', n: 'Ferritin + Iron + TIBC + UIBC', p: 14 },
       { g: 'Vitamins, Minerals & Anemia', n: 'Zinc', p: 10 },
       { g: 'Vitamins, Minerals & Anemia', n: 'MMA (Methylmalonic Acid)', p: 37 },
       { g: 'Screening & Other', n: 'PSA (Prostate-specific Antigen)', p: 11 },
@@ -662,16 +666,20 @@
       { g: 'Heart & Metabolic', n: 'GGT', inPanel: true },
       { g: 'Heart & Metabolic', n: 'Phosphorus', inPanel: true },
       { g: 'Heart & Metabolic', n: 'LDH', inPanel: true },
+      { g: 'Heart & Metabolic', n: 'Bilirubin (Total + Direct)', inPanel: true },
       { g: 'Thyroid', n: 'TSH', inPanel: true },
       { g: 'Thyroid', n: 'Free T4 (Thyroxine)', inPanel: true },
       { g: 'Thyroid', n: 'Free T3', inPanel: true },
-      { g: 'Thyroid', n: 'Total T3', inPanel: true },
-      { g: 'Thyroid', n: 'T3 Uptake', inPanel: true },
+      { g: 'Thyroid', n: 'Total T4 & Total T3', inPanel: true },
+      { g: 'Thyroid', n: 'T3 Uptake / Free Thyroxine Index', inPanel: true },
+      { g: 'Thyroid', n: 'Reverse T3', inPanel: true },
+      { g: 'Thyroid', n: 'Thyroid Antibodies (TPO + Thyroglobulin)', inPanel: true },
+      { g: 'Thyroid', n: 'TBG (Thyroxine-binding Globulin)', inPanel: true },
       { g: 'Inflammation & Autoimmune', n: 'CRP (high-sensitivity)', inPanel: true },
       { g: 'Inflammation & Autoimmune', n: 'Homocysteine', inPanel: true },
       { g: 'Inflammation & Autoimmune', n: 'ANA', inPanel: true },
       { g: 'Vitamins, Minerals & Anemia', n: 'Vitamin D', inPanel: true },
-      { g: 'Vitamins, Minerals & Anemia', n: 'Iron', inPanel: true },
+      { g: 'Vitamins, Minerals & Anemia', n: 'Iron + TIBC + Ferritin + Iron Saturation', inPanel: true },
       { g: 'Vitamins, Minerals & Anemia', n: 'Magnesium', inPanel: true }
     ];
     var selected = {};
@@ -738,6 +746,54 @@
       Object.keys(selected).forEach(function (i) { if (selected[i]) { picked.push(ADDONS[i].n + ' ($' + ADDONS[i].p + ')'); total += ADDONS[i].p; } });
       return { picked: picked, total: total };
     };
+  })();
+  </script>
+
+  <script>
+  /* Address autocomplete (Geoapify). As the patient types a street address we
+     suggest real US addresses and auto-fill street/city/state/ZIP on select.
+     Degrades gracefully: if the lookup fails, manual entry still works. Only the
+     typed address is sent to Geoapify for matching (no name/DOB/health info). */
+  (function () {
+    'use strict';
+    var KEY = '4ab740705fe34dee8bd1235b489afc1e';
+    var street = document.getElementById('fldStreet');
+    var ac = document.getElementById('addrAC');
+    if (!street || !ac) { return; }
+    var timer = null, last = '';
+    function hide() { ac.hidden = true; ac.innerHTML = ''; }
+    function clean(s) { return String(s == null ? '' : s).replace(/[<>&"]/g, ''); }
+    function fill(p) {
+      var line = (p.address_line1 || ((p.housenumber ? p.housenumber + ' ' : '') + (p.street || ''))).trim();
+      if (line) { street.value = line; }
+      var city = document.getElementById('fldCity'); if (city && p.city) { city.value = p.city; }
+      var st = document.getElementById('fldState'); if (st && p.state_code) { st.value = String(p.state_code).toUpperCase(); }
+      var zip = document.getElementById('fldZip'); if (zip && p.postcode) { zip.value = String(p.postcode).slice(0, 5); }
+      [street, city, st, zip].forEach(function (el) { if (el) { el.removeAttribute('aria-invalid'); } });
+      hide();
+    }
+    function lookup(q) {
+      fetch('https://api.geoapify.com/v1/geocode/autocomplete?text=' + encodeURIComponent(q) + '&format=json&filter=countrycode:us&limit=5&apiKey=' + KEY)
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (data) {
+          if (!data || !data.results || !data.results.length || document.activeElement !== street) { hide(); return; }
+          ac.innerHTML = data.results.map(function (p, i) { return '<div class="ac-item" data-i="' + i + '">' + clean(p.formatted) + '</div>'; }).join('');
+          ac.hidden = false;
+          Array.prototype.forEach.call(ac.querySelectorAll('.ac-item'), function (el, i) {
+            el.addEventListener('mousedown', function (ev) { ev.preventDefault(); fill(data.results[i]); });
+          });
+        })
+        .catch(hide);
+    }
+    street.addEventListener('input', function () {
+      var q = street.value.trim();
+      if (q.length < 4) { hide(); return; }
+      if (q === last) { return; }
+      last = q;
+      clearTimeout(timer);
+      timer = setTimeout(function () { lookup(q); }, 280);
+    });
+    street.addEventListener('blur', function () { setTimeout(hide, 150); });
   })();
   </script>
 
