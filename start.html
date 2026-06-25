@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get Started | Momentum Health &amp; Wellness</title>
+  <meta name="description" content="Two quick steps to begin as a new patient at Momentum Health & Wellness: schedule your first visit and set up your labs." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    .wiz-panelcard { background: var(--gray-100); border: 1px solid var(--gray-200); border-left: 3px solid var(--gold); border-radius: 8px; padding: 16px 18px; margin-bottom: 22px; }
+    .wiz-panelcard .pc-head { margin: 0 0 6px; color: var(--gray-900); font-weight: 600; font-size: 0.98rem; }
+    .wiz-panelcard .pc-sub { margin: 0; color: var(--gray-700); font-size: 0.92rem; line-height: 1.55; }
+    .wiz-acc { margin-top: 12px; border-top: 1px solid var(--gray-200); padding-top: 10px; }
+    .wiz-acc > summary { cursor: pointer; list-style: none; font-weight: 600; font-size: 0.88rem; color: var(--gold-dark); display: flex; align-items: center; }
+    .wiz-acc > summary::-webkit-details-marker { display: none; }
+    .wiz-acc > summary::after { content: "+"; margin-left: auto; font-size: 1.15rem; line-height: 1; }
+    .wiz-acc[open] > summary::after { content: "\2212"; }
+    .wiz-acc-body { padding-top: 8px; }
+    .wiz-acc-body h5 { font-family: 'Inter', sans-serif; margin: 12px 0 1px; font-size: 0.9rem; color: var(--gray-900); font-weight: 600; }
+    .wiz-acc-body h5:first-child { margin-top: 4px; }
+    .wiz-acc-body p { margin: 0; font-size: 0.86rem; color: var(--gray-500); line-height: 1.5; }
+    .addon-search { margin-bottom: 10px; }
+    .addon-list { max-height: 300px; overflow-y: auto; border: 1px solid var(--gray-200); border-radius: 8px; }
+    .addon-group-head { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold-dark); font-weight: 700; padding: 12px 14px 4px; background: var(--gray-100); }
+    .addon-item { display: flex; align-items: center; gap: 16px; padding: 11px 16px; cursor: pointer; font-size: 0.9rem; color: var(--gray-700); border-top: 1px solid var(--gray-200); }
+    .addon-item:hover { background: var(--gray-100); }
+    .addon-item input { width: 18px; height: 18px; flex: none; margin: 0; }
+    .addon-item .pr { flex: none; width: 50px; text-align: left; font-weight: 700; color: var(--gold-dark); }
+    .addon-item .nm { flex: 1; }
+    .pc-check { display: flex; align-items: center; gap: 11px; cursor: pointer; margin: 0 0 6px; color: var(--gray-900); font-size: 0.98rem; }
+    .pc-check input { width: 18px; height: 18px; flex: none; margin: 0; }
+    .addon-empty { padding: 16px 14px; color: var(--gray-500); font-size: 0.9rem; }
+    .addon-summary { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; padding: 11px 15px; background: rgba(201,168,76,0.14); border-radius: 8px; font-weight: 600; color: var(--gray-900); font-size: 0.95rem; }
+    .addon-note { font-size: 0.8rem; color: var(--gray-500); margin: 8px 0 0; line-height: 1.5; }
+  </style>
+  <noscript>
+    <style>
+      /* No-JS fallback: stack all panels and hide interactive rail affordances. Hash anchors still jump. */
+      .wiz-panel { display: block; margin-bottom: 48px; }
+      .wiz-railband { display: none; }
+      .wiz-actions { display: none; }
+    </style>
+  </noscript>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-name">Momentum Health</span>
+        <span class="brand-sub">&amp; Wellness &middot; Minnesota</span>
+      </a>
+      <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/">Home</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#new-patients" class="active">New Patients</a></li>
+        <li><a href="/#contact">Contact</a></li>
+        <li><a class="btn btn-gold" href="https://momentum-health.janeapp.com/#/discipline/1/treatment/1" target="_blank" rel="noopener">Book Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow" style="color:var(--gold-light)">New Patient Start</p>
+      <h1>Let's get you set up.</h1>
+      <p>Just two quick steps and you're done. We'll walk you through each one.</p>
+    </div>
+  </section>
+
+  <div class="wiz-railband">
+    <nav class="wiz-rail" aria-label="Your progress">
+      <span class="visually-hidden" id="wizStepCount">Step 1 of 3</span>
+      <a class="wiz-rail-step" data-node="schedule" href="#schedule">
+        <span class="node" aria-hidden="true">1</span>
+        <span class="label">Schedule</span>
+      </a>
+      <a class="wiz-rail-step" data-node="labs" href="#labs">
+        <span class="node" aria-hidden="true">2</span>
+        <span class="label">Order Labs</span>
+      </a>
+      <a class="wiz-rail-step" data-node="done" href="#done">
+        <span class="node" aria-hidden="true">3</span>
+        <span class="label">You're Set</span>
+      </a>
+    </nav>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="wiz-stage">
+
+        <!-- ===== STEP 1: Schedule ===== -->
+        <div class="wiz-panel" id="schedule">
+          <p class="eyebrow">Step 1 of 3</p>
+          <h2 tabindex="-1">Let's get your first visit on the calendar!</h2>
+          <p>Tap below and Jane will show you the first available opening across <strong>both of our providers</strong>, so you get the soonest spot we have. Pick whatever works best and it goes straight onto our schedule. These visits fill up fast, so grabbing a time now is the move!</p>
+
+          <!-- INLINE JANE EMBED (built but OFF by default behind USE_INLINE_JANE; format unverified for this account) -->
+          <div class="booking-embed-wrap" id="janeInline" hidden>
+            <div class="booking-inline" id="janeInlineMount"></div>
+          </div>
+
+          <!-- FALLBACK: deep-link out to Jane in a new tab (default path) -->
+          <div id="janeLinkOut">
+            <a class="btn btn-gold btn-book" id="janeBookBtn" href="#" target="_blank" rel="noopener" aria-label="Pick your time (opens secure scheduling by Jane)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Pick Your Time
+            </a>
+            <p class="book-note">Free to reschedule anytime. Secure scheduling by <strong>Jane</strong>.</p>
+          </div>
+
+          <label class="wiz-checkbox" for="bookedChk">
+            <input type="checkbox" id="bookedChk" />
+            <span>All booked? Check this and we'll keep going.</span>
+          </label>
+
+          <div class="wiz-actions">
+            <span class="spacer"></span>
+            <button type="button" class="btn btn-gold" id="step1Continue" disabled aria-disabled="true">Continue</button>
+          </div>
+        </div>
+
+        <!-- ===== STEP 2: Order Labs (PHI screen) ===== -->
+        <div class="wiz-panel" id="labs">
+          <p class="eyebrow">Step 2 of 3</p>
+          <h2 tabindex="-1">Now, let's order your labs.</h2>
+          <p>Quick part! We just need a few details exactly as they appear on your ID so the lab can match you correctly. Then we tee everything up before your visit.</p>
+
+          <div class="wiz-panelcard">
+            <label class="pc-check"><input type="checkbox" id="panelChk" checked /><span>Include the <strong>New Patient Panel</strong></span></label>
+            <p class="pc-sub">Ordering your labs gets you our comprehensive New Patient Panel, the same starting workup about 99% of our patients do. It covers <strong>over 50 biomarkers</strong> across your blood count, metabolism, thyroid, inflammation, iron, blood sugar, and more.</p>
+            <details class="wiz-acc">
+              <summary>See everything that's included</summary>
+              <div class="wiz-acc-body">
+                <h5>Complete Blood Count (CBC) with Differential + Platelets</h5>
+                <p>A full look at your red and white blood cells and platelets, for a bird's-eye view of your immune system and a check for anemia.</p>
+                <h5>Metabolic Panel</h5>
+                <p>Kidney and liver function, blood sugar, electrolytes, and protein. Can flag blood sugar issues, adrenal stress, or nutrient gaps.</p>
+                <h5>Lipid Panel</h5>
+                <p>Your full cholesterol breakdown. Helps spot metabolic syndrome, thyroid issues, and inflammation.</p>
+                <h5>Thyroid Panel</h5>
+                <p>TSH, T4, T3, Free T3 and T4, Free Thyroxine Index, and T3 Uptake. The thyroid often shows trouble before other systems do.</p>
+                <h5>Vitamin D + Inflammation</h5>
+                <p>Vitamin D, Homocysteine, and CRP, markers tied to methylation and cardiovascular health.</p>
+                <h5>Anemia Panel</h5>
+                <p>Iron, TIBC, iron saturation, and transferrin, for a deeper look at your iron status.</p>
+                <h5>Key Extras</h5>
+                <p>Magnesium, Hemoglobin A1C, Insulin, and ANA. A1C and insulin round out your blood-sugar picture, and ANA screens for autoimmune activity.</p>
+              </div>
+            </details>
+          </div>
+
+          <div class="wiz-privacy">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span>Your information is private and protected. We're a HIPAA practice, these details go straight to our office to place your lab order, and we never sell or share them. 😊<br><span style="display:block;margin-top:8px;font-size:0.85rem;color:var(--gray-500);">This is the same secure info you'd give at any front desk.</span></span>
+          </div>
+
+          <form class="wiz-form" id="labForm" novalidate>
+            <div class="wiz-field">
+              <label for="fldName">Full name (exactly as it appears on your government ID)</label>
+              <span class="help" id="helpName">Middle name too, if it's on your ID. It has to match so the lab accepts your order.</span>
+              <input type="text" id="fldName" name="name" autocomplete="name" required aria-describedby="helpName errName" />
+              <span class="wiz-err" id="errName">We'll need this one to place your order.</span>
+            </div>
+
+            <div class="wiz-field">
+              <label for="fldDob">Date of birth</label>
+              <span class="help" id="helpDob">The lab uses this to confirm it's you.</span>
+              <input type="date" id="fldDob" name="dob" autocomplete="bday" required aria-describedby="helpDob errDob" />
+              <span class="wiz-err" id="errDob">Mind double-checking the date of birth?</span>
+            </div>
+
+            <div class="wiz-field">
+              <label for="fldPhone">Best phone number</label>
+              <span class="help" id="helpPhone">Where we can reach you about your order.</span>
+              <input type="tel" id="fldPhone" name="phone" inputmode="tel" autocomplete="tel" required aria-describedby="helpPhone errPhone" />
+              <span class="wiz-err" id="errPhone">We'll need a number we can reach you at.</span>
+            </div>
+
+            <div class="wiz-field">
+              <label id="addrLabel">Mailing address</label>
+              <span class="help" id="helpAddr">Some lab options can come to your home, so we keep this on file.</span>
+              <div class="wiz-addr" role="group" aria-labelledby="addrLabel" aria-describedby="helpAddr">
+                <input class="full" type="text" id="fldStreet" name="street" placeholder="Street address" aria-label="Street address" autocomplete="street-address" required aria-describedby="errStreet" />
+                <span class="wiz-err full" id="errStreet">We'll need your street address.</span>
+                <input type="text" id="fldCity" name="city" placeholder="City" aria-label="City" autocomplete="address-level2" required aria-describedby="errCity" />
+                <span class="wiz-err" id="errCity">We'll need your city.</span>
+                <select id="fldState" name="state" aria-label="State" autocomplete="address-level1" required aria-describedby="errState">
+                  <option value="AL">AL</option><option value="AK">AK</option><option value="AZ">AZ</option><option value="AR">AR</option><option value="CA">CA</option><option value="CO">CO</option><option value="CT">CT</option><option value="DE">DE</option><option value="FL">FL</option><option value="GA">GA</option><option value="HI">HI</option><option value="ID">ID</option><option value="IL">IL</option><option value="IN">IN</option><option value="IA">IA</option><option value="KS">KS</option><option value="KY">KY</option><option value="LA">LA</option><option value="ME">ME</option><option value="MD">MD</option><option value="MA">MA</option><option value="MI">MI</option><option value="MN" selected>MN</option><option value="MS">MS</option><option value="MO">MO</option><option value="MT">MT</option><option value="NE">NE</option><option value="NV">NV</option><option value="NH">NH</option><option value="NJ">NJ</option><option value="NM">NM</option><option value="NY">NY</option><option value="NC">NC</option><option value="ND">ND</option><option value="OH">OH</option><option value="OK">OK</option><option value="OR">OR</option><option value="PA">PA</option><option value="RI">RI</option><option value="SC">SC</option><option value="SD">SD</option><option value="TN">TN</option><option value="TX">TX</option><option value="UT">UT</option><option value="VT">VT</option><option value="VA">VA</option><option value="WA">WA</option><option value="WV">WV</option><option value="WI">WI</option><option value="WY">WY</option>
+                </select>
+                <span class="wiz-err" id="errState">Pick your state.</span>
+                <input type="text" id="fldZip" name="zip" placeholder="ZIP" aria-label="ZIP code" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code" required aria-describedby="errZip" />
+                <span class="wiz-err full" id="errZip">A 5-digit ZIP, please.</span>
+              </div>
+            </div>
+
+            <div class="wiz-field">
+              <label>Want to add any specific tests? <span style="font-weight:400;color:var(--gray-500);">(optional)</span></label>
+              <span class="help">About 99% of patients just go with the New Patient Panel above, so this is totally optional. Search or browse to add anything extra, and we'll go over it together at your visit.</span>
+              <input type="text" id="addonSearch" class="addon-search" placeholder="Search add-on tests (e.g. testosterone, b12)" aria-label="Search add-on tests" />
+              <div id="addonList" class="addon-list"></div>
+              <div id="addonSummary" class="addon-summary" hidden>
+                <span id="addonCount">0 selected</span>
+                <span id="addonTotal">Add-ons: $0</span>
+              </div>
+              <p class="addon-note">Prices are per test. A 3% service fee and the $8 draw fee are added to your final total when your order is placed.</p>
+              <label for="fldTests" style="margin-top:16px;">Anything else not listed? <span style="font-weight:400;color:var(--gray-500);">(optional)</span></label>
+              <textarea id="fldTests" name="additionalTests" rows="2" maxlength="1000" placeholder="Type any other request here"></textarea>
+            </div>
+
+            <div class="wiz-actions">
+              <button type="button" class="btn btn-outline-dark" data-go="#schedule">Back</button>
+              <button type="submit" class="btn btn-gold" id="labSubmit">Send My Lab Order</button>
+            </div>
+          </form>
+
+          <!-- Success block, swapped in after a successful adapter send -->
+          <div id="labSuccess" hidden>
+            <h3>Perfect, your lab order is on its way!</h3>
+            <p id="labSuccessLine">Got it! Our office will confirm the details with you by phone and place your lab order.</p>
+          </div>
+        </div>
+
+        <!-- ===== STEP 3: Confirmation ===== -->
+        <div class="wiz-panel" id="done">
+          <p class="eyebrow">Step 3 of 3</p>
+          <h2 tabindex="-1">You're all set! 🎉</h2>
+          <p>Your first visit is booked and your lab order is on its way. We're genuinely excited to meet you!</p>
+          <p>Keep an eye out for an email from Evexia to pay for your labs. That payment is what finalizes the order, and it loves to hide in your spam folder, so check there too.</p>
+
+          <a class="btn btn-gold" href="lab-instructions.html">Read Your Lab Instructions</a>
+          <p class="book-note">Bookmark this page. It answers almost every question that comes up.</p>
+
+          <div class="wiz-actions">
+            <a class="btn btn-outline-dark" href="/">Back to Momentum Health</a>
+            <span class="spacer"></span>
+          </div>
+          <p style="color:var(--gray-500); font-size:0.9rem; margin-top:18px;">Questions? Call us at <a href="tel:+17637609176">(763) 760-9176</a>, we're happy to help.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand-name">Momentum Health</div>
+          <div class="brand-sub">&amp; Wellness &middot; Minnesota</div>
+          <p>Functional medicine, applied kinesiology, and functional blood work analysis — helping you find the root cause and get your momentum back.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/#new-patients">New Patients</a></li>
+            <li><a href="/#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Visit Us</h4>
+          <ul>
+            <li>231 Main Street NW<br>Elk River, MN</li>
+            <li><a href="tel:+17637609176">(763) 760-9176</a></li>
+            <li><a href="mailto:office@momentumhealthwellnessmn.com">office@momentumhealthwellnessmn.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="disclaimer">The content on this website is for informational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified health provider with any questions about a medical condition.</p>
+        <p>&copy; 2026 Momentum Health &amp; Wellness. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  /* =====================================================================
+     New-patient wizard controller (vanilla, no dependencies).
+
+     HARD RULE: do NOT touch the nav's inline onclick hamburger toggle or
+     id="navLinks". The mobile menu depends on them. This script never
+     references them.
+
+     PHI SAFETY: sessionStorage holds ONLY {step, booked} (non-PHI). We
+     NEVER persist name / DOB / phone / address anywhere. Submission routes
+     through ONE isolated ADAPTER; the shipped default transmits PHI
+     NOWHERE (no fetch, no third-party action=, no mailto, no GET, no
+     analytics) and tells the patient the office will confirm by phone.
+     ===================================================================== */
+  (function () {
+    'use strict';
+
+    /* ---- Config constants (the only things to edit to go live) ---- */
+
+    // CONFIRMED by Dr. Todd: the New-Patient appointment. This is the
+    // DISCIPLINE-scoped link (not staff_member-scoped) on purpose, so Jane
+    // shows the first available opening across BOTH providers rather than
+    // locking the patient to one. Step 1 copy says this explicitly.
+    var JANE_NP_URL = 'https://momentum-health.janeapp.com/#/discipline/1/treatment/1';
+
+    // Inline Jane embed is OFF: the inline-embed URL format is unverified
+    // for this account/treatment. Flip to true ONLY after confirming it.
+    var USE_INLINE_JANE = false;
+
+    // ---- Submission adapter (compliance-critical, isolated + swappable) ----
+    // LIVE: posts to the deployed `labOrder` Cloud Function on the practice's
+    // momentum-booking project (Google Cloud BAA in place). The function writes
+    // server-side to Firestore (rules deny all public reads) and fires a
+    // PHI-FREE email + text alert. To pause intake, set this back to
+    // 'office-confirm' (transmits PHI nowhere, shows a "we'll confirm by phone"
+    // success).
+    var ADAPTER_MODE = 'firebase';
+
+    // Deployed standalone function URL (separate from the booking `api`).
+    var FIREBASE_ENDPOINT = 'https://us-central1-momentum-booking.cloudfunctions.net/labOrder';
+
+    var ADAPTER = {
+      send: function (payload) {
+        if (ADAPTER_MODE === 'firebase') {
+          // Documented but INACTIVE until FIREBASE_ENDPOINT is wired.
+          if (!FIREBASE_ENDPOINT) {
+            return Promise.reject(new Error('Firebase endpoint not configured yet.'));
+          }
+          return fetch(FIREBASE_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          }).then(function (r) {
+            if (!r.ok) { throw new Error('Submission failed.'); }
+            return { mode: 'firebase' };
+          });
+        }
+        // DEFAULT 'office-confirm': capture nothing, transmit nowhere.
+        return Promise.resolve({ mode: 'office-confirm' });
+      }
+    };
+    function submitLabOrder(payload) { return ADAPTER.send(payload); }
+
+    /* ---- State (NON-PHI only) ---- */
+    var KEY = 'mhw_start';
+    var ORDER = ['schedule', 'labs', 'done'];
+    var state = { step: 'schedule', booked: false };
+    try {
+      var saved = JSON.parse(sessionStorage.getItem(KEY) || '{}');
+      if (saved.step) { state.step = saved.step; }
+      if (saved.booked) { state.booked = true; }
+    } catch (e) {}
+    function save() {
+      try { sessionStorage.setItem(KEY, JSON.stringify({ step: state.step, booked: state.booked })); } catch (e) {}
+    }
+
+    /* ---- Elements ---- */
+    var panels = {};
+    ORDER.forEach(function (id) { panels[id] = document.getElementById(id); });
+    var railSteps = Array.prototype.slice.call(document.querySelectorAll('.wiz-rail-step'));
+    var stepCount = document.getElementById('wizStepCount');
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function indexOf(id) { return ORDER.indexOf(id); }
+
+    /* ---- Render ---- */
+    function render(focusHeading) {
+      var cur = indexOf(state.step);
+      if (cur < 0) { state.step = 'schedule'; cur = 0; }
+
+      ORDER.forEach(function (id) {
+        panels[id].classList.toggle('is-active', id === state.step);
+      });
+
+      railSteps.forEach(function (el, i) {
+        el.classList.remove('is-current', 'is-done');
+        el.removeAttribute('aria-current');
+
+        // A node behind the current step is DONE (its gate was satisfied to
+        // get past it). The node AT the current step is CURRENT. A node
+        // ahead of the current step is UPCOMING and locked.
+        var isCurrent = (i === cur);
+        var isDone = (i < cur);
+
+        if (isCurrent) {
+          el.classList.add('is-current');
+          el.setAttribute('aria-current', 'step');
+        } else if (isDone) {
+          el.classList.add('is-done');
+        }
+
+        // DONE + CURRENT nodes are real links you can revisit. UPCOMING
+        // nodes cannot be clicked so the gate can't be skipped.
+        if (isDone || isCurrent) {
+          el.removeAttribute('aria-disabled');
+          el.style.cursor = '';
+          el.setAttribute('href', '#' + ORDER[i]);
+        } else {
+          el.setAttribute('aria-disabled', 'true');
+          el.style.cursor = 'default';
+          el.removeAttribute('href');
+        }
+      });
+
+      stepCount.textContent = 'Step ' + (cur + 1) + ' of 3';
+
+      if (focusHeading) {
+        var h = panels[state.step].querySelector('h2');
+        if (h) { h.focus(); }
+      }
+      save();
+    }
+
+    function goTo(id, focusHeading) {
+      if (indexOf(id) < 0) { return; }
+      state.step = id;
+      if (('#' + id) !== location.hash) {
+        location.hash = '#' + id; // triggers hashchange -> render
+      } else {
+        render(focusHeading);
+      }
+    }
+
+    /* ---- Hash sync ---- */
+    function fromHash() {
+      var h = (location.hash || '').replace('#', '');
+      if (indexOf(h) >= 0) { state.step = h; }
+      render(true);
+    }
+    window.addEventListener('hashchange', fromHash);
+
+    /* ---- Rail review-jump: block jumps to upcoming/locked nodes ---- */
+    railSteps.forEach(function (el) {
+      el.addEventListener('click', function (ev) {
+        // UPCOMING nodes carry aria-disabled and no href; never advance.
+        if (el.getAttribute('aria-disabled') === 'true') { ev.preventDefault(); }
+      });
+    });
+
+    /* ---- Step 1: Jane handoff + honor-system gate ---- */
+    var bookBtn = document.getElementById('janeBookBtn');
+    if (bookBtn) { bookBtn.setAttribute('href', JANE_NP_URL); }
+    if (USE_INLINE_JANE) {
+      var wrap = document.getElementById('janeInline');
+      var mount = document.getElementById('janeInlineMount');
+      var out = document.getElementById('janeLinkOut');
+      if (wrap && mount && out) {
+        var f = document.createElement('iframe');
+        f.src = JANE_NP_URL; f.title = 'Secure scheduling by Jane'; f.style.minHeight = '640px';
+        mount.appendChild(f);
+        wrap.hidden = false;
+        out.hidden = true;
+      }
+    }
+
+    var chk = document.getElementById('bookedChk');
+    var cont = document.getElementById('step1Continue');
+    if (state.booked && chk) { chk.checked = true; }
+    function syncContinue() {
+      var on = chk.checked;
+      cont.disabled = !on;
+      cont.setAttribute('aria-disabled', on ? 'false' : 'true');
+    }
+    if (chk && cont) {
+      syncContinue();
+      chk.addEventListener('change', syncContinue);
+      cont.addEventListener('click', function () {
+        if (cont.disabled) { return; }
+        state.booked = true;
+        save();
+        goTo('labs', true);
+      });
+    }
+
+    /* ---- Back buttons ---- */
+    Array.prototype.slice.call(document.querySelectorAll('[data-go]')).forEach(function (b) {
+      b.addEventListener('click', function () { goTo(b.getAttribute('data-go').replace('#', ''), true); });
+    });
+
+    /* ---- Step 2: validation + adapter submit ---- */
+    var form = document.getElementById('labForm');
+    var phone = document.getElementById('fldPhone');
+    if (phone) {
+      phone.addEventListener('blur', function () {
+        var d = phone.value.replace(/\D/g, '').slice(0, 10);
+        if (d.length === 10) { phone.value = '(' + d.slice(0, 3) + ') ' + d.slice(3, 6) + '-' + d.slice(6); }
+      });
+    }
+
+    function setErr(input, errId, show) {
+      var err = document.getElementById(errId);
+      if (err) { err.classList.toggle('show', show); }
+      if (input) {
+        if (show) { input.setAttribute('aria-invalid', 'true'); }
+        else { input.removeAttribute('aria-invalid'); }
+      }
+    }
+
+    function validField(input, errId) {
+      var val = (input.value || '').trim();
+      var ok = true;
+      if (!val) { ok = false; }
+      else if (input.id === 'fldDob') {
+        var d = new Date(val);
+        ok = !isNaN(d.getTime()) && d < new Date();
+      } else if (input.id === 'fldPhone') {
+        ok = val.replace(/\D/g, '').length === 10;
+      } else if (input.id === 'fldZip') {
+        ok = /^[0-9]{5}$/.test(val);
+      }
+      setErr(input, errId, !ok);
+      return ok;
+    }
+
+    var checks = [
+      ['fldName', 'errName'], ['fldDob', 'errDob'], ['fldPhone', 'errPhone'],
+      ['fldStreet', 'errStreet'], ['fldCity', 'errCity'], ['fldState', 'errState'], ['fldZip', 'errZip']
+    ];
+    // Every field (City and State included) has its own error node, so each
+    // flows through validField()/setErr() and gets a blur handler below.
+    checks.forEach(function (c) {
+      var el = document.getElementById(c[0]);
+      if (el && document.getElementById(c[1])) {
+        el.addEventListener('blur', function () { validField(el, c[1]); });
+      }
+    });
+
+    if (form) {
+      form.addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        var firstBad = null;
+        checks.forEach(function (c) {
+          var el = document.getElementById(c[0]);
+          var errId = c[1];
+          if (!el) { return; }
+          var ok;
+          if (document.getElementById(errId)) { ok = validField(el, errId); }
+          else { ok = !!(el.value || '').trim(); if (!ok) { el.setAttribute('aria-invalid', 'true'); } }
+          if (!ok && !firstBad) { firstBad = el; }
+        });
+        if (firstBad) {
+          firstBad.focus();
+          if (firstBad.scrollIntoView) { firstBad.scrollIntoView({ block: 'center', behavior: reduceMotion ? 'auto' : 'smooth' }); }
+          return;
+        }
+
+        // Build payload locally and hand it to the isolated adapter. Values
+        // live only in the inputs and this in-memory object; never stored.
+        var payload = {
+          name: document.getElementById('fldName').value.trim(),
+          dob: document.getElementById('fldDob').value,
+          phone: document.getElementById('fldPhone').value.trim(),
+          street: document.getElementById('fldStreet').value.trim(),
+          city: document.getElementById('fldCity').value.trim(),
+          state: document.getElementById('fldState').value,
+          zip: document.getElementById('fldZip').value.trim(),
+          additionalTests: (function () {
+            var a = window.__getAddons ? window.__getAddons() : { picked: [], total: 0 };
+            var other = document.getElementById('fldTests').value.trim();
+            var parts = [];
+            var panelChk = document.getElementById('panelChk');
+            if (panelChk && !panelChk.checked) { parts.push('NEW PATIENT PANEL DECLINED by patient'); }
+            if (a.picked.length) { parts.push('Add-ons: ' + a.picked.join(', ') + ' (subtotal $' + a.total + ')'); }
+            if (other) { parts.push('Other: ' + other); }
+            return parts.join(' | ');
+          })()
+        };
+
+        var submitBtn = document.getElementById('labSubmit');
+        submitBtn.disabled = true;
+        submitLabOrder(payload).then(function (res) {
+          var line = document.getElementById('labSuccessLine');
+          if (line && res && res.mode === 'firebase') {
+            line.textContent = 'Got it! Your lab order has been sent to our office.';
+          }
+          form.hidden = true;
+          document.querySelector('.wiz-privacy').hidden = true;
+          document.getElementById('labSuccess').hidden = false;
+          goTo('done', true);
+        }).catch(function () {
+          submitBtn.disabled = false;
+          var line = document.getElementById('labSuccessLine');
+          // Calm retry; typed values stay on screen (never persisted).
+          alert('Hmm, that did not go through. Mind trying once more? Your details are still here.');
+        });
+      });
+    }
+
+    /* ---- Boot ---- */
+    fromHash();
+  })();
+  </script>
+
+  <script>
+  /* À la carte add-on test selector. Searchable, grouped checklist with a live
+     subtotal. Only tests NOT already in the New Patient Panel are listed (so
+     nothing is double-ordered). The main wizard script reads the selection via
+     window.__getAddons() when the lab order is submitted. */
+  (function () {
+    'use strict';
+    var ADDONS = [
+      { g: 'Hormones', n: 'Testosterone, Total', p: 10 },
+      { g: 'Hormones', n: 'Testosterone, Free + Total (LC/MS)', p: 27 },
+      { g: 'Hormones', n: 'Testosterone, Free (Profile I, with SHBG)', p: 60 },
+      { g: 'Hormones', n: 'DHT (Dihydrotestosterone)', p: 41 },
+      { g: 'Hormones', n: 'DHEA-Sulfate', p: 15 },
+      { g: 'Hormones', n: 'DHEA-Sulfate (LC/MS)', p: 50 },
+      { g: 'Hormones', n: 'Estradiol (E2), Sensitive', p: 30 },
+      { g: 'Hormones', n: 'Progesterone', p: 30 },
+      { g: 'Hormones', n: 'FSH + LH', p: 22 },
+      { g: 'Hormones', n: 'Prolactin', p: 9 },
+      { g: 'Hormones', n: 'AMH (Anti-Mullerian Hormone)', p: 53 },
+      { g: 'Hormones', n: 'hCG, Quantitative', p: 9 },
+      { g: 'Thyroid', n: 'Reverse T3', p: 23 },
+      { g: 'Thyroid', n: 'Thyroid Antibodies (TPO + Thyroglobulin)', p: 14 },
+      { g: 'Thyroid', n: 'TBG (Thyroxine-binding Globulin)', p: 16 },
+      { g: 'Heart & Metabolic', n: 'NMR LipoProfile (with lipids)', p: 40 },
+      { g: 'Heart & Metabolic', n: 'Lipoprotein-PLA2 (PLAC)', p: 30 },
+      { g: 'Heart & Metabolic', n: 'C-Peptide', p: 13 },
+      { g: 'Heart & Metabolic', n: 'Cystatin C', p: 30 },
+      { g: 'Heart & Metabolic', n: 'Bilirubin, Direct', p: 4 },
+      { g: 'Inflammation & Autoimmune', n: 'ESR (Sedimentation Rate)', p: 7 },
+      { g: 'Inflammation & Autoimmune', n: 'Rheumatoid Factor (RF)', p: 8 },
+      { g: 'Inflammation & Autoimmune', n: 'Celiac Antibodies Profile', p: 80 },
+      { g: 'Inflammation & Autoimmune', n: 'Intrinsic Factor Antibodies', p: 20 },
+      { g: 'Vitamins, Minerals & Anemia', n: 'Vitamin B12', p: 9 },
+      { g: 'Vitamins, Minerals & Anemia', n: 'Ferritin', p: 7 },
+      { g: 'Vitamins, Minerals & Anemia', n: 'Ferritin + Iron + TIBC + UIBC', p: 14 },
+      { g: 'Vitamins, Minerals & Anemia', n: 'Zinc', p: 10 },
+      { g: 'Vitamins, Minerals & Anemia', n: 'MMA (Methylmalonic Acid)', p: 37 },
+      { g: 'Screening & Other', n: 'PSA (Prostate-specific Antigen)', p: 11 },
+      { g: 'Screening & Other', n: 'Lyme Antibodies (2-tier)', p: 30 },
+      { g: 'Screening & Other', n: 'Lyme, Line Blot', p: 50 },
+      { g: 'Screening & Other', n: 'EBV Antibody Profile', p: 52 },
+      { g: 'Screening & Other', n: 'Cryptococcus Antibodies', p: 28 },
+      { g: 'Screening & Other', n: 'HNK1 (CD57) Profile', p: 80 },
+      { g: 'Screening & Other', n: 'D-Dimer', p: 30 }
+    ];
+    var selected = {};
+    var list = document.getElementById('addonList');
+    var search = document.getElementById('addonSearch');
+    var summary = document.getElementById('addonSummary');
+    var countEl = document.getElementById('addonCount');
+    var totalEl = document.getElementById('addonTotal');
+    if (!list) { return; }
+    function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+    function render(filter) {
+      filter = (filter || '').toLowerCase();
+      var order = [], groups = {};
+      ADDONS.forEach(function (a, i) {
+        if (filter && a.n.toLowerCase().indexOf(filter) < 0) { return; }
+        if (!groups[a.g]) { groups[a.g] = []; order.push(a.g); }
+        groups[a.g].push(i);
+      });
+      if (!order.length) { list.innerHTML = '<div class="addon-empty">No tests match that search.</div>'; return; }
+      var html = '';
+      order.forEach(function (g) {
+        html += '<div class="addon-group-head">' + esc(g) + '</div>';
+        groups[g].forEach(function (i) {
+          var a = ADDONS[i];
+          html += '<label class="addon-item"><input type="checkbox" data-i="' + i + '"' + (selected[i] ? ' checked' : '') + ' /><span class="pr">$' + a.p + '</span><span class="nm">' + esc(a.n) + '</span></label>';
+        });
+      });
+      list.innerHTML = html;
+    }
+    function recalc() {
+      var n = 0, t = 0;
+      Object.keys(selected).forEach(function (i) { if (selected[i]) { n++; t += ADDONS[i].p; } });
+      if (n) { summary.hidden = false; countEl.textContent = n + (n === 1 ? ' test selected' : ' tests selected'); totalEl.textContent = 'Add-ons: $' + t; }
+      else { summary.hidden = true; }
+    }
+    list.addEventListener('change', function (e) {
+      if (!e.target || e.target.type !== 'checkbox') { return; }
+      selected[e.target.getAttribute('data-i')] = e.target.checked;
+      recalc();
+    });
+    search.addEventListener('input', function () { render(search.value); });
+    render('');
+    window.__getAddons = function () {
+      var picked = [], total = 0;
+      Object.keys(selected).forEach(function (i) { if (selected[i]) { picked.push(ADDONS[i].n + ' ($' + ADDONS[i].p + ')'); total += ADDONS[i].p; } });
+      return { picked: picked, total: total };
+    };
+  })();
+  </script>
+
+</body>
+</html>
