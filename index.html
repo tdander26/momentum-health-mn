@@ -10,6 +10,7 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <title>Momentum Health & Wellness Minnesota | Functional Medicine | Elk River, MN</title>
   <meta name="description" content="Momentum Health & Wellness Minnesota — Functional medicine in Elk River, MN. Dr. Todd Anderson & Dr. Anna Payne. Gut, thyroid, hormones, autoimmune, and chronic pain.">
+  <link rel="canonical" href="https://momentumhealthwellnessmn.com/" />
 
   <!-- Open Graph / Social Preview -->
   <meta property="og:type" content="website" />
@@ -25,6 +26,69 @@
   <meta name="twitter:title" content="Momentum Health & Wellness Minnesota" />
   <meta name="twitter:description" content="Functional medicine in Elk River, MN. Root-cause solutions for gut, thyroid, hormones, autoimmune, and chronic pain." />
   <meta name="twitter:image" content="https://momentumhealthwellnessmn.com/images/og-image.png" />
+
+  <!-- Structured data: local business + providers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["MedicalClinic", "LocalBusiness"],
+        "@id": "https://momentumhealthwellnessmn.com/#clinic",
+        "name": "Momentum Health & Wellness Minnesota",
+        "url": "https://momentumhealthwellnessmn.com/",
+        "logo": "https://momentumhealthwellnessmn.com/apple-touch-icon.png",
+        "image": "https://momentumhealthwellnessmn.com/images/og-image.png",
+        "description": "Functional medicine, applied kinesiology, and chiropractic care in Elk River, MN. Root-cause care for gut, thyroid, hormones, autoimmune, and chronic pain.",
+        "telephone": "+1-763-760-9176",
+        "email": "doc@drtoddanderson.com",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "231 Main Street NW",
+          "addressLocality": "Elk River",
+          "addressRegion": "MN",
+          "postalCode": "55330",
+          "addressCountry": "US"
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Elk River" },
+          { "@type": "City", "name": "Otsego" },
+          { "@type": "City", "name": "Zimmerman" },
+          { "@type": "City", "name": "Rogers" },
+          { "@type": "AdministrativeArea", "name": "Sherburne County, Minnesota" }
+        ],
+        "openingHoursSpecification": [
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"], "opens": "10:00", "closes": "13:30" },
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"], "opens": "15:00", "closes": "18:00" }
+        ],
+        "founder": { "@id": "https://momentumhealthwellnessmn.com/#dr-todd" },
+        "employee": [
+          { "@id": "https://momentumhealthwellnessmn.com/#dr-todd" },
+          { "@id": "https://momentumhealthwellnessmn.com/#dr-anna" }
+        ]
+      },
+      {
+        "@type": "Physician",
+        "@id": "https://momentumhealthwellnessmn.com/#dr-todd",
+        "name": "Dr. Todd Anderson, DC",
+        "jobTitle": "Doctor of Chiropractic & Applied Kinesiologist",
+        "image": "https://momentumhealthwellnessmn.com/images/dr-todd-anderson.jpg",
+        "url": "https://www.drtoddanderson.com",
+        "worksFor": { "@id": "https://momentumhealthwellnessmn.com/#clinic" }
+      },
+      {
+        "@type": "Physician",
+        "@id": "https://momentumhealthwellnessmn.com/#dr-anna",
+        "name": "Dr. Anna Payne, DC",
+        "jobTitle": "Doctor of Chiropractic & Applied Kinesiologist",
+        "image": "https://momentumhealthwellnessmn.com/images/dr-anna-payne-card.jpg",
+        "url": "https://momentumhealthwellnessmn.com/dr-anna-payne/",
+        "worksFor": { "@id": "https://momentumhealthwellnessmn.com/#clinic" }
+      }
+    ]
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
