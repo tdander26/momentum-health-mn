@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <title>Thyroid Doctor in Elk River, MN | Functional Thyroid Care | Momentum Health & Wellness</title>
+  <meta name="description" content="Your thyroid labs are 'normal' but you still feel exhausted, foggy, and stuck. Functional thyroid care in Elk River, MN — we find the actual driver (Hashimoto's, conversion issues, iodine, gut, stress) instead of just managing the symptom.">
+  <link rel="canonical" href="https://momentumhealthwellnessmn.com/thyroid/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://momentumhealthwellnessmn.com/thyroid/" />
+  <meta property="og:title" content="Thyroid Doctor in Elk River, MN | Functional Thyroid Care" />
+  <meta property="og:description" content="Labs 'normal' but you still feel terrible? Functional thyroid care in Elk River, MN. We find the actual driver — Hashimoto's, conversion issues, gut, stress — not just manage symptoms." />
+  <meta property="og:image" content="https://momentumhealthwellnessmn.com/images/og-image.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Thyroid Doctor in Elk River, MN | Functional Thyroid Care" />
+  <meta name="twitter:description" content="Labs 'normal' but you still feel terrible? Functional thyroid care in Elk River, MN — find the driver, not just manage symptoms." />
+  <meta name="twitter:image" content="https://momentumhealthwellnessmn.com/images/og-image.png" />
+
+  <!-- Structured data: MedicalWebPage about thyroid, served by the clinic -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "@id": "https://momentumhealthwellnessmn.com/thyroid/#page",
+    "url": "https://momentumhealthwellnessmn.com/thyroid/",
+    "name": "Thyroid Doctor in Elk River, MN | Functional Thyroid Care",
+    "description": "Functional thyroid care in Elk River, MN. Root-cause approach for Hashimoto's, hypothyroid, hyperthyroid, and 'normal labs but feel terrible' cases.",
+    "inLanguage": "en-US",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Thyroid disorders",
+      "alternateName": ["Hashimoto's thyroiditis", "Hypothyroidism", "Hyperthyroidism", "Subclinical hypothyroidism"],
+      "code": [
+        { "@type": "MedicalCode", "code": "E03.9", "codingSystem": "ICD-10" },
+        { "@type": "MedicalCode", "code": "E06.3", "codingSystem": "ICD-10" }
+      ]
+    },
+    "audience": { "@type": "PatientsAudience", "geographicArea": { "@type": "AdministrativeArea", "name": "Sherburne County, Minnesota" } },
+    "mainEntityOfPage": { "@id": "https://momentumhealthwellnessmn.com/#clinic" },
+    "publisher": { "@id": "https://momentumhealthwellnessmn.com/#clinic" }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #e0e0e0;
+      background: #0d0d0d;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    :root {
+      --gold:       #C9A84C;
+      --gold-light: #E8C97A;
+      --gold-dark:  #A07830;
+      --black:      #0d0d0d;
+      --charcoal:   #1c1c1c;
+      --card:       #181818;
+      --card2:      #222222;
+      --border:     rgba(255,255,255,0.07);
+      --border-gold: rgba(201,168,76,0.2);
+      --gray-500:   #6B7280;
+      --muted:      #888;
+      --white:      #ffffff;
+      --green:      #3ecf8e;
+    }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+    .btn {
+      display: inline-block; padding: 16px 38px; font-size: 0.9rem;
+      font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+      text-decoration: none; border-radius: 4px; cursor: pointer;
+      transition: all 0.25s ease; border: 2px solid transparent;
+    }
+    .btn-gold { background: var(--gold); color: var(--black); border-color: var(--gold); }
+    .btn-gold:hover { background: var(--gold-dark); border-color: var(--gold-dark); color: var(--white); }
+    .btn-outline { border-color: rgba(255,255,255,0.3); color: var(--white); background: transparent; }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+    .gold-divider { width: 56px; height: 3px; background: var(--gold); border-radius: 2px; }
+    .gold-divider.center { margin: 0 auto; }
+    .section-label {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 12px;
+    }
+    .section-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700; line-height: 1.2; color: var(--white);
+    }
+
+    /* ─── TOP BAR ─── */
+    .top-bar {
+      background: var(--gold); padding: 9px 24px; text-align: center;
+    }
+    .top-bar p { font-size: 0.8rem; font-weight: 600; color: var(--black); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .top-bar a { color: var(--black); font-weight: 700; text-decoration: underline; }
+
+    /* ─── NAV ─── */
+    nav {
+      background: #080808; padding: 0 24px;
+      border-bottom: 1px solid var(--border-gold);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; height: 60px;
+    }
+    .nav-logo { text-decoration: none; }
+    .nav-logo-main { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--white); font-weight: 700; }
+    .nav-logo-sub { font-size: 0.62rem; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; }
+    .nav-phone { font-size: 0.88rem; font-weight: 700; color: var(--gold); text-decoration: none; }
+    .nav-phone:hover { color: var(--gold-light); }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: var(--black);
+      padding: 80px 24px 88px;
+      position: relative; overflow: hidden; text-align: center;
+      border-bottom: 1px solid var(--border-gold);
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,168,76,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 22px;
+      display: inline-block; padding: 6px 18px;
+      border: 1px solid var(--border-gold); border-radius: 20px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.1rem, 5vw, 3.5rem);
+      font-weight: 700; line-height: 1.15; color: var(--white);
+      margin-bottom: 22px; position: relative;
+    }
+    .hero h1 em { color: var(--gold); font-style: italic; }
+    .hero-sub {
+      font-size: 1.05rem; color: var(--muted); max-width: 600px;
+      margin: 0 auto 38px; line-height: 1.75; position: relative;
+    }
+    .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; position: relative; }
+    .hero-trust {
+      margin-top: 28px; font-size: 0.78rem; color: #555;
+      display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap;
+      position: relative;
+    }
+    .hero-trust span { display: flex; align-items: center; gap: 6px; color: #666; }
+    .hero-trust span::before { content: '✓'; color: var(--green); font-weight: 700; }
+
+    /* ─── SYMPTOMS ─── */
+    .symptoms { background: var(--charcoal); padding: 80px 24px; border-top: 1px solid var(--border); }
+    .section-header { text-align: center; margin-bottom: 52px; }
+    .section-header p { font-size: 0.98rem; color: var(--muted); max-width: 540px; margin: 16px auto 0; line-height: 1.75; }
+    .symptom-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+      max-width: 860px; margin: 0 auto 44px;
+    }
+    .symptom-item {
+      display: flex; align-items: center; gap: 12px;
+      background: var(--card); border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      border-radius: 6px; padding: 13px 16px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .symptom-item:hover { background: #1e1e1e; border-color: rgba(201,168,76,0.4); }
+    .symptom-icon { font-size: 1rem; flex-shrink: 0; }
+    .symptom-name { font-size: 0.85rem; font-weight: 500; color: #ccc; }
+    .symptoms-cta { text-align: center; }
+    .symptoms-note { font-size: 0.8rem; color: #555; margin-top: 12px; }
+
+    /* ─── APPROACH ─── */
+    .approach { padding: 80px 24px; background: var(--black); border-top: 1px solid var(--border); }
+    .thyroid-example {
+      background: var(--card); border: 1px solid var(--border-gold);
+      border-radius: 12px; overflow: hidden;
+      max-width: 780px; margin: 48px auto 56px;
+    }
+    .thyroid-example img { width: 100%; display: block; }
+    .thyroid-caption {
+      padding: 20px 24px; font-size: 0.82rem; color: var(--muted);
+      border-top: 1px solid var(--border); text-align: center;
+      font-style: italic;
+    }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 860px; margin: 0 auto; }
+    .step {
+      background: var(--card); border: 1px solid var(--border);
+      border-top: 3px solid var(--gold);
+      border-radius: 10px; padding: 32px 24px; text-align: center;
+      transition: border-color 0.2s;
+    }
+    .step:hover { border-color: rgba(201,168,76,0.5); }
+    .step-emoji { font-size: 2rem; margin-bottom: 14px; display: block; }
+    .step h3 {
+      font-family: 'Playfair Display', serif; font-size: 1.3rem;
+      color: var(--white); margin-bottom: 12px;
+    }
+    .step p { font-size: 0.85rem; color: var(--muted); line-height: 1.75; }
+
+    /* ─── WHY DIFFERENT ─── */
+    .why { background: var(--charcoal); padding: 80px 24px; border-top: 1px solid var(--border); }
+    .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 760px; margin: 0 auto; }
+    .why-item {
+      display: flex; gap: 16px; align-items: flex-start;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 24px;
+      transition: border-color 0.2s;
+    }
+    .why-item:hover { border-color: var(--border-gold); }
+    .why-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+    .why-title { font-weight: 700; font-size: 0.92rem; color: var(--white); margin-bottom: 6px; }
+    .why-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
+
+    /* ─── DOCTOR ─── */
+    .doctor { padding: 80px 24px; background: var(--black); border-top: 1px solid var(--border); }
+    .doctor-inner {
+      max-width: 760px; margin: 0 auto;
+      display: grid; grid-template-columns: 200px 1fr; gap: 44px; align-items: center;
+    }
+    .doctor-photo {
+      width: 200px; height: 240px; border-radius: 10px;
+      border: 2px solid var(--border-gold); overflow: hidden;
+      background: var(--card); display: flex; align-items: center;
+      justify-content: center; color: var(--gold);
+      font-family: 'Playfair Display', serif; font-size: 3rem;
+    }
+    .doctor-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .doctor-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .doctor-name { font-family: 'Playfair Display', serif; font-size: 1.7rem; color: var(--white); margin-bottom: 6px; }
+    .doctor-title { font-size: 0.85rem; color: var(--gold); font-weight: 600; margin-bottom: 18px; }
+    .doctor-bio { font-size: 0.92rem; color: var(--muted); line-height: 1.8; margin-bottom: 14px; }
+    .doctor-sig { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-style: italic; color: #555; }
+
+    /* ─── SCHEDULE ─── */
+    .schedule { padding: 80px 24px; background: var(--charcoal); border-top: 1px solid var(--border); }
+    .tidycal-wrap {
+      max-width: 860px; margin: 0 auto;
+      background: var(--card); border-radius: 12px; padding: 40px;
+      border: 1px solid var(--border-gold);
+    }
+    .schedule-alt {
+      text-align: center; margin-top: 32px; padding-top: 28px;
+      border-top: 1px solid var(--border);
+    }
+    .schedule-alt p { font-size: 0.88rem; color: var(--muted); margin-bottom: 10px; }
+    .schedule-alt a { color: var(--gold); font-weight: 600; text-decoration: none; }
+    .schedule-alt a:hover { color: var(--gold-light); text-decoration: underline; }
+
+    /* ─── REVIEWS ─── */
+    .reviews { padding: 80px 24px; background: var(--black); border-top: 1px solid var(--border); }
+    .reviews-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 860px; margin: 0 auto; }
+    .review-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 28px 24px;
+      transition: border-color 0.2s;
+    }
+    .review-card:hover { border-color: var(--border-gold); }
+    .review-stars { color: var(--gold); font-size: 1rem; letter-spacing: 2px; margin-bottom: 14px; }
+    .review-text { font-size: 0.88rem; color: #bbb; line-height: 1.8; margin-bottom: 18px; font-style: italic; }
+    .review-text::before { content: '\201C'; color: var(--gold); font-size: 1.4rem; line-height: 0; vertical-align: -0.3em; margin-right: 3px; }
+    .review-text::after { content: '\201D'; color: var(--gold); font-size: 1.4rem; line-height: 0; vertical-align: -0.3em; margin-left: 3px; }
+    .review-author { display: flex; align-items: center; gap: 12px; }
+    .review-avatar {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: var(--card2); border: 1px solid var(--border-gold);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; font-weight: 700; color: var(--gold); flex-shrink: 0;
+    }
+    .review-name { font-weight: 700; font-size: 0.88rem; color: var(--white); }
+    .review-source { font-size: 0.72rem; color: #555; margin-top: 2px; }
+    .review-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--gold); background: rgba(201,168,76,0.08); border: 1px solid var(--border-gold);
+      border-radius: 20px; padding: 4px 12px; margin-bottom: 10px;
+    }
+
+    /* ─── FAQ ─── */
+    .faq { padding: 80px 24px; background: var(--charcoal); border-top: 1px solid var(--border); }
+    .faq-list { max-width: 700px; margin: 0 auto; }
+    .faq-item {
+      border-bottom: 1px solid var(--border); padding: 24px 0;
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q {
+      font-weight: 700; font-size: 0.98rem; color: var(--white);
+      cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+      gap: 16px;
+    }
+    .faq-q .faq-icon { color: var(--gold); font-size: 1.2rem; flex-shrink: 0; transition: transform 0.2s; }
+    .faq-a { font-size: 0.88rem; color: var(--muted); line-height: 1.8; margin-top: 14px; display: none; }
+    .faq-item.open .faq-a { display: block; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    /* ─── STICKY CTA (mobile) ─── */
+    .sticky-cta {
+      display: none;
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+      background: var(--gold); padding: 14px 24px;
+      box-shadow: 0 -4px 24px rgba(0,0,0,0.5);
+    }
+    .sticky-cta a {
+      display: block; text-align: center; text-decoration: none;
+      font-weight: 700; font-size: 0.92rem; color: var(--black);
+      letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    @media (max-width: 720px) { .sticky-cta { display: block; } }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #080808; border-top: 1px solid var(--border-gold);
+      padding: 40px 24px; text-align: center;
+    }
+    .footer-logo-main { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--white); font-weight: 700; }
+    .footer-logo-sub { font-size: 0.62rem; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 18px; }
+    .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 18px; }
+    .footer-links a { color: #555; text-decoration: none; font-size: 0.8rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-copy { font-size: 0.72rem; color: #333; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 720px) {
+      .symptom-grid { grid-template-columns: 1fr 1fr; }
+      .steps { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .doctor-inner { grid-template-columns: 1fr; text-align: center; }
+      .doctor-photo { margin: 0 auto; }
+      .tidycal-wrap { padding: 24px 16px; }
+    }
+    @media (max-width: 480px) {
+      .symptom-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── TOP BAR ─── -->
+<div class="top-bar">
+  <p>📍 Elk River, MN &nbsp;·&nbsp; Now Accepting New Patients &nbsp;·&nbsp; <a href="sms:+17637609176&body=I'd like to schedule a free consultation.">Text us: (763) 760-9176</a></p>
+</div>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <div class="nav-inner">
+    <a href="https://momentumhealthwellnessmn.com" class="nav-logo">
+      <span class="nav-logo-main">Momentum Health & Wellness MN</span>
+      <span class="nav-logo-sub">Elk River, Minnesota</span>
+    </a>
+    <a href="tel:+17637609176" class="nav-phone">📞 (763) 760-9176</a>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="container">
+    <p class="hero-eyebrow">Functional Thyroid Care &middot; Elk River, MN</p>
+    <h1>
+      Thyroid Labs "Normal" but You<br>
+      Still Feel <em>Terrible</em>?
+    </h1>
+    <p class="hero-sub">
+      Exhaustion. Brain fog. Stubborn weight. Cold hands. Thinning hair. If conventional medicine keeps telling you your thyroid is "fine" while you know something's off, you're in the right place. We find the actual driver — Hashimoto's, T4-to-T3 conversion, iodine, gut, stress, blood sugar — and we fix it.
+    </p>
+    <div class="hero-ctas">
+      <a href="#schedule" class="btn btn-gold">Schedule My Free Consultation</a>
+      <a href="sms:+17637609176&body=I'd like to talk about my thyroid." class="btn btn-outline">Text Us Instead</a>
+    </div>
+    <div class="hero-trust">
+      <span>Functional thyroid panel</span>
+      <span>Root-cause approach</span>
+      <span>Two licensed doctors</span>
+      <span>Elk River, MN</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SYMPTOMS ─── -->
+<section class="symptoms">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Sound familiar?</span>
+      <h2 class="section-heading">Common Signs of Thyroid Dysfunction</h2>
+      <p>You don't need every one of these to have a thyroid problem. Even a few — especially if your labs are "in range" — usually point to dysfunction your standard panel won't catch.</p>
+    </div>
+    <div class="symptom-grid">
+      <div class="symptom-item"><span class="symptom-icon">😴</span><span class="symptom-name">Persistent Fatigue</span></div>
+      <div class="symptom-item"><span class="symptom-icon">🧠</span><span class="symptom-name">Brain Fog &amp; Poor Memory</span></div>
+      <div class="symptom-item"><span class="symptom-icon">⚖️</span><span class="symptom-name">Stubborn Weight Gain</span></div>
+      <div class="symptom-item"><span class="symptom-icon">💇</span><span class="symptom-name">Hair Loss &amp; Thinning Brows</span></div>
+      <div class="symptom-item"><span class="symptom-icon">🥶</span><span class="symptom-name">Cold Hands &amp; Feet</span></div>
+      <div class="symptom-item"><span class="symptom-icon">🌵</span><span class="symptom-name">Dry Skin &amp; Brittle Nails</span></div>
+      <div class="symptom-item"><span class="symptom-icon">🚽</span><span class="symptom-name">Constipation</span></div>
+      <div class="symptom-item"><span class="symptom-icon">😟</span><span class="symptom-name">Anxiety, Depression, Low Mood</span></div>
+      <div class="symptom-item"><span class="symptom-icon">🌙</span><span class="symptom-name">Sleep Issues / Wired-Tired</span></div>
+      <div class="symptom-item"><span class="symptom-icon">💪</span><span class="symptom-name">Muscle Aches &amp; Weakness</span></div>
+      <div class="symptom-item"><span class="symptom-icon">🌡️</span><span class="symptom-name">Irregular or Heavy Cycles</span></div>
+      <div class="symptom-item"><span class="symptom-icon">💧</span><span class="symptom-name">Puffy Face &amp; Eyes</span></div>
+      <div class="symptom-item"><span class="symptom-icon">💓</span><span class="symptom-name">Slow or Racing Heart Rate</span></div>
+      <div class="symptom-item"><span class="symptom-icon">🛡️</span><span class="symptom-name">Family History of Hashimoto's</span></div>
+      <div class="symptom-item"><span class="symptom-icon">❓</span><span class="symptom-name">"Normal Labs" — Still Feel Off</span></div>
+    </div>
+    <div class="symptoms-cta">
+      <a href="#schedule" class="btn btn-gold">Yes — I Want Real Answers</a>
+      <p class="symptoms-note">Free 15-minute phone consultation. No pressure, no commitment.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── APPROACH ─── -->
+<section class="approach">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Why Most Thyroid Care Falls Short</span>
+      <h2 class="section-heading">The Standard Thyroid Panel Misses the Driver</h2>
+      <p>Most offices run TSH (sometimes T4) and call it a day. That's a symptom-level test, not a driver-level test. So you stay tired — or you get a prescription that papers over what's actually happening upstream.</p>
+    </div>
+
+    <div class="thyroid-example">
+      <img src="/images/thyroid-example.jpg" alt="Thyroid dysfunction diagram — Symptom, Dysfunction, Driver, Correction" />
+      <div class="thyroid-caption">
+        The thyroid example: the <strong style="color:#fff;">symptom</strong> (weight gain, fatigue) traces back through dysfunction &rarr; driver &rarr; correction. We find the driver, not just manage the symptom.
+      </div>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <span class="step-emoji">🔍</span>
+        <h3>Find</h3>
+        <p>A full functional thyroid panel (TSH, free T4, free T3, reverse T3, TPO &amp; TG antibodies) read against <em>functional</em> ranges &mdash; not just the lab's pathological cutoffs. Combined with a complete history and Applied Kinesiology, we pinpoint the actual driver.</p>
+      </div>
+      <div class="step">
+        <span class="step-emoji">🛠</span>
+        <h3>Fix</h3>
+        <p>Targeted to <em>your</em> driver. Hashimoto's gets autoimmune support. Conversion issues get the right cofactors (selenium, zinc, the gut). Iodine, blood sugar, stress, and inflammation each have specific protocols. No shotgun approach.</p>
+      </div>
+      <div class="step">
+        <span class="step-emoji">👍</span>
+        <h3>Stabilize</h3>
+        <p>Lifestyle changes that keep the thyroid quiet for good &mdash; food, sleep, stress, and the inputs you can actually control. Our goal is to give you the tools to thrive long after you're done with us.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHY DIFFERENT ─── -->
+<section class="why">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">What Makes Us Different</span>
+      <h2 class="section-heading">This Isn't Conventional Medicine.</h2>
+      <p>We go deeper. We listen longer. We look for causes, not just symptom management.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-icon">🕐</div>
+        <div>
+          <div class="why-title">Time With Your Doctor</div>
+          <div class="why-desc">No 7-minute appointments. We take the time to understand your full health story — not just your chief complaint.</div>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">🔬</div>
+        <div>
+          <div class="why-title">Functional Blood Work</div>
+          <div class="why-desc">We read labs with functional ranges — not just pathological cutoffs. Patterns that conventional medicine misses, we catch.</div>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">🧠</div>
+        <div>
+          <div class="why-title">Applied Kinesiology</div>
+          <div class="why-desc">A whole-body assessment system used to identify functional imbalances — from organ systems to structural patterns.</div>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">🌿</div>
+        <div>
+          <div class="why-title">Natural, Root-Cause Care</div>
+          <div class="why-desc">We address why you feel the way you do — through diet, lifestyle, and targeted supplementation.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── DOCTOR ─── -->
+<section class="doctor">
+  <div class="container">
+    <div class="doctor-inner">
+      <div class="doctor-photo">
+        <img src="/images/dr-todd-anderson.jpg" alt="Dr. Todd Anderson, DC" />
+      </div>
+      <div>
+        <div class="doctor-label">Your Doctor</div>
+        <div class="doctor-name">Dr. Todd Anderson, DC</div>
+        <div class="doctor-title">Functional Medicine Doctor &amp; Applied Kinesiologist — Elk River, MN</div>
+        <p class="doctor-bio">
+          I am extremely passionate about getting people back to health and performing better. I've worked with patients dealing with thyroid dysfunction, gut issues, hormonal imbalances, autoimmunity, and chronic pain — conditions that conventional medicine too often labels as "normal."
+        </p>
+        <p class="doctor-bio">
+          I don't mind going the extra mile. If you have questions, reach out anytime. I'm here to help you find real answers — not just manage symptoms.
+        </p>
+        <div class="doctor-sig">— Todd Anderson, DC</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── REVIEWS ─── -->
+<section class="reviews">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Real Patients. Real Results.</span>
+      <h2 class="section-heading">What Patients Are Saying</h2>
+      <p>These aren't curated testimonials — they're Google reviews from people who were told their labs were "normal" and finally got real answers. Many came in with thyroid, autoimmune, or fatigue symptoms that everyone else had dismissed.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-badge">✓ Verified Google Review</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">I saw many doctors, many tests and even a brain scan. They could not find anything wrong with me — everything came back "normal" per their standards. After seeing Dr. Todd, I am sitting here writing this in tears of gratitude. After a year and a half of suffering I now feel like myself again.</p>
+        <div class="review-author">
+          <div class="review-avatar">MD</div>
+          <div>
+            <div class="review-name">Maria Deonnei</div>
+            <div class="review-source">Google Review · 5 Stars</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-badge">✓ Verified Google Review</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">I found Dr. Todd as a "last resort" after spending months seeking answers to my autoimmune issues from medical doctors, with nothing but dead ends. I felt a sigh of relief from our initial phone consult. Truly, I have never felt so heard and validated by a doctor. My symptoms have been steadily improving since I started working with him and I feel so much better today than just 5 months ago.</p>
+        <div class="review-author">
+          <div class="review-avatar">K</div>
+          <div>
+            <div class="review-name">Kimberly</div>
+            <div class="review-source">Google Review · 5 Stars</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-badge">✓ Verified Google Review</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">I've been working with Dr. Todd on digestive and menopause issues. I can honestly say I have not felt this good in years. I have the energy to work out consistently, which is a big deal for me. My sleep has also improved. I like his method of diagnosis and treatment — both Todd and Megan are kind and caring.</p>
+        <div class="review-author">
+          <div class="review-avatar">CJ</div>
+          <div>
+            <div class="review-name">Carol Joy</div>
+            <div class="review-source">Google Review · 5 Stars</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-badge">✓ Verified Google Review</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">We are so grateful for Dr. Todd! My daughter was experiencing issues that were lowering the quality of her teenage daily life. I felt like we had tried everything — nothing helped. Once she had her first appointment, it didn't take long for her to get back to feeling like a normal kid. He is very patient, personable and knowledgeable.</p>
+        <div class="review-author">
+          <div class="review-avatar">AH</div>
+          <div>
+            <div class="review-name">Adria Hamel</div>
+            <div class="review-source">Google Review · 5 Stars</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQ ─── -->
+<section class="faq">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Common Thyroid Questions</span>
+      <h2 class="section-heading">What People Ask About Thyroid Care</h2>
+      <p>The questions we hear most often from new thyroid patients in Elk River and the surrounding area.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          My thyroid labs came back "normal." Why do I still feel awful?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Because "normal" on a standard panel often isn't normal at all. Most offices run TSH (sometimes T4) and compare your result to a wide pathological range. We use functional ranges and a full panel — TSH, free T4, free T3, reverse T3, and antibodies — to catch the dysfunction long before it becomes a disease. If you feel terrible, there's almost always a reason on a functional panel.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Do you treat Hashimoto's?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Yes. Hashimoto's is one of the most common drivers we see. We look at the autoimmune piece (TPO and TG antibodies), the triggers feeding it (gut health, infections, food sensitivities, stress, blood sugar), and the conversion piece — then build a plan around your specific pattern. A lot of patients see antibody numbers come down significantly as the upstream drivers are addressed.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Can I still take my thyroid medication while working with you?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Absolutely. We don't prescribe or change your medication — that stays between you and your prescribing doctor. What we do is address the underlying drivers so the medication has a chance to actually work, and so the thyroid has the support it needs from the rest of your body (gut, liver, adrenals, blood sugar).</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Do you take insurance?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">We do not take insurance. We provide a superbill so your insurance company can reimburse you directly depending on your benefits, and we accept HSA and FSA. Our rates are time-based — not driven by an insurance menu — which means everything we do together is because it's what we genuinely believe is best for you.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Do I need blood work before my first visit?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">It helps, but it's not required. We can often move forward without it depending on your situation and budget, and decide together during your first visit whether a functional thyroid panel makes sense for you.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Are you accepting new thyroid patients?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">Yes. We see thyroid patients from Elk River, Otsego, Zimmerman, Rogers, and the surrounding Sherburne County area. Start with a free phone consultation so we can hear your story and confirm we're the right fit before you book a full visit.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SCHEDULE ─── -->
+<section class="schedule" id="schedule">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Ready to Get Started?</span>
+      <h2 class="section-heading">Choose Your Next Step</h2>
+      <p>Not sure yet? Book a free phone call. Already ready? Schedule your first appointment directly.</p>
+      <div class="gold-divider center" style="margin-top: 20px;"></div>
+    </div>
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-bottom: 40px;">
+      <a href="https://momentum-health.janeapp.com/#/discipline/1/treatment/1" target="_blank" rel="noopener" class="btn btn-gold" style="font-size:0.95rem;">📅 Book First Appointment</a>
+      <a href="#tidycal" class="btn btn-outline" style="font-size:0.95rem;">📞 Free Phone Consult First</a>
+    </div>
+    <div class="tidycal-wrap" id="tidycal">
+      <!-- Momentum booking widget (intro call). Loader script is before </body>. -->
+      <div class="booking-inline" data-url="https://momentum-booking.web.app/?type=intro-call" style="min-width:320px;height:640px;"></div>
+      <div class="schedule-alt">
+        <p>Prefer to reach out directly?</p>
+        <p>
+          📱 <a href="sms:+17637609176&body=I'd like to schedule a free consultation.">Text (763) 760-9176</a>
+          &nbsp;·&nbsp;
+          ✉️ <a href="mailto:office@momentumhealthwellnessmn.com">office@momentumhealthwellnessmn.com</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-logo-main">Momentum Health & Wellness Minnesota</div>
+  <div class="footer-logo-sub">Elk River, Minnesota · (763) 760-9176</div>
+  <div class="footer-links">
+    <a href="https://momentumhealthwellnessmn.com">Home</a>
+    <a href="https://momentumhealthwellnessmn.com/#doctors">Our Doctors</a>
+    <a href="https://momentumhealthwellnessmn.com/#services">Services</a>
+    <a href="https://momentumhealthwellnessmn.com/#contact">Contact</a>
+    <a href="https://momentum-health.janeapp.com/#/discipline/1/treatment/1" target="_blank" rel="noopener">Book Appointment</a>
+  </div>
+  <p class="footer-copy">© 2026 Momentum Health & Wellness Minnesota. All rights reserved.</p>
+</footer>
+
+<!-- ─── STICKY MOBILE CTA ─── -->
+<div class="sticky-cta">
+  <a href="#schedule">📅 Schedule My Free Consultation</a>
+</div>
+
+<script>
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    item.classList.toggle('open');
+  }
+</script>
+
+<!-- Momentum booking widget loader -->
+<script src="https://momentum-booking.web.app/embed.js" async></script>
+
+<!-- Structured data: FAQ (eligible for Google FAQ rich results) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "My thyroid labs came back \"normal.\" Why do I still feel awful?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Because \"normal\" on a standard panel often isn't normal at all. Most offices run TSH (sometimes T4) and compare your result to a wide pathological range. We use functional ranges and a full panel — TSH, free T4, free T3, reverse T3, and antibodies — to catch the dysfunction long before it becomes a disease." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you treat Hashimoto's?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. We look at the autoimmune piece (TPO and TG antibodies), the triggers feeding it (gut health, infections, food sensitivities, stress, blood sugar), and the conversion piece — then build a plan around your specific pattern." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I still take my thyroid medication while working with you?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. We don't prescribe or change your medication — that stays between you and your prescribing doctor. We address the underlying drivers so the medication has a chance to actually work and the thyroid has support from the rest of your body." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you take insurance?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We do not take insurance, but we provide a superbill for direct reimbursement depending on your benefits, and we accept HSA and FSA accounts. Our rates are time-based — not driven by an insurance menu." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need blood work before my first visit?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It helps, but it's not required. We can often move forward without it depending on your situation and budget, and decide together during your first visit whether a functional thyroid panel makes sense." }
+    },
+    {
+      "@type": "Question",
+      "name": "Are you accepting new thyroid patients?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. We see thyroid patients from Elk River, Otsego, Zimmerman, Rogers, and the surrounding Sherburne County area. Start with a free phone consultation so we can hear your story and confirm we're the right fit." }
+    }
+  ]
+}
+</script>
+</body>
+</html>
