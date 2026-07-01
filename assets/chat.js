@@ -382,10 +382,14 @@
 				} else if (data.slots && data.slots.length) {
 					if (!startsAfter) track('slots_shown');
 					addSlotButtons(data.slots, !!data.has_more);
+				} else if (data.message) {
+					// Soft "no open times for that" note (e.g. a closed day) — not an error.
+					addMessage('assistant', data.message);
+					if (data.options && data.options.length) renderOptions(data.options);
 				} else if (startsAfter) {
 					addMessage('assistant', "Those are all the open times I see right now. Want to call the office at " + (MomentumChat.phone || 'the number on our site') + " to find something further out?");
 				} else {
-					addMessage('assistant', "Something went wrong getting the calendar. Please call the office at " + (MomentumChat.phone || 'the number on our site') + ".");
+					addMessage('assistant', "I don't see any open times right now. Please call the office at " + (MomentumChat.phone || 'the number on our site') + ".");
 				}
 				setBusy(false);
 			})
