@@ -109,6 +109,25 @@
 		scrollLogToBottom();
 	}
 
+	// Mid-conversation tappable options (e.g. timing: ASAP / Next week / Any Friday),
+	// sent by the assistant via an [OPTIONS] directive. Reuses the quick-reply chips.
+	function renderOptions(options) {
+		if (!options || !options.length) return;
+		var wrap = el('div', { class: 'mchat-quick-replies' });
+		options.forEach(function (opt) {
+			var text = String(opt);
+			var btn = el('button', { type: 'button', class: 'mchat-quick-reply', text: text });
+			btn.addEventListener('click', function () {
+				if (wrap.parentNode) wrap.parentNode.removeChild(wrap);
+				input.value = text;
+				send();
+			});
+			wrap.appendChild(btn);
+		});
+		log.appendChild(wrap);
+		scrollLogToBottom();
+	}
+
 	var popoutEl;
 	function schedulePopout() {
 		var text = (MomentumChat.popoutText || '').trim();
@@ -272,7 +291,7 @@
 		fetch(MomentumChat.restUrl + 'booking-link', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json', 'X-WP-Nonce': MomentumChat.nonce },
-			body: JSON.stringify({ starts_at: slot.starts_at, session_id: state.sessionId })
+			body: JSON.stringify({ starts_at: slot.starts_at, provider_id: slot.provider_id, session_id: state.sessionId })
 		})
 			.then(function (r) { return r.json(); })
 			.then(function (data) {
@@ -323,11 +342,15 @@
 				if (data.reply) {
 					addMessage('assistant', data.reply);
 				}
+				if (data.options && data.options.length) {
+					renderOptions(data.options);
+				}
 				if (data.tool && data.tool.action === 'fetch_slots') {
+					state.timeframe = (data.tool.timeframe || '').toString();
 					showTyping();
 					fetchSlots();
 				} else {
-					if (!data.reply) {
+					if (!data.reply && !(data.options && data.options.length)) {
 						addMessage('assistant', "Sorry, I didn't catch a response. Could you try again? If this keeps happening, please call " + (MomentumChat.phone || 'the office') + '.');
 					}
 					setBusy(false);
@@ -344,6 +367,7 @@
 	function fetchSlots(startsAfter, moreBtn) {
 		var payload = { session_id: state.sessionId };
 		if (startsAfter) payload.starts_after = startsAfter;
+		if (state.timeframe) payload.timeframe = state.timeframe;
 		fetch(MomentumChat.restUrl + 'slots', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json', 'X-WP-Nonce': MomentumChat.nonce },
