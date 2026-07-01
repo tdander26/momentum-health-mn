@@ -253,6 +253,24 @@
 	box-shadow: var(--mchat-shadow-sm);
 }
 
+/* Inline links (e.g. the Jane follow-up link) — gold, not the browser default. */
+.mchat-msg-assistant a {
+	color: var(--mchat-gold-light);
+	text-decoration: underline;
+	text-underline-offset: 2px;
+	font-weight: 600;
+}
+
+.mchat-msg-assistant a:hover {
+	color: var(--mchat-gold);
+}
+
+.mchat-msg-user a {
+	color: var(--mchat-ink);
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
 .mchat-typing {
 	align-self: flex-start;
 	background: var(--mchat-surface);

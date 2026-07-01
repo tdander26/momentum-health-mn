@@ -58,7 +58,7 @@
   };
 
   // ---- Inject styles + widget ----------------------------------------------
-  var v = '20260701b'; // bump to bust cache after edits
+  var v = '20260701c'; // bump to bust cache after edits
   function mount() {
     if (window.__momentumChatMounted) return;
     window.__momentumChatMounted = true;
