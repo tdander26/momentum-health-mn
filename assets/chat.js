@@ -23,6 +23,33 @@
 		}
 	}
 
+	// ---- Conversation persistence across page navigations ----------------------
+	// The thread (and whether the panel was open) survives clicking between pages,
+	// so a mid-conversation visitor never loses their place. Session-scoped: a new
+	// tab or browser restart starts fresh.
+	var HISTORY_KEY = 'mchat_history';
+
+	function persist() {
+		try {
+			sessionStorage.setItem(HISTORY_KEY, JSON.stringify({
+				messages: state.messages.slice(-40),
+				open: state.open
+			}));
+		} catch (e) { /* sessionStorage may be blocked or full */ }
+	}
+
+	function loadHistory() {
+		try {
+			var raw = sessionStorage.getItem(HISTORY_KEY);
+			if (!raw) return null;
+			var data = JSON.parse(raw);
+			if (!data || !Array.isArray(data.messages) || !data.messages.length) return null;
+			return data;
+		} catch (e) {
+			return null;
+		}
+	}
+
 	function el(tag, attrs, children) {
 		var node = document.createElement(tag);
 		if (attrs) {
@@ -86,8 +113,23 @@
 		document.body.appendChild(bubble);
 		document.body.appendChild(root);
 
-		addMessage('assistant', MomentumChat.greeting);
-		renderQuickReplies();
+		var restored = loadHistory();
+		if (restored) {
+			// Mid-conversation page navigation: replay the thread instead of
+			// greeting again, and reopen the panel if it was open (without
+			// stealing focus — no auto-keyboard on mobile).
+			state.messages = restored.messages;
+			state.messages.forEach(function (m) { renderMsgDom(m.role, m.content); });
+			if (restored.open) {
+				state.open = true;
+				root.setAttribute('aria-hidden', 'false');
+				root.classList.add('mchat-open');
+				bubble.classList.add('mchat-bubble-open');
+			}
+		} else {
+			addMessage('assistant', MomentumChat.greeting);
+			renderQuickReplies();
+		}
 		schedulePopout();
 	}
 
@@ -184,6 +226,7 @@
 		root.setAttribute('aria-hidden', state.open ? 'false' : 'true');
 		root.classList.toggle('mchat-open', state.open);
 		bubble.classList.toggle('mchat-bubble-open', state.open);
+		persist();
 		if (state.open) {
 			if (popoutEl) dismissPopout();
 			setTimeout(function () { input.focus(); }, 220);
@@ -230,12 +273,19 @@
 		return out;
 	}
 
-	function addMessage(role, text) {
-		state.messages.push({ role: role, content: text });
+	// Render one message bubble into the log (no state change) — used both for
+	// live messages and for replaying persisted history on page load.
+	function renderMsgDom(role, text) {
 		var msg = el('div', { class: 'mchat-msg mchat-msg-' + role });
 		msg.innerHTML = renderText(text);
 		log.appendChild(msg);
 		scrollLogToBottom();
+	}
+
+	function addMessage(role, text) {
+		state.messages.push({ role: role, content: text });
+		renderMsgDom(role, text);
+		persist();
 	}
 
 	// Renders like an assistant bubble but is NOT added to state.messages, so

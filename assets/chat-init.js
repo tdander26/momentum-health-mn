@@ -35,7 +35,8 @@
     panelTitle: 'Momentum Assistant',
     avatarUrl: '/favicon.svg', // gold "M" brand mark
 
-    // First message the assistant shows when the panel opens.
+    // First message the assistant shows when the panel opens. Swapped for an
+    // after-hours variant below when the office is closed.
     greeting:
       "Hi! I'm the Momentum assistant. I can answer questions about the practice " +
       "or book you a free 15-minute consult with Dr. Anderson or Dr. Payne. " +
@@ -57,8 +58,38 @@
     disclaimer: 'Automated assistant · not medical advice'
   };
 
+  // ---- After-hours greeting -------------------------------------------------
+  // Office hours (America/Chicago): Mon–Thu 10:00–1:30 and 3:00–6:00. Outside
+  // those windows the greeting sets expectations — the bot still books 24/7.
+  (function () {
+    function officeOpenNow() {
+      try {
+        var parts = new Intl.DateTimeFormat('en-US', {
+          timeZone: 'America/Chicago',
+          weekday: 'short', hour: 'numeric', minute: 'numeric', hour12: false
+        }).formatToParts(new Date());
+        var get = function (t) {
+          for (var i = 0; i < parts.length; i++) if (parts[i].type === t) return parts[i].value;
+          return '';
+        };
+        var openDays = { Mon: 1, Tue: 1, Wed: 1, Thu: 1 };
+        if (!openDays[get('weekday')]) return false;
+        var mins = (parseInt(get('hour'), 10) % 24) * 60 + parseInt(get('minute'), 10);
+        return (mins >= 600 && mins < 810) || (mins >= 900 && mins < 1080); // 10:00–1:30, 3:00–6:00
+      } catch (e) {
+        return true; // if in doubt, use the normal greeting
+      }
+    }
+    if (!officeOpenNow()) {
+      window.MomentumChat.greeting =
+        "Hi! The office is closed right now, but I'm here 24/7 — I can answer " +
+        "questions about the practice or book you a free 15-minute consult with " +
+        "Dr. Anderson or Dr. Payne. What can I help you with?";
+    }
+  })();
+
   // ---- Inject styles + widget ----------------------------------------------
-  var v = '20260701d'; // bump to bust cache after edits
+  var v = '20260702a'; // bump to bust cache after edits
   function mount() {
     if (window.__momentumChatMounted) return;
     window.__momentumChatMounted = true;
