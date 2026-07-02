@@ -260,8 +260,23 @@
 			.replace(/'/g, '&#39;');
 	}
 
+	// Defense-in-depth: the backend already strips [TOOL]/[OPTIONS] control
+	// directives, but strip them client-side too so a backend miss, a model
+	// quirk, or an OLD message replayed from sessionStorage can never render a
+	// raw "[OPTIONS]...[/OPTIONS]" tag in a bubble. Handles paired blocks plus
+	// any stray/unclosed tag fragments; case-insensitive.
+	function stripDirectives(text) {
+		return String(text)
+			.replace(/\[OPTIONS\][\s\S]*?\[\/OPTIONS\]/gi, '')
+			.replace(/\[TOOL\][\s\S]*?\[\/TOOL\]/gi, '')
+			.replace(/\[\/?OPTIONS\]/gi, '')
+			.replace(/\[\/?TOOL\]/gi, '')
+			.replace(/[ \t]+\n/g, '\n')
+			.trim();
+	}
+
 	function renderText(text) {
-		var out = escapeHtml(text);
+		var out = escapeHtml(stripDirectives(text));
 		// Markdown links: [label](url)
 		out = out.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, function (_, label, url) {
 			return '<a href="' + url + '" target="_blank" rel="noopener">' + label + '</a>';
