@@ -238,6 +238,30 @@
 		scrollLogToBottom();
 	}
 
+	// Renders like an assistant bubble but is NOT added to state.messages, so
+	// error text never pollutes the AI-visible history or saved transcripts.
+	function addNotice(text) {
+		var msg = el('div', { class: 'mchat-msg mchat-msg-assistant' });
+		msg.innerHTML = renderText(text);
+		log.appendChild(msg);
+		scrollLogToBottom();
+	}
+
+	// One-tap retry chip shown under an error notice. Runs onRetry and removes
+	// itself; reuses the quick-reply styling.
+	function showRetry(onRetry) {
+		var wrap = el('div', { class: 'mchat-quick-replies' });
+		var btn = el('button', { type: 'button', class: 'mchat-quick-reply', text: 'Try again' });
+		btn.addEventListener('click', function () {
+			if (state.busy) return;
+			if (wrap.parentNode) wrap.parentNode.removeChild(wrap);
+			onRetry();
+		});
+		wrap.appendChild(btn);
+		log.appendChild(wrap);
+		scrollLogToBottom();
+	}
+
 	function showTyping() {
 		if (typingEl) return;
 		typingEl = el('div', { class: 'mchat-typing', 'aria-label': 'Assistant is typing' });
@@ -322,6 +346,12 @@
 		if (!text || state.busy) return;
 		input.value = '';
 		addMessage('user', text);
+		deliver();
+	}
+
+	// Sends the current thread to the assistant. Retry-safe: the user's message
+	// is already in state.messages, so the "Try again" chip just calls this again.
+	function deliver() {
 		setBusy(true);
 		showTyping();
 
@@ -335,7 +365,8 @@
 				hideTyping();
 				data = data || {};
 				if (data.code && data.message) {
-					addMessage('assistant', data.message + ' If this keeps happening, please call ' + (MomentumChat.phone || 'the office') + '.');
+					addNotice(data.message + ' If this keeps happening, please call ' + (MomentumChat.phone || 'the office') + '.');
+					showRetry(deliver);
 					setBusy(false);
 					return;
 				}
@@ -351,7 +382,8 @@
 					fetchSlots();
 				} else {
 					if (!data.reply && !(data.options && data.options.length)) {
-						addMessage('assistant', "Sorry, I didn't catch a response. Could you try again? If this keeps happening, please call " + (MomentumChat.phone || 'the office') + '.');
+						addNotice("Sorry, I didn't catch a response. If this keeps happening, please call " + (MomentumChat.phone || 'the office') + '.');
+						showRetry(deliver);
 					}
 					setBusy(false);
 				}
@@ -359,7 +391,8 @@
 			.catch(function (err) {
 				hideTyping();
 				if (window.console && console.error) console.error('Momentum Chat fetch error:', err);
-				addMessage('assistant', "I'm having trouble connecting right now. Please try again, or call " + (MomentumChat.phone || 'the office') + '.');
+				addNotice("I'm having trouble connecting right now. You can try again, or call " + (MomentumChat.phone || 'the office') + '.');
+				showRetry(deliver);
 				setBusy(false);
 			});
 	}
@@ -378,7 +411,8 @@
 				hideTyping();
 				if (moreBtn && moreBtn.parentNode) moreBtn.parentNode.removeChild(moreBtn);
 				if (data.code && data.message) {
-					addMessage('assistant', "I can't pull up the calendar right now (" + data.message + "). Please call the office at " + (MomentumChat.phone || 'the number on our site') + " to book.");
+					addNotice("I can't pull up the calendar right now (" + data.message + "). You can try again, or call the office at " + (MomentumChat.phone || 'the number on our site') + ".");
+					showRetry(function () { setBusy(true); showTyping(); fetchSlots(startsAfter); });
 				} else if (data.slots && data.slots.length) {
 					if (!startsAfter) track('slots_shown');
 					addSlotButtons(data.slots, !!data.has_more);
@@ -396,7 +430,8 @@
 			.catch(function () {
 				hideTyping();
 				if (moreBtn && moreBtn.parentNode) moreBtn.parentNode.removeChild(moreBtn);
-				addMessage('assistant', "I'm having trouble reaching the calendar. Please call the office at " + (MomentumChat.phone || 'the number on our site') + ".");
+				addNotice("I'm having trouble reaching the calendar. You can try again, or call the office at " + (MomentumChat.phone || 'the number on our site') + ".");
+				showRetry(function () { setBusy(true); showTyping(); fetchSlots(startsAfter); });
 				setBusy(false);
 			});
 	}
