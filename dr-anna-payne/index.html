@@ -315,6 +315,16 @@
       section { padding: 64px 24px; }
     }
   </style>
+  <!-- GA4 + Google Ads (attribution fix in /assets/track.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z8GY6PR3WM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Z8GY6PR3WM');
+    gtag('config', 'AW-819343988');
+  </script>
+  <script src="/assets/track.js" defer></script>
 </head>
 <body>
 
@@ -364,7 +374,7 @@
       </div>
     </div>
     <div class="hero-photo-area">
-      <img class="hero-photo-img" src="/images/dr-anna-payne.jpg" alt="Dr. Anna Payne, DC" />
+      <img class="hero-photo-img" src="/images/dr-anna-payne.jpg" alt="Dr. Anna Payne, DC" width="540" height="630" />
     </div>
   </div>
 </section>
