@@ -189,6 +189,22 @@
     }
     .step p { font-size: 0.85rem; color: var(--muted); line-height: 1.75; }
 
+    /* ─── VIDEO WALKTHROUGHS ─── */
+    .watch { background: var(--black); padding: 80px 24px; border-top: 1px solid var(--border); }
+    .video-feature { max-width: 820px; margin: 0 auto; }
+    .video-frame {
+      position: relative; width: 100%; padding-top: 56.25%;
+      border-radius: 14px; overflow: hidden; background: #000;
+      border: 1px solid var(--border-gold);
+    }
+    .video-frame iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; display: block; }
+    .video-label { margin-top: 14px; font-size: 0.85rem; color: var(--muted); line-height: 1.7; text-align: center; }
+    .video-label strong { display: block; color: var(--white); font-weight: 600; font-size: 0.95rem; margin-bottom: 3px; }
+    .video-note { max-width: 820px; margin: 46px auto 0; text-align: center; color: var(--muted); font-size: 0.95rem; line-height: 1.75; }
+    .video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; max-width: 900px; margin: 22px auto 0; }
+    .video-grid .video-label { font-size: 0.8rem; }
+    .video-grid .video-label strong { font-size: 0.87rem; }
+
     /* ─── WHY DIFFERENT ─── */
     .why { background: var(--charcoal); padding: 80px 24px; border-top: 1px solid var(--border); }
     .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 760px; margin: 0 auto; }
@@ -314,6 +330,7 @@
     @media (max-width: 720px) {
       .symptom-grid { grid-template-columns: 1fr 1fr; }
       .steps { grid-template-columns: 1fr; }
+      .video-grid { grid-template-columns: 1fr; }
       .why-grid { grid-template-columns: 1fr; }
       .reviews-grid { grid-template-columns: 1fr; }
       .doctor-inner { grid-template-columns: 1fr; text-align: center; }
@@ -408,6 +425,13 @@
         <p>Every marker gets read against functional ranges and against each other. Patterns matter more than any single number. Then we sit down and walk you through all of it, so you see what is off, why it is off, and the plan.</p>
       </div>
     </div>
+
+    <div class="video-feature" style="margin-top: 44px;">
+      <div class="video-frame">
+        <iframe src="https://www.youtube-nocookie.com/embed/QEn8FUQWmBo?rel=0" title="Blood Work Menu Walkthrough" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <div class="video-label"><strong>Blood Work Menu Walkthrough</strong>A tour of what is actually on the panel, and why each piece earns its spot. About 8 minutes.</div>
+    </div>
   </div>
 </section>
 
@@ -442,6 +466,47 @@
         <span class="step-emoji">3️⃣</span>
         <h3>Conversion</h3>
         <p>Plenty of T4 gets made, but it never converts to the active T3 your cells need. Free T3 and reverse T3 tell that story. TSH will not. <a href="/thyroid/" style="color:var(--gold); font-weight:600;">More on thyroid care &rarr;</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── VIDEO WALKTHROUGHS ─── -->
+<section class="watch">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">See it for yourself</span>
+      <h2 class="section-heading">Watch It Happen on Real Blood Work</h2>
+      <p>Dr. Anderson recorded these walkthroughs on actual panels. No theory, no slides. Just the numbers, what they mean sitting next to each other, and the pattern that only shows up once you read the whole picture.</p>
+    </div>
+
+    <div class="video-feature">
+      <div class="video-frame">
+        <iframe src="https://www.youtube-nocookie.com/embed/shLMsKpLng0?rel=0" title="Basic Blood Work Overview" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <div class="video-label"><strong>Basic Blood Work Overview</strong>Start here. A full read of a standard panel, marker by marker. About 11 minutes.</div>
+    </div>
+
+    <p class="video-note">And here are those three thyroid patterns again, this time on real labs.</p>
+
+    <div class="video-grid">
+      <div>
+        <div class="video-frame">
+          <iframe src="https://www.youtube-nocookie.com/embed/0nRuKC5DI3E?rel=0" title="Thyroid Category 1 Pattern Example" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="video-label"><strong>Thyroid Category 1 Pattern</strong>About 4 minutes.</div>
+      </div>
+      <div>
+        <div class="video-frame">
+          <iframe src="https://www.youtube-nocookie.com/embed/4yU8-iPI994?rel=0" title="Thyroid Category 2 Pattern Example" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="video-label"><strong>Thyroid Category 2 Pattern</strong>About 3 minutes.</div>
+      </div>
+      <div>
+        <div class="video-frame">
+          <iframe src="https://www.youtube-nocookie.com/embed/rAwuRBKI9nk?rel=0" title="Category 4 Thyroid Blood Work Pattern Example" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="video-label"><strong>Thyroid Category 4 Pattern</strong>About 2 minutes.</div>
       </div>
     </div>
   </div>
@@ -605,6 +670,56 @@
       "audience": { "@type": "PatientsAudience" },
       "about": { "@id": "https://momentumhealthwellnessmn.com/#clinic" },
       "isPartOf": { "@type": "WebSite", "name": "Momentum Health & Wellness Minnesota", "url": "https://momentumhealthwellnessmn.com/" }
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Basic Blood Work Overview",
+      "description": "Dr. Todd Anderson reads a standard blood panel marker by marker, showing how each value is judged against a functional range instead of only a disease cutoff.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/shLMsKpLng0/hqdefault.jpg",
+      "uploadDate": "2021-10-12T18:49:36-07:00",
+      "duration": "PT10M45S",
+      "embedUrl": "https://www.youtube.com/embed/shLMsKpLng0",
+      "contentUrl": "https://www.youtube.com/watch?v=shLMsKpLng0"
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Blood Work Menu Walkthrough",
+      "description": "A tour of every marker included in the comprehensive blood panel and the reason each one is on the list.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/QEn8FUQWmBo/hqdefault.jpg",
+      "uploadDate": "2024-05-19T16:40:21-07:00",
+      "duration": "PT8M5S",
+      "embedUrl": "https://www.youtube.com/embed/QEn8FUQWmBo",
+      "contentUrl": "https://www.youtube.com/watch?v=QEn8FUQWmBo"
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Thyroid Category 1 Pattern Example",
+      "description": "A real blood work example of a pituitary driven hypothyroid pattern, where the thyroid gland itself is not the problem.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/0nRuKC5DI3E/hqdefault.jpg",
+      "uploadDate": "2021-10-12T18:49:28-07:00",
+      "duration": "PT3M48S",
+      "embedUrl": "https://www.youtube.com/embed/0nRuKC5DI3E",
+      "contentUrl": "https://www.youtube.com/watch?v=0nRuKC5DI3E"
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Thyroid Category 2 Pattern Example",
+      "description": "A real blood work example walking through a second distinct thyroid pattern and the markers that reveal it.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/4yU8-iPI994/hqdefault.jpg",
+      "uploadDate": "2021-10-12T18:49:24-07:00",
+      "duration": "PT3M",
+      "embedUrl": "https://www.youtube.com/embed/4yU8-iPI994",
+      "contentUrl": "https://www.youtube.com/watch?v=4yU8-iPI994"
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Category 4 Thyroid Blood Work Pattern Example",
+      "description": "A real blood work example of a fourth thyroid pattern and how it differs from the earlier categories on paper.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/rAwuRBKI9nk/hqdefault.jpg",
+      "uploadDate": "2021-10-12T18:49:20-07:00",
+      "duration": "PT2M11S",
+      "embedUrl": "https://www.youtube.com/embed/rAwuRBKI9nk",
+      "contentUrl": "https://www.youtube.com/watch?v=rAwuRBKI9nk"
     },
     {
       "@type": "BreadcrumbList",

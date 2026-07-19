@@ -595,3 +595,9 @@
 	}
 	.mchat-send { height: 42px; min-width: 56px; padding: 0 14px; font-size: 14px; }
 }
+
+/* Landing pages show a full-width sticky CTA bar at <=720px. Lift the bubble
+   above it so the bubble never covers the CTA text (and vice versa). */
+@media (max-width: 720px) {
+	body:has(.sticky-cta) .mchat-bubble { bottom: 68px; }
+}
