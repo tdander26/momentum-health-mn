@@ -176,6 +176,7 @@
       font-style: italic;
     }
     .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 860px; margin: 0 auto; }
+    .steps.steps-2 { grid-template-columns: repeat(2, 1fr); max-width: 660px; }
     .step {
       background: var(--card); border: 1px solid var(--border);
       border-top: 3px solid var(--gold);
@@ -191,7 +192,6 @@
     .step p { font-size: 0.85rem; color: var(--muted); line-height: 1.75; }
 
     /* ─── PRICE ─── */
-    .pricing { background: var(--charcoal); padding: 80px 24px; border-top: 1px solid var(--border); }
     .price-compare {
       display: grid; grid-template-columns: 1fr auto 1fr;
       max-width: 720px; margin: 0 auto;
@@ -369,7 +369,10 @@
     /* ─── RESPONSIVE ─── */
     @media (max-width: 720px) {
       .symptom-grid { grid-template-columns: 1fr 1fr; }
-      .steps { grid-template-columns: 1fr; }
+      .steps, .steps.steps-2 { grid-template-columns: 1fr; }
+      .symptoms, .approach, .why, .watch, .faq, .schedule { padding: 52px 20px; }
+      .section-header { margin-bottom: 32px; }
+      .hero { padding: 56px 20px 60px; }
       .price-compare { grid-template-columns: 1fr; }
       .price-vs {
         border-left: none; border-right: none;
@@ -464,45 +467,9 @@
 <section class="approach">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Optimal function, not "not yet sick"</span>
-      <h2 class="section-heading">There Is a Big Gap Between "Not Diseased" and "Healthy"</h2>
-      <p>A lab range is built from the average of everyone who walked through the door, and most of those people are not thriving. A functional range is tighter. It is the window where people actually feel good. When a marker drifts out of that window but has not hit the disease cutoff yet, that is the sweet spot. That is when it is easiest to turn around.</p>
-    </div>
-
-    <div class="steps">
-      <div class="step">
-        <span class="step-emoji">🩸</span>
-        <h3>The Panel</h3>
-        <p>Over 60 markers in one draw: complete blood count, full metabolic and lipid panels, a complete thyroid picture, iron studies, vitamin D, inflammation markers, blood sugar and insulin, and an autoimmune screen. Not the four-marker checkup.</p>
-      </div>
-      <div class="step">
-        <span class="step-emoji">💵</span>
-        <h3>The Price</h3>
-        <p><strong style="color:#fff;">$216.30</strong> plus an $8 draw fee. That is exactly what the lab charges us, passed straight through with no markup on it. Retail for this same list runs $750 and up.</p>
-      </div>
-      <div class="step">
-        <span class="step-emoji">🧠</span>
-        <h3>The Analysis</h3>
-        <p>Every marker gets read against functional ranges and against each other. Patterns matter more than any single number. Then we sit down and walk you through all of it, so you see what is off, why it is off, and the plan.</p>
-      </div>
-    </div>
-
-    <div class="video-feature" style="margin-top: 44px;">
-      <div class="video-frame">
-        <iframe src="https://www.youtube-nocookie.com/embed/QEn8FUQWmBo?rel=0" title="Blood Work Menu Walkthrough" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
-      <div class="video-label"><strong>Blood Work Menu Walkthrough</strong>A tour of what is actually on the panel, and why each piece earns its spot. About 8 minutes.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── PRICE ─── -->
-<section class="pricing">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">What it costs</span>
-      <h2 class="section-heading">The Same Panel, About a Quarter of&nbsp;the&nbsp;Price</h2>
-      <p>We do not mark up lab work. You pay what the lab charges us, and you see the number before anything gets drawn.</p>
+      <span class="section-label">What you get, and what it costs</span>
+      <h2 class="section-heading">60+ Markers in One Draw. $216.30.</h2>
+      <p>Standard ranges are built from the average patient, and most of them are not thriving. A functional range is tighter. It is where people actually feel good, and it is where we read your results.</p>
     </div>
 
     <div class="price-compare">
@@ -520,8 +487,33 @@
     </div>
 
     <p class="price-save">Same markers, same lab, same blood. <strong>You keep more than $530.</strong> And there is no surprise bill three weeks later, because the point is getting you answers, not making money on a blood draw. HSA and FSA both work here.</p>
+
+    <div style="text-align:center; margin-top: 28px;">
+      <a href="#schedule" class="btn btn-gold">See Available Times</a>
+    </div>
+
+    <div class="steps steps-2" style="margin-top: 44px;">
+      <div class="step">
+        <span class="step-emoji">🩸</span>
+        <h3>The Panel</h3>
+        <p>Over 60 markers in one draw: complete blood count, full metabolic and lipid panels, a complete thyroid picture, iron studies, vitamin D, inflammation markers, blood sugar and insulin, and an autoimmune screen. Not the four-marker checkup.</p>
+      </div>
+      <div class="step">
+        <span class="step-emoji">🧠</span>
+        <h3>The Analysis</h3>
+        <p>Every marker gets read against functional ranges and against each other. Patterns matter more than any single number. Then we sit down and walk you through all of it, so you see what is off, why it is off, and the plan.</p>
+      </div>
+    </div>
+
+    <div class="video-feature" style="margin-top: 44px;">
+      <div class="video-frame">
+        <iframe src="https://www.youtube-nocookie.com/embed/QEn8FUQWmBo?rel=0" title="Blood Work Menu Walkthrough" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <div class="video-label"><strong>Blood Work Menu Walkthrough</strong>A tour of what is actually on the panel, and why each piece earns its spot. About 8 minutes.</div>
+    </div>
   </div>
 </section>
+
 
 <!-- ─── PROOF OF DEPTH ─── -->
 <section class="why">
@@ -599,6 +591,35 @@
     </div>
 
     <p class="video-note">Sometimes a pattern points somewhere blood work alone cannot follow: the gut, hormones, mold, histamine. That is when we add a specialty test instead of guessing. <a href="/specialty-testing/" style="color:var(--gold); font-weight:600;">Here is where we go deeper &rarr;</a></p>
+  </div>
+</section>
+
+
+<!-- ─── SCHEDULE ─── -->
+<section class="schedule" id="schedule">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Ready to See What's Actually Going On?</span>
+      <h2 class="section-heading">Choose Your Next Step</h2>
+      <p>Ready to go? Start as a new patient and we will get your panel ordered. Want to talk it through first? Grab a free phone consult.</p>
+      <div class="gold-divider center" style="margin-top: 20px;"></div>
+    </div>
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-bottom: 40px;">
+      <a href="/start" class="btn btn-gold" style="font-size:0.95rem;">🩸 Start as a New Patient</a>
+      <a href="#tidycal" class="btn btn-outline" style="font-size:0.95rem;">📞 Free Phone Consult First</a>
+    </div>
+    <div class="tidycal-wrap" id="tidycal">
+      <!-- Momentum booking widget (intro call). Loader script is before </body>. -->
+      <div class="booking-inline" data-url="https://momentum-booking.web.app/?type=intro-call" style="min-width:320px;height:640px;"></div>
+      <div class="schedule-alt">
+        <p>Prefer to reach out directly?</p>
+        <p>
+          📱 <a href="sms:+17637609176&body=I'd like to talk about getting my blood work done.">Text (763) 760-9176</a>
+          &nbsp;&middot;&nbsp;
+          ✉️ <a href="mailto:office@momentumhealthwellnessmn.com">office@momentumhealthwellnessmn.com</a>
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -691,33 +712,6 @@
   </div>
 </section>
 
-<!-- ─── SCHEDULE ─── -->
-<section class="schedule" id="schedule">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">Ready to See What's Actually Going On?</span>
-      <h2 class="section-heading">Choose Your Next Step</h2>
-      <p>Ready to go? Start as a new patient and we will get your panel ordered. Want to talk it through first? Grab a free phone consult.</p>
-      <div class="gold-divider center" style="margin-top: 20px;"></div>
-    </div>
-    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-bottom: 40px;">
-      <a href="/start" class="btn btn-gold" style="font-size:0.95rem;">🩸 Start as a New Patient</a>
-      <a href="#tidycal" class="btn btn-outline" style="font-size:0.95rem;">📞 Free Phone Consult First</a>
-    </div>
-    <div class="tidycal-wrap" id="tidycal">
-      <!-- Momentum booking widget (intro call). Loader script is before </body>. -->
-      <div class="booking-inline" data-url="https://momentum-booking.web.app/?type=intro-call" style="min-width:320px;height:640px;"></div>
-      <div class="schedule-alt">
-        <p>Prefer to reach out directly?</p>
-        <p>
-          📱 <a href="sms:+17637609176&body=I'd like to talk about getting my blood work done.">Text (763) 760-9176</a>
-          &nbsp;&middot;&nbsp;
-          ✉️ <a href="mailto:office@momentumhealthwellnessmn.com">office@momentumhealthwellnessmn.com</a>
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <footer>
   <div class="footer-logo-main">Momentum Health & Wellness Minnesota</div>
