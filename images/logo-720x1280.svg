@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1280" viewBox="0 0 720 1280">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="30%" r="72%">
+      <stop offset="0%"   stop-color="#C9A84C" stop-opacity="0.16"/>
+      <stop offset="55%"  stop-color="#C9A84C" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#C9A84C" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <style>
+    .serif { font-family: 'Playfair Display', Didot, Georgia, 'Times New Roman', serif; }
+    .sans  { font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; }
+  </style>
+
+  <rect width="720" height="1280" fill="#0d0d0d"/>
+  <rect width="720" height="1280" fill="url(#glow)"/>
+  <rect x="26" y="26" width="668" height="1228" fill="none" stroke="#C9A84C" stroke-opacity="0.32" stroke-width="1.5"/>
+
+  <!-- Monogram badge -->
+  <rect x="296" y="350" width="128" height="128" rx="28" fill="#0d0d0d" stroke="#C9A84C" stroke-width="3.5"/>
+  <text class="serif" x="360" y="416" text-anchor="middle" dominant-baseline="central"
+        font-size="84" font-weight="500" fill="#C9A84C">M</text>
+
+  <!-- Eyebrow -->
+  <text class="sans" x="360" y="580" text-anchor="middle"
+        font-size="17" font-weight="500" letter-spacing="4.6" fill="#A07830">FUNCTIONAL MEDICINE · CHIROPRACTIC</text>
+
+  <!-- Wordmark -->
+  <text class="serif" x="360" y="716" text-anchor="middle"
+        font-size="82" font-weight="700" fill="#C9A84C">Momentum</text>
+  <text class="serif" x="360" y="790" text-anchor="middle"
+        font-size="48" font-weight="400" letter-spacing="1.5" fill="#E8C97A">Health &amp; Wellness</text>
+
+  <line x1="315" y1="834" x2="405" y2="834" stroke="#C9A84C" stroke-width="2"/>
+
+  <text class="sans" x="360" y="886" text-anchor="middle"
+        font-size="27" font-weight="500" letter-spacing="8" fill="#ffffff">MINNESOTA</text>
+
+  <!-- Footer block -->
+  <line x1="200" y1="1064" x2="520" y2="1064" stroke="#C9A84C" stroke-opacity="0.28" stroke-width="1"/>
+
+  <text class="sans" x="360" y="1124" text-anchor="middle"
+        font-size="20" font-weight="500" letter-spacing="3.4" fill="#C9A84C">ELK RIVER, MINNESOTA</text>
+  <text class="serif" x="360" y="1172" text-anchor="middle"
+        font-size="30" font-weight="600" fill="#ffffff">(763) 760-9176</text>
+  <text class="sans" x="360" y="1212" text-anchor="middle"
+        font-size="18" font-weight="400" letter-spacing="1" fill="#A07830">momentumhealthwellnessmn.com</text>
+</svg>
