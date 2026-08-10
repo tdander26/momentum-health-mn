@@ -216,6 +216,19 @@
       background: var(--card); border-radius: 12px; padding: 40px;
       border: 1px solid var(--border-gold);
     }
+    /* Widget loading state: the embed iframe is transparent until the booking
+       app paints its own background, so this text shows through from the
+       container, then disappears under the widget. The iframe is lifted with
+       position/z-index so it paints ABOVE the absolutely-positioned ::before
+       once loaded (positioned elements paint over earlier positioned ones). */
+    .booking-inline { position: relative; }
+    .booking-inline::before {
+      content: 'Loading available times…';
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted); font-size: 0.9rem;
+    }
+    .booking-inline iframe { position: relative; z-index: 1; }
     .schedule-alt {
       text-align: center; margin-top: 32px; padding-top: 28px;
       border-top: 1px solid var(--border);
@@ -367,13 +380,13 @@
       Conventional medicine is great at emergencies — but if you've been told "your labs look normal" while you still feel terrible, there's a better way. Let's find the actual driver of your dysfunction.
     </p>
     <div class="hero-ctas">
-      <a href="#schedule" class="btn btn-gold">Schedule My Free Consultation</a>
+      <a href="#schedule" class="btn btn-gold booking-popup" data-url="https://momentum-booking.web.app/?type=intro-call&provider=mbr_todd">Schedule My Free Consultation</a>
       <a href="sms:+17637609176&body=I'd like to schedule a free consultation." class="btn btn-outline">Text Us Instead</a>
     </div>
     <div class="hero-trust">
       <span>No obligation</span>
       <span>100% free phone call</span>
-      <span>Root-cause approach</span>
+      <span>With Dr. Todd Anderson, DC</span>
       <span>Elk River, MN</span>
     </div>
   </div>
@@ -405,8 +418,32 @@
       <div class="symptom-item"><span class="symptom-icon">❓</span><span class="symptom-name">"Normal Labs" — Still Feel Terrible</span></div>
     </div>
     <div class="symptoms-cta">
-      <a href="#schedule" class="btn btn-gold">Yes — I Want Real Answers</a>
+      <a href="#schedule" class="btn btn-gold booking-popup" data-url="https://momentum-booking.web.app/?type=intro-call&provider=mbr_todd">Yes — I Want Real Answers</a>
       <p class="symptoms-note">Free 15-minute phone consultation. No pressure, no commitment.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SCHEDULE ─── -->
+<section class="schedule" id="schedule">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Free 15-Minute Phone Consult</span>
+      <h2 class="section-heading">Book Your Free Phone Consult</h2>
+      <p>Pick a time that works and you'll get instant confirmation with the call details. 15 minutes with the doctor, no obligation, straight answers.</p>
+      <div class="gold-divider center" style="margin-top: 20px;"></div>
+    </div>
+    <div class="tidycal-wrap" id="tidycal">
+      <!-- Momentum booking widget (intro call, Dr. Todd preselected). Loader script is before </body>. -->
+      <div class="booking-inline" data-url="https://momentum-booking.web.app/?type=intro-call&provider=mbr_todd" style="min-width:320px;height:640px;"></div>
+      <div class="schedule-alt">
+        <p>Already sure you're ready to start? <a href="https://momentum-health.janeapp.com/#/discipline/1/treatment/1" target="_blank" rel="noopener">Book your first appointment directly</a>.</p>
+        <p>
+          📱 <a href="sms:+17637609176&body=I'd like to schedule a free consultation.">Text (763) 760-9176</a>
+          &nbsp;·&nbsp;
+          ✉️ <a href="mailto:office@momentumhealthwellnessmn.com">office@momentumhealthwellnessmn.com</a>
+        </p>
+      </div>
     </div>
   </div>
 </section>
@@ -628,34 +665,6 @@
   </div>
 </section>
 
-<!-- ─── SCHEDULE ─── -->
-<section class="schedule" id="schedule">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">Ready to Get Started?</span>
-      <h2 class="section-heading">Choose Your Next Step</h2>
-      <p>Not sure yet? Book a free phone call. Already ready? Schedule your first appointment directly.</p>
-      <div class="gold-divider center" style="margin-top: 20px;"></div>
-    </div>
-    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-bottom: 40px;">
-      <a href="https://momentum-health.janeapp.com/#/discipline/1/treatment/1" target="_blank" rel="noopener" class="btn btn-gold" style="font-size:0.95rem;">📅 Book First Appointment</a>
-      <a href="#tidycal" class="btn btn-outline" style="font-size:0.95rem;">📞 Free Phone Consult First</a>
-    </div>
-    <div class="tidycal-wrap" id="tidycal">
-      <!-- Momentum booking widget (intro call). Loader script is before </body>. -->
-      <div class="booking-inline" data-url="https://momentum-booking.web.app/?type=intro-call" style="min-width:320px;height:640px;"></div>
-      <div class="schedule-alt">
-        <p>Prefer to reach out directly?</p>
-        <p>
-          📱 <a href="sms:+17637609176&body=I'd like to schedule a free consultation.">Text (763) 760-9176</a>
-          &nbsp;·&nbsp;
-          ✉️ <a href="mailto:office@momentumhealthwellnessmn.com">office@momentumhealthwellnessmn.com</a>
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ─── FOOTER ─── -->
 <footer>
   <div class="footer-logo-main">Momentum Health & Wellness Minnesota</div>
@@ -672,7 +681,7 @@
 
 <!-- ─── STICKY MOBILE CTA ─── -->
 <div class="sticky-cta">
-  <a href="#schedule">📅 Schedule My Free Consultation</a>
+  <a href="#schedule" class="booking-popup" data-url="https://momentum-booking.web.app/?type=intro-call&provider=mbr_todd">📅 Schedule My Free Consultation</a>
 </div>
 
 <script>
