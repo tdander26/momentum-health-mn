@@ -160,6 +160,21 @@
       .blog-grid-section { padding: 44px 20px; }
       .blog-cta-line { padding: 4px 20px 48px; }
     }
+  
+    /* featured card */
+    .featured-card { max-width: 900px; margin: 0 auto 26px; padding: 40px 44px; position: relative; }
+    .featured-card h2 { font-size: 1.65rem; }
+    .featured-card .excerpt { font-size: 0.95rem; }
+    .featured-tag {
+      position: absolute; top: 0; right: 24px; background: var(--gold); color: var(--black);
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+      padding: 5px 12px; border-radius: 0 0 6px 6px;
+    }
+    .blog-grid { max-width: 900px; }
+    @media (max-width: 720px) {
+      .featured-card { padding: 30px 22px; }
+      .featured-card h2 { font-size: 1.3rem; }
+    }
   </style>
 </head>
 <body>
@@ -186,6 +201,17 @@
 <!-- ─── BLOG GRID ─── -->
 <section class="blog-grid-section">
   <div class="container" style="max-width:1100px;">
+    <a class="blog-card featured-card" href="/blog/pmos-formerly-pcos-blood-sugar/">
+      <div class="featured-tag">Featured</div>
+      <span class="section-label">Hormones &amp; Metabolism</span>
+      <h2>PMOS (Formerly PCOS): It's Not Just a Hormone Problem. It's a Blood Sugar Story.</h2>
+      <p class="excerpt">If you haven't heard: what we've long called PCOS (Polycystic Ovary Syndrome) was recently renamed PMOS, Polyendocrine Metabolic Ovarian Syndrome. Same condition, same diagnosis, just a name that finally reflects everything actually going on in your body.</p>
+      <div class="card-byline">
+        <img src="/images/dr-anna-payne-card.jpg" alt="Dr. Anna Payne, DC" />
+        <span>Dr. Anna Payne, DC &middot; August 26, 2026 &middot; 4 min read</span>
+      </div>
+    </a>
+
     <div class="blog-grid">
 
       <a class="blog-card" href="/blog/hot-flashes-natural-relief/">
@@ -208,15 +234,6 @@
         </div>
       </a>
 
-      <a class="blog-card" href="/blog/pmos-formerly-pcos-blood-sugar/">
-        <span class="section-label">Hormones &amp; Metabolism</span>
-        <h2>PMOS (Formerly PCOS): It's Not Just a Hormone Problem. It's a Blood Sugar Story.</h2>
-        <p class="excerpt">If you haven't heard: what we've long called PCOS (Polycystic Ovary Syndrome) was recently renamed PMOS, Polyendocrine Metabolic Ovarian Syndrome.</p>
-        <div class="card-byline">
-          <img src="/images/dr-anna-payne-card.jpg" alt="Dr. Anna Payne, DC" />
-          <span>Dr. Anna Payne, DC &middot; August 26, 2026 &middot; 4 min read</span>
-        </div>
-      </a>
 
     </div>
   </div>

@@ -139,7 +139,7 @@
 
     /* ─── ARTICLE BODY ─── */
     .article-body-section { background: var(--charcoal); padding: 60px 24px; border-top: 1px solid var(--border); }
-    .article-body { max-width: 700px; margin: 0 auto; font-size: 1.03rem; line-height: 1.9; color: #cfcfcf; }
+    .article-body { max-width: 700px; margin: 0 auto; font-size: 1.05rem; line-height: 1.9; color: #d9d9d9; }
     .article-body p { margin-bottom: 1.5em; }
     .article-body h2 {
       font-family: 'Playfair Display', serif; color: var(--white);
@@ -210,9 +210,26 @@
     @media (max-width: 480px) {
       .byline { font-size: 0.78rem; gap: 7px; }
     }
+  
+    /* editorial elevation */
+    .article-body > p:first-of-type::first-letter {
+      font-family: 'Playfair Display', serif; font-weight: 700; color: var(--gold);
+      font-size: 3.4em; line-height: 0.82; float: left; padding: 6px 12px 0 0;
+    }
+    .pullquote {
+      margin: 46px 0; padding: 4px 0 4px 26px; border-left: 3px solid var(--gold);
+      font-family: 'Playfair Display', serif; font-style: italic; font-weight: 600;
+      font-size: 1.42rem; line-height: 1.5; color: var(--white);
+    }
+    #readbar { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: var(--gold); z-index: 300; }
+    @media (max-width: 720px) {
+      .pullquote { font-size: 1.18rem; margin: 34px 0; padding-left: 18px; }
+      .article-body > p:first-of-type::first-letter { font-size: 2.9em; }
+    }
   </style>
 </head>
 <body>
+<div id="readbar"></div>
 
 <nav>
   <div class="nav-inner">
@@ -256,6 +273,8 @@
       <p>Since adrenal health plays such a central role in this transition, easing the burden on these glands is a great place to start. Choose a stress-reduction practice you genuinely enjoy and commit to it consistently: slow intentional breathing, dancing, singing, walking outdoors, or simply carving out quiet time for yourself. The key isn't finding the "perfect" technique; it's finding one you'll actually stick with. Prioritizing sleep is also crucial during this time, recovery is important for managing cortisol as well as being able to take on hormonal shifts. Aim for 8-9 hours of good quality sleep during this time.</p>
 
       <div class="gold-divider small"></div>
+      <blockquote class="pullquote">Rather than viewing these symptoms as simply something to endure, think of them as your body's way of asking for more support.</blockquote>
+
       <h2>Balancing Blood Sugar</h2>
       <p>Blood sugar swings place additional stress on the adrenal glands, so eating balanced meals throughout the day can make a real difference. Focus on high quality protein and healthy fats at each meal to keep energy and hormones steadier. Limiting refined sugars, and avoiding coffee on an empty stomach, can also help take some pressure off your adrenals during this transition as well.</p>
 
@@ -356,5 +375,11 @@
 </script>
 
   <script src="/assets/chat-init.js" defer></script>
+<script>
+(function(){var b=document.getElementById('readbar');if(!b)return;
+var t=function(){var d=document.documentElement;var m=d.scrollHeight-window.innerHeight;
+b.style.width=(m>0?(window.scrollY/m*100):0)+'%';};
+window.addEventListener('scroll',t,{passive:true});t();})();
+</script>
 </body>
 </html>
