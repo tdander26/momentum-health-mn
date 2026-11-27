@@ -239,19 +239,52 @@
     }
   </style>
   <link rel="stylesheet" href="/assets/icons.css" />
+  <link rel="stylesheet" href="/assets/site.css?v=20261127c" />
 </head>
 <body>
 <div id="readbar"></div>
 
-<nav>
-  <div class="nav-inner">
-    <a href="https://momentumhealthwellnessmn.com" class="nav-logo">
-      <span class="nav-logo-main">Momentum Health & Wellness MN</span>
-      <span class="nav-logo-sub">Elk River, Minnesota</span>
+<!-- site-header -->
+<header class="mh-header" id="mh-header">
+  <div class="mh-header-inner">
+    <a href="/" class="mh-logo" aria-label="Momentum Health &amp; Wellness, home">
+      <span class="mh-mark" aria-hidden="true">M</span>
+      <span class="mh-logo-text">
+        <span class="mh-logo-name">Momentum Health &amp; Wellness</span>
+        <span class="mh-logo-sub">Elk River, Minnesota</span>
+      </span>
     </a>
-    <a href="tel:+17637609176" class="nav-phone"><svg class="icon icon-lead" aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg>(763) 760-9176</a>
+    <div class="mh-nav" role="navigation" aria-label="Main">
+      <ul class="mh-links">
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#focus">Conditions</a></li>
+        <li><a href="/#doctors">Our Doctors</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#reviews">Reviews</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+      <a href="/start" class="mh-cta">Start Now</a>
+    </div>
+    <button class="mh-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mh-menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-</nav>
+  <div class="mh-menu" id="mh-menu" hidden>
+    <ul>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#focus">Conditions</a></li>
+      <li><a href="/#doctors">Our Doctors</a></li>
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#reviews">Reviews</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/#contact">Contact</a></li>
+      <li><a href="tel:+17637609176"><svg class="icon icon-lead" aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg>(763) 760-9176</a></li>
+    </ul>
+    <a href="/start" class="mh-cta">Start Now</a>
+  </div>
+</header>
+<!-- /site-header -->
 
 <!-- ─── ARTICLE HEADER ─── -->
 <section class="article-header">
@@ -377,18 +410,59 @@
   </div>
 </section>
 
-<footer>
-  <div class="footer-logo-main">Momentum Health & Wellness Minnesota</div>
-  <div class="footer-logo-sub">Elk River, Minnesota · (763) 760-9176</div>
-  <div class="footer-links">
-    <a href="https://momentumhealthwellnessmn.com">Home</a>
-    <a href="https://momentumhealthwellnessmn.com/#doctors">Our Doctors</a>
-    <a href="https://momentumhealthwellnessmn.com/#services">Services</a>
-    <a href="https://momentumhealthwellnessmn.com/#contact">Contact</a>
-    <a href="https://momentum-health.janeapp.com/#/discipline/1/treatment/1" target="_blank" rel="noopener">Book Appointment</a>
+<!-- site-footer -->
+<footer class="mh-footer">
+  <div class="mh-footer-inner">
+    <div class="mh-footer-grid">
+      <div class="mh-footer-brand">
+        <a href="/" class="mh-logo" aria-label="Momentum Health &amp; Wellness, home">
+          <span class="mh-mark" aria-hidden="true">M</span>
+          <span class="mh-logo-text">
+            <span class="mh-logo-name">Momentum Health &amp; Wellness</span>
+            <span class="mh-logo-sub">Elk River, Minnesota</span>
+          </span>
+        </a>
+        <p>Functional medicine for gut, thyroid, hormones, and the problems that standard labs call normal. Serving Elk River, Otsego, Zimmerman, Rogers, Ramsey, Big Lake, and the northwest metro.</p>
+      </div>
+      <div class="mh-footer-col">
+        <h2>Practice</h2>
+        <ul>
+          <li><a href="/#about">About</a></li>
+          <li><a href="/dr-todd-anderson/">Dr. Todd Anderson</a></li>
+          <li><a href="/dr-anna-payne/">Dr. Anna Payne</a></li>
+          <li><a href="/#reviews">Reviews</a></li>
+          <li><a href="/start">New Patients</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div class="mh-footer-col">
+        <h2>Care</h2>
+        <ul>
+          <li><a href="/thyroid/">Thyroid</a></li>
+          <li><a href="/hashimotos/">Hashimoto's</a></li>
+          <li><a href="/hormones/">Hormones</a></li>
+          <li><a href="/gut-health/">Gut Health</a></li>
+          <li><a href="/blood-work-analysis/">Blood Work Analysis</a></li>
+          <li><a href="/specialty-testing/">Specialty Testing</a></li>
+          <li><a href="/labs-supplements.html">Labs &amp; Supplements</a></li>
+        </ul>
+      </div>
+      <div class="mh-footer-col">
+        <h2>Visit</h2>
+        <ul class="mh-footer-contact">
+          <li><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-map-pin"/></svg><a href="https://www.google.com/maps/search/?api=1&amp;query=231+Main+St+NW+Ste+2+Elk+River+MN+55330" target="_blank" rel="noopener">231 Main Street NW, Suite 2<br>Elk River, MN 55330</a></li>
+          <li><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg><a href="tel:+17637609176">(763) 760-9176</a></li>
+          <li><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-message-square-text"/></svg><a href="sms:+17637609176">Text us</a></li>
+          <li><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-mail"/></svg><a href="mailto:office@momentumhealthwellnessmn.com">office@<wbr>momentumhealthwellnessmn.com</a></li>
+          <li><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-clock"/></svg><span>Mon to Thu, 10:00 to 1:30 and 3:00 to 6:00<br>By appointment</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="mh-footer-legal">Dr. Todd Anderson and Dr. Anna Payne are licensed Chiropractic Doctors and Applied Kinesiologists in the State of Minnesota. Information on this website is for general education only. It is not medical advice and does not create a doctor-patient relationship. These statements have not been evaluated by the Food and Drug Administration. If you have or suspect a medical problem, contact your health care provider promptly.</p>
+    <p class="mh-footer-copy">© 2026 Momentum Health &amp; Wellness Minnesota</p>
   </div>
-  <p class="footer-copy">© 2026 Momentum Health & Wellness Minnesota. All rights reserved.</p>
 </footer>
+<!-- /site-footer -->
 
 <script type="application/ld+json">
 {
@@ -426,5 +500,6 @@ var t=function(){var d=document.documentElement;var m=d.scrollHeight-window.inne
 b.style.width=(m>0?(window.scrollY/m*100):0)+'%';};
 window.addEventListener('scroll',t,{passive:true});t();})();
 </script>
+<script src="/assets/site.js?v=20261127c" defer></script>
 </body>
 </html>
