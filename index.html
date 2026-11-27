@@ -74,7 +74,7 @@
         "name": "Dr. Todd Anderson, DC",
         "jobTitle": "Doctor of Chiropractic & Applied Kinesiologist",
         "image": "https://momentumhealthwellnessmn.com/images/dr-todd-anderson.jpg",
-        "url": "https://www.drtoddanderson.com",
+        "url": "https://momentumhealthwellnessmn.com/dr-todd-anderson/",
         "sameAs": [ "https://www.drtoddanderson.com/" ],
         "worksFor": { "@id": "https://momentumhealthwellnessmn.com/#clinic" }
       },
@@ -114,17 +114,17 @@
       --charcoal:   #F4EEE2;
       --gray-900:   #1A1814;
       --gray-700:   #3A352E;
-      --gray-500:   #6E6557;
+      --gray-500:   #574F43;
       --gray-200:   #E8E0CF;
       --gray-100:   #FAF8F3;
       --white:      #ffffff;
       /* light theme tokens */
       --ink:        #1A1814;
       --body:       #3A352E;
-      --muted:      #6E6557;
-      --faint:      #655C4F;
-      --gold-text:  #7F6124;
-      --gold-deep:  #6E5320;
+      --muted:      #574F43;
+      --faint:      #5B5346;
+      --gold-text:  #6B4F17;
+      --gold-deep:  #5C4413;
       --paper:      #FFFFFF;
       --cream:      #FAF8F3;
       --cream-2:    #F4EEE2;
@@ -134,7 +134,7 @@
     /* ─── UTILITY ──────────────────────────────────── */
     .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
     .section-label {
-      font-size: 0.72rem;
+      font-size: 0.78rem;
       font-weight: 600;
       letter-spacing: 0.18em;
       text-transform: uppercase;
@@ -166,7 +166,7 @@
     .btn {
       display: inline-block;
       padding: 14px 34px;
-      font-size: 0.88rem;
+      font-size: 0.95rem;
       font-weight: 600;
       letter-spacing: 0.06em;
       text-transform: uppercase;
@@ -237,7 +237,7 @@
       letter-spacing: 0.02em;
     }
     .nav-logo-sub {
-      font-size: 0.63rem;
+      font-size: 0.72rem;
       font-weight: 500;
       letter-spacing: 0.2em;
       text-transform: uppercase;
@@ -252,7 +252,7 @@
     }
     .nav-links a {
       text-decoration: none;
-      font-size: 0.83rem;
+      font-size: 0.9rem;
       font-weight: 500;
       letter-spacing: 0.06em;
       text-transform: uppercase;
@@ -260,7 +260,7 @@
       transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--gold-text); }
-    .nav-links .btn { font-size: 0.78rem; padding: 10px 22px; }
+    .nav-links .btn { font-size: 0.84rem; padding: 10px 22px; }
     .hamburger {
       display: none;
       flex-direction: column;
@@ -297,7 +297,7 @@
 
     /* ─── HERO ─────────────────────────────────────── */
     #hero {
-      min-height: 100vh;
+      min-height: calc(100vh - 72px);
       background: var(--paper);
       display: flex;
       align-items: center;
@@ -329,10 +329,10 @@
     .hero-content {
       position: relative;
       z-index: 2;
-      padding: 120px 0 80px;
+      padding: 72px 0 80px;
     }
     .hero-eyebrow {
-      font-size: 0.72rem;
+      font-size: 0.78rem;
       font-weight: 600;
       letter-spacing: 0.22em;
       text-transform: uppercase;
@@ -380,7 +380,7 @@
       line-height: 1;
     }
     .hero-stat-label {
-      font-size: 0.8rem;
+      font-size: 0.86rem;
       font-weight: 500;
       color: var(--muted);
       letter-spacing: 0.06em;
@@ -401,7 +401,7 @@
       gap: 0;
     }
     .marquee-track span {
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       font-weight: 700;
       letter-spacing: 0.15em;
       text-transform: uppercase;
@@ -464,7 +464,7 @@
     }
     .about-ethos-label {
       position: relative;
-      font-size: 0.72rem;
+      font-size: 0.78rem;
       font-weight: 700;
       letter-spacing: 0.22em;
       text-transform: uppercase;
@@ -493,7 +493,7 @@
       display: flex;
       align-items: center;
       gap: 11px;
-      font-size: 0.74rem;
+      font-size: 0.8rem;
       font-weight: 600;
       letter-spacing: 0.16em;
       text-transform: uppercase;
@@ -519,7 +519,7 @@
       line-height: 1;
     }
     .about-accent-box .lbl {
-      font-size: 0.78rem;
+      font-size: 0.84rem;
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -543,7 +543,7 @@
       padding: 8px 18px;
       border: 1.5px solid var(--gold);
       border-radius: 100px;
-      font-size: 0.8rem;
+      font-size: 0.86rem;
       font-weight: 500;
       color: var(--gold-deep);
       letter-spacing: 0.04em;
@@ -618,7 +618,7 @@
       margin-bottom: 12px;
     }
     .focus-card p {
-      font-size: 0.9rem;
+      font-size: 0.97rem;
       color: var(--gray-500);
       line-height: 1.7;
     }
@@ -659,7 +659,7 @@
       font-family: 'Playfair Display', serif;
       font-size: 3rem;
       font-weight: 700;
-      color: rgba(160,120,48,0.6);
+      color: var(--gold-text);
       line-height: 1;
       margin-bottom: 16px;
     }
@@ -672,7 +672,7 @@
       text-transform: uppercase;
     }
     .process-step p {
-      font-size: 0.875rem;
+      font-size: 0.93rem;
       color: var(--muted);
       line-height: 1.7;
     }
@@ -722,7 +722,7 @@
       display: block;
     }
     .doc-photo-placeholder .placeholder-text {
-      font-size: 0.7rem;
+      font-size: 0.76rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
       color: rgba(26,24,20,0.2);
@@ -733,7 +733,7 @@
       bottom: 20px; left: 20px;
       background: var(--gold);
       color: var(--black);
-      font-size: 0.68rem;
+      font-size: 0.74rem;
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -751,7 +751,7 @@
       margin-bottom: 4px;
     }
     .doc-title {
-      font-size: 0.8rem;
+      font-size: 0.86rem;
       font-weight: 600;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -764,7 +764,7 @@
       margin-bottom: 20px;
     }
     .doc-bio {
-      font-size: 0.93rem;
+      font-size: 0.98rem;
       color: var(--gray-700);
       line-height: 1.8;
     }
@@ -778,13 +778,13 @@
       display: flex;
       align-items: flex-start;
       gap: 10px;
-      font-size: 0.85rem;
+      font-size: 0.92rem;
       color: var(--gray-700);
     }
     .doc-credential::before {
       content: '◆';
       color: var(--gold-text);
-      font-size: 0.55rem;
+      font-size: 0.66rem;
       margin-top: 5px;
       flex-shrink: 0;
     }
@@ -828,7 +828,7 @@
       margin-bottom: 14px;
     }
     .service-card p {
-      font-size: 0.9rem;
+      font-size: 0.97rem;
       color: var(--gray-500);
       line-height: 1.7;
       flex: 1;
@@ -837,7 +837,7 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: 0.82rem;
+      font-size: 0.88rem;
       font-weight: 600;
       color: var(--gold-deep);
       text-decoration: none;
@@ -882,14 +882,14 @@
     .review-card:hover { background: rgba(26,24,20,0.049); }
     .review-stars {
       color: var(--gold-text);
-      font-size: 0.85rem;
+      font-size: 0.92rem;
       letter-spacing: 2px;
       margin-bottom: 18px;
     }
     .review-quote {
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem;
-      font-style: italic;
+      font-family: 'Inter', sans-serif;
+      font-size: 1.02rem;
+      font-style: normal;
       color: var(--body);
       line-height: 1.75;
       margin-bottom: 24px;
@@ -907,17 +907,17 @@
       align-items: center;
       justify-content: center;
       font-weight: 700;
-      font-size: 0.85rem;
+      font-size: 0.92rem;
       color: var(--black);
       flex-shrink: 0;
     }
     .review-name {
-      font-size: 0.88rem;
+      font-size: 0.95rem;
       font-weight: 600;
       color: var(--ink);
     }
     .review-date {
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       color: var(--muted);
       margin-top: 2px;
     }
@@ -940,7 +940,7 @@
       line-height: 1;
     }
     .rating-detail .stars { color: var(--gold-text); font-size: 1.1rem; letter-spacing: 3px; }
-    .rating-detail .count { font-size: 0.82rem; color: var(--muted); margin-top: 4px; }
+    .rating-detail .count { font-size: 0.88rem; color: var(--muted); margin-top: 4px; }
 
     /* ─── NEW PATIENTS ─────────────────────────────── */
     #new-patients {
@@ -987,13 +987,13 @@
     }
     .np-step-text strong {
       display: block;
-      font-size: 0.93rem;
+      font-size: 0.98rem;
       font-weight: 600;
       color: var(--gray-900);
       margin-bottom: 4px;
     }
     .np-step-text span {
-      font-size: 0.85rem;
+      font-size: 0.92rem;
       color: var(--gray-500);
     }
     .np-ctas { display: flex; gap: 14px; margin-top: 36px; flex-wrap: wrap; }
@@ -1012,7 +1012,7 @@
       margin-bottom: 8px;
     }
     .np-visual p {
-      font-size: 0.88rem;
+      font-size: 0.95rem;
       color: var(--muted);
       margin-bottom: 28px;
     }
@@ -1050,12 +1050,12 @@
     .np-option-icon svg { width: 18px; height: 18px; display: block; }
     .np-option-text strong {
       display: block;
-      font-size: 0.88rem;
+      font-size: 0.95rem;
       font-weight: 600;
       color: var(--ink);
     }
     .np-option-text span {
-      font-size: 0.78rem;
+      font-size: 0.84rem;
       color: var(--muted);
     }
 
@@ -1114,7 +1114,7 @@
     .contact-item-icon svg { width: 18px; height: 18px; display: block; }
     .contact-item-text strong {
       display: block;
-      font-size: 0.78rem;
+      font-size: 0.84rem;
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -1122,7 +1122,7 @@
       margin-bottom: 2px;
     }
     .contact-item-text span {
-      font-size: 0.93rem;
+      font-size: 0.98rem;
       color: var(--body);
     }
     .contact-form {
@@ -1149,7 +1149,7 @@
       margin-bottom: 16px;
     }
     .form-group label {
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       font-weight: 600;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -1162,7 +1162,7 @@
       border: 1px solid rgba(26,24,20,0.132);
       border-radius: 3px;
       padding: 13px 16px;
-      font-size: 0.9rem;
+      font-size: 0.97rem;
       color: var(--ink);
       font-family: 'Inter', sans-serif;
       transition: border-color 0.2s;
@@ -1182,7 +1182,7 @@
     .form-group textarea { resize: vertical; min-height: 110px; }
     .form-submit { width: 100%; margin-top: 8px; }
     .disclaimer {
-      font-size: 0.72rem;
+      font-size: 0.78rem;
       color: var(--muted);
       line-height: 1.6;
       margin-top: 16px;
@@ -1207,7 +1207,7 @@
       color: var(--ink);
     }
     .footer-brand-sub {
-      font-size: 0.65rem;
+      font-size: 0.72rem;
       font-weight: 600;
       letter-spacing: 0.2em;
       text-transform: uppercase;
@@ -1215,13 +1215,13 @@
       margin-top: 3px;
     }
     .footer-tagline {
-      font-size: 0.87rem;
+      font-size: 0.93rem;
       color: var(--muted);
       line-height: 1.7;
       margin-top: 16px;
     }
     .footer-col h4 {
-      font-size: 0.72rem;
+      font-size: 0.78rem;
       font-weight: 600;
       letter-spacing: 0.15em;
       text-transform: uppercase;
@@ -1231,7 +1231,7 @@
     .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 11px; }
     .footer-col a {
       text-decoration: none;
-      font-size: 0.87rem;
+      font-size: 0.93rem;
       color: var(--muted);
       transition: color 0.2s;
     }
@@ -1242,7 +1242,7 @@
       gap: 12px;
     }
     .footer-contact-item {
-      font-size: 0.85rem;
+      font-size: 0.92rem;
       color: var(--muted);
       display: flex;
       align-items: flex-start;
@@ -1260,13 +1260,13 @@
       gap: 16px;
     }
     .footer-bottom p {
-      font-size: 0.78rem;
+      font-size: 0.84rem;
       color: var(--faint);
     }
     .footer-bottom a { color: var(--muted); text-decoration: none; }
     .footer-bottom a:hover { color: var(--gold-text); }
     .footer-disclaimer {
-      font-size: 0.72rem;
+      font-size: 0.78rem;
       color: var(--faint);
       line-height: 1.7;
       margin-top: 24px;
@@ -1274,7 +1274,32 @@
       padding-top: 20px;
     }
 
+
+    .contact-map { margin-top: 32px; border-radius: 12px; overflow: hidden; border: 1px solid var(--gray-200); background: var(--cream-2); }
+    .contact-map iframe { display: block; width: 100%; height: 260px; border: 0; }
+    .contact-map-link { display: block; padding: 12px 16px; font-size: 0.92rem; font-weight: 600; color: var(--gold-text); text-decoration: none; background: var(--paper); }
+    .contact-map-link:hover { color: var(--gold-deep); }
+    .contact-item-text a { color: inherit; text-decoration: none; }
+    .contact-item-text a:hover { color: var(--gold-text); }
+    .cf-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    .cf-status { margin-top: 12px; font-size: 0.95rem; line-height: 1.5; min-height: 0; }
+    .cf-status:empty { display: none; }
+    .cf-status.is-ok { color: #1F6B47; font-weight: 600; }
+    .cf-status.is-error { color: #9B2C2C; }
+    .cf-status a { color: inherit; font-weight: 600; }
+    .form-submit:disabled { opacity: 0.7; cursor: default; }
+    .contact-form { position: relative; }
+
     /* ─── RESPONSIVE ────────────────────────────────── */
+    .nav-links a, .nav-links .btn { white-space: nowrap; }
+    @media (max-width: 1180px) {
+      .nav-links { gap: 20px; }
+      .nav-links a { font-size: 0.82rem; letter-spacing: 0.04em; }
+    }
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
     @media (max-width: 900px) {
       .about-grid,
       .doctors-grid,
@@ -1308,45 +1333,52 @@
   </script>
   <script src="/assets/track.js" defer></script>
   <link rel="stylesheet" href="/assets/icons.css" />
+  <link rel="stylesheet" href="/assets/site.css?v=20261127c" />
 </head>
 <body>
 
 <!-- ─── NAVIGATION ──────────────────────────────────── -->
-<nav id="navbar">
-  <div class="container">
-    <div class="nav-inner">
-      <a href="#" class="nav-logo">
-        <span class="nav-logo-main">Momentum Health</span>
-        <span class="nav-logo-sub">& Wellness Minnesota</span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#focus">Conditions</a></li>
-        <li><a href="#doctors">Our Doctors</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#reviews">Reviews</a></li>
-        <li><a href="#contact">Contact</a></li>
+<!-- site-header -->
+<header class="mh-header" id="mh-header">
+  <div class="mh-header-inner">
+    <a href="/" class="mh-logo" aria-label="Momentum Health &amp; Wellness, home">
+      <span class="mh-mark" aria-hidden="true">M</span>
+      <span class="mh-logo-text">
+        <span class="mh-logo-name">Momentum Health &amp; Wellness</span>
+        <span class="mh-logo-sub">Elk River, Minnesota</span>
+      </span>
+    </a>
+    <div class="mh-nav" role="navigation" aria-label="Main">
+      <ul class="mh-links">
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#focus">Conditions</a></li>
+        <li><a href="/#doctors">Our Doctors</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#reviews">Reviews</a></li>
         <li><a href="/blog/">Blog</a></li>
-        <li><a href="/start" class="btn btn-gold">Start Now</a></li>
+        <li><a href="/#contact">Contact</a></li>
       </ul>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <a href="/start" class="mh-cta">Start Now</a>
     </div>
+    <button class="mh-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mh-menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-  <div class="mobile-menu" id="mobile-menu">
+  <div class="mh-menu" id="mh-menu" hidden>
     <ul>
-      <li><a href="#about" class="mobile-link">About</a></li>
-      <li><a href="#focus" class="mobile-link">Conditions</a></li>
-      <li><a href="#doctors" class="mobile-link">Our Doctors</a></li>
-      <li><a href="#services" class="mobile-link">Services</a></li>
-      <li><a href="#reviews" class="mobile-link">Reviews</a></li>
-      <li><a href="#contact" class="mobile-link">Contact</a></li>
-      <li><a href="/blog/" class="mobile-link">Blog</a></li>
-      <li><a href="/start" class="btn btn-gold mobile-link">Start Now</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#focus">Conditions</a></li>
+      <li><a href="/#doctors">Our Doctors</a></li>
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#reviews">Reviews</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/#contact">Contact</a></li>
+      <li><a href="tel:+17637609176"><svg class="icon icon-lead" aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg>(763) 760-9176</a></li>
     </ul>
+    <a href="/start" class="mh-cta">Start Now</a>
   </div>
-</nav>
+</header>
+<!-- /site-header -->
 
 <!-- ─── HERO ────────────────────────────────────────── -->
 <section id="hero">
@@ -1370,53 +1402,9 @@
         <a href="/start" class="btn btn-gold">Start Now</a>
         <a href="https://momentum-booking.web.app/?type=intro-call" target="_blank" rel="noopener" class="btn btn-outline-white">Free Phone Consult</a>
       </div>
-      <div class="hero-stats">
-        <div>
-          <div class="hero-stat-num">2</div>
-          <div class="hero-stat-label">Expert Doctors</div>
-        </div>
-        <div>
-          <div class="hero-stat-num">100+</div>
-          <div class="hero-stat-label">5-Star Reviews</div>
-        </div>
-        <div>
-          <div class="hero-stat-num">7+</div>
-          <div class="hero-stat-label">Areas of Focus</div>
-        </div>
-        <div>
-          <div class="hero-stat-num">Elk River</div>
-          <div class="hero-stat-label">MN Location</div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
-
-<!-- ─── MARQUEE ──────────────────────────────────────── -->
-<div class="marquee-strip" aria-hidden="true">
-  <div class="marquee-track">
-    <span>Gut Health</span>
-    <span>Thyroid Support</span>
-    <span>Hormone Balance</span>
-    <span>Autoimmune</span>
-    <span>Chronic Pain</span>
-    <span>Weight Management</span>
-    <span>Blood Work Analysis</span>
-    <span>Functional Medicine</span>
-    <span>Applied Kinesiology</span>
-    <span>Sleep Optimization</span>
-    <span>Gut Health</span>
-    <span>Thyroid Support</span>
-    <span>Hormone Balance</span>
-    <span>Autoimmune</span>
-    <span>Chronic Pain</span>
-    <span>Weight Management</span>
-    <span>Blood Work Analysis</span>
-    <span>Functional Medicine</span>
-    <span>Applied Kinesiology</span>
-    <span>Sleep Optimization</span>
-  </div>
-</div>
 
 <!-- ─── ABOUT ────────────────────────────────────────── -->
 <section id="about">
@@ -1606,7 +1594,7 @@
             <div class="doc-credential">Functional Nutrition &amp; Blood Work Analysis</div>
             <div class="doc-credential">Serving Elk River, MN and surrounding communities</div>
           </div>
-          <a href="https://www.drtoddanderson.com" target="_blank" rel="noopener" class="service-link" style="margin-top: 20px;">More About Dr. Anderson →</a>
+          <a href="/dr-todd-anderson/" class="service-link" style="margin-top: 20px;">More About Dr. Anderson →</a>
         </div>
       </div>
       <!-- Dr. Anna Payne -->
@@ -1788,15 +1776,13 @@
       <div class="review-card">
         <div class="review-stars">★★★★★</div>
         <p class="review-quote">
-          "Dr. Anderson is one of the most knowledgeable natural health care physicians
-          I've had the opportunity to work with. He gets to the source of the problem and
-          teaches you ways to improve nutrition, fitness, and overall lifestyle."
+          "I found Dr. Todd as a "last resort" after spending months seeking answers to my autoimmune issues from medical doctors, with nothing but dead ends. I felt a sigh of relief from our initial phone consult. Truly, I have never felt so heard and validated by a doctor. My symptoms have been steadily improving since I started working with him and I feel so much better today than just 5 months ago."
         </p>
         <div class="review-author">
-          <div class="review-avatar">SH</div>
+          <div class="review-avatar">K</div>
           <div>
-            <div class="review-name">Systems Health Care</div>
-            <div class="review-date">Colleague Review</div>
+            <div class="review-name">Kimberly</div>
+            <div class="review-date">Verified Patient</div>
           </div>
         </div>
       </div>
@@ -1914,21 +1900,21 @@
             <div class="contact-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
             <div class="contact-item-text">
               <strong>Location</strong>
-              <span>231 Main Street NW, Elk River, MN</span>
+              <span>231 Main Street NW, Suite 2<br>Elk River, MN 55330</span>
             </div>
           </div>
           <div class="contact-item">
             <div class="contact-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
             <div class="contact-item-text">
               <strong>Phone</strong>
-              <span>(763) 760-9176</span>
+              <span><a href="tel:+17637609176">(763) 760-9176</a> &nbsp;·&nbsp; <a href="sms:+17637609176">Text us</a></span>
             </div>
           </div>
           <div class="contact-item">
             <div class="contact-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
             <div class="contact-item-text">
               <strong>Email</strong>
-              <span>doc@drtoddanderson.com</span>
+              <span><a href="mailto:office@momentumhealthwellnessmn.com">office@momentumhealthwellnessmn.com</a></span>
             </div>
           </div>
           <div class="contact-item">
@@ -1939,30 +1925,34 @@
             </div>
           </div>
         </div>
+        <div class="contact-map">
+          <iframe title="Map to Momentum Health &amp; Wellness, 231 Main Street NW, Elk River" src="https://www.google.com/maps?q=231+Main+St+NW+Ste+2,+Elk+River,+MN+55330&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <a class="contact-map-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=231+Main+St+NW+Ste+2+Elk+River+MN+55330" target="_blank" rel="noopener">Get directions →</a>
+        </div>
       </div>
-      <div class="contact-form">
+      <form class="contact-form" id="contact-form" novalidate>
         <h3>Send Us a Message</h3>
         <div class="form-row">
           <div class="form-group">
-            <label>First Name</label>
-            <input type="text" id="cf-first" placeholder="Jane" />
+            <label for="cf-first">First Name</label>
+            <input type="text" id="cf-first" name="first" autocomplete="given-name" placeholder="Jane" required />
           </div>
           <div class="form-group">
-            <label>Last Name</label>
-            <input type="text" id="cf-last" placeholder="Smith" />
+            <label for="cf-last">Last Name</label>
+            <input type="text" id="cf-last" name="last" autocomplete="family-name" placeholder="Smith" />
           </div>
         </div>
         <div class="form-group">
-          <label>Email</label>
-          <input type="email" id="cf-email" placeholder="jane@example.com" />
+          <label for="cf-email">Email</label>
+          <input type="email" id="cf-email" name="email" autocomplete="email" placeholder="jane@example.com" required />
         </div>
         <div class="form-group">
-          <label>Phone</label>
-          <input type="tel" id="cf-phone" placeholder="(763) 000-0000" />
+          <label for="cf-phone">Phone</label>
+          <input type="tel" id="cf-phone" name="phone" autocomplete="tel" placeholder="(763) 000-0000" />
         </div>
         <div class="form-group">
-          <label>I'm interested in...</label>
-          <select id="cf-service">
+          <label for="cf-service">I'm interested in...</label>
+          <select id="cf-service" name="interest">
             <option value="">Select a service</option>
             <option>Functional Medicine / Nutrition</option>
             <option>Blood Work Analysis</option>
@@ -1973,118 +1963,88 @@
           </select>
         </div>
         <div class="form-group">
-          <label>Tell us about your situation</label>
-          <textarea id="cf-message" placeholder="Briefly describe your main health concerns and what you're hoping to address..."></textarea>
+          <label for="cf-message">Tell us about your situation</label>
+          <textarea id="cf-message" name="message" maxlength="4000" placeholder="Briefly describe your main health concerns and what you're hoping to address..."></textarea>
         </div>
-        <button type="button" onclick="submitContactForm()" class="btn btn-gold form-submit">Send Message</button>
-        <p id="cf-error" style="color:#B23A3A;font-size:0.8rem;margin-top:10px;display:none;">Please fill in your name and email before sending.</p>
+        <div class="cf-hp" aria-hidden="true">
+          <label for="cf-website">Leave this empty</label>
+          <input type="text" id="cf-website" name="website" tabindex="-1" autocomplete="off" />
+        </div>
+        <button type="submit" class="btn btn-gold form-submit" id="cf-submit">Send Message</button>
+        <p id="cf-status" class="cf-status" role="status" aria-live="polite"></p>
         <p class="disclaimer">
-          Clicking Send Message will open your email client with a pre-filled message to
-          doc@drtoddanderson.com. We respond within 1 business day. For urgent matters,
-          please call (763) 760-9176.
+          Your message goes straight to our office, and we reply within 1 business day.
+          Please don't include anything urgent. For urgent matters, call (763) 760-9176.
         </p>
-      </div>
+      </form>
     </div>
   </div>
 </section>
 
 <!-- ─── FOOTER ────────────────────────────────────────── -->
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand-name">Momentum Health &amp; Wellness</div>
-        <div class="footer-brand-sub">Minnesota</div>
-        <p class="footer-tagline">
-          Functional medicine for the whole person —
-          gut, hormones, thyroid, and beyond. Proudly serving Elk River,
-          Otsego, Zimmerman, Rogers, Ramsey, Big Lake, and the northwest metro.
-        </p>
+<!-- site-footer -->
+<footer class="mh-footer">
+  <div class="mh-footer-inner">
+    <div class="mh-footer-grid">
+      <div class="mh-footer-brand">
+        <a href="/" class="mh-logo" aria-label="Momentum Health &amp; Wellness, home">
+          <span class="mh-mark" aria-hidden="true">M</span>
+          <span class="mh-logo-text">
+            <span class="mh-logo-name">Momentum Health &amp; Wellness</span>
+            <span class="mh-logo-sub">Elk River, Minnesota</span>
+          </span>
+        </a>
+        <p>Functional medicine for gut, thyroid, hormones, and the problems that standard labs call normal. Serving Elk River, Otsego, Zimmerman, Rogers, Ramsey, Big Lake, and the northwest metro.</p>
       </div>
-      <div class="footer-col">
-        <h4>Navigate</h4>
+      <div class="mh-footer-col">
+        <h2>Practice</h2>
         <ul>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#focus">Conditions</a></li>
-          <li><a href="#doctors">Our Doctors</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#reviews">Reviews</a></li>
-          <li><a href="#new-patients">New Patients</a></li>
+          <li><a href="/#about">About</a></li>
+          <li><a href="/dr-todd-anderson/">Dr. Todd Anderson</a></li>
+          <li><a href="/dr-anna-payne/">Dr. Anna Payne</a></li>
+          <li><a href="/#reviews">Reviews</a></li>
+          <li><a href="/start">New Patients</a></li>
           <li><a href="/blog/">Blog</a></li>
         </ul>
       </div>
-      <div class="footer-col">
-        <h4>Services</h4>
+      <div class="mh-footer-col">
+        <h2>Care</h2>
         <ul>
-          <li><a href="#services">Functional Medicine</a></li>
+          <li><a href="/thyroid/">Thyroid</a></li>
+          <li><a href="/hashimotos/">Hashimoto's</a></li>
+          <li><a href="/hormones/">Hormones</a></li>
+          <li><a href="/gut-health/">Gut Health</a></li>
           <li><a href="/blood-work-analysis/">Blood Work Analysis</a></li>
-          <li><a href="#services">Hormone Support</a></li>
           <li><a href="/specialty-testing/">Specialty Testing</a></li>
           <li><a href="/labs-supplements.html">Labs &amp; Supplements</a></li>
-          <li><a href="https://momentum-booking.web.app/?type=intro-call" target="_blank" rel="noopener">Free Phone Consult</a></li>
         </ul>
       </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <div class="footer-contact-list">
-          <div class="footer-contact-item">
-            <span class="footer-ico"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-map-pin"/></svg></span>
-            <span>231 Main Street NW<br>Elk River, MN</span>
-          </div>
-          <div class="footer-contact-item">
-            <span class="footer-ico"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg></span>
-            <span>(763) 760-9176</span>
-          </div>
-          <div class="footer-contact-item">
-            <span class="footer-ico"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-mail"/></svg></span>
-            <span>doc@drtoddanderson.com</span>
-          </div>
-        </div>
+      <div class="mh-footer-col">
+        <h2>Visit</h2>
+        <ul class="mh-footer-contact">
+          <li><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-map-pin"/></svg><a href="https://www.google.com/maps/search/?api=1&amp;query=231+Main+St+NW+Ste+2+Elk+River+MN+55330" target="_blank" rel="noopener">231 Main Street NW, Suite 2<br>Elk River, MN 55330</a></li>
+          <li><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg><a href="tel:+17637609176">(763) 760-9176</a></li>
+          <li><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-message-square-text"/></svg><a href="sms:+17637609176">Text us</a></li>
+          <li><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-mail"/></svg><a href="mailto:office@momentumhealthwellnessmn.com">office@<wbr>momentumhealthwellnessmn.com</a></li>
+          <li><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-clock"/></svg><span>Mon to Thu, 10:00 to 1:30 and 3:00 to 6:00<br>By appointment</span></li>
+        </ul>
       </div>
     </div>
-    <div class="footer-disclaimer">
-      Dr. Todd Anderson is a licensed Chiropractic Doctor and Applied Kinesiologist in the State of Minnesota.
-      Information on this website is provided for general educational purposes only and is not intended to constitute
-      medical advice or counseling, the practice of medicine, the creation of a physician-patient relationship, or an
-      endorsement of any product or service. These statements have not been evaluated by the Food and Drug Administration.
-      If you have or suspect a medical problem, contact your health care provider promptly.
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 Momentum Health &amp; Wellness Minnesota. All rights reserved.</p>
-      <p>
-        <a href="#about">Privacy Policy</a> &nbsp;·&nbsp;
-        <a href="#about">Accessibility</a> &nbsp;·&nbsp;
-        <a href="#about">Disclaimer</a>
-      </p>
-    </div>
+    <p class="mh-footer-legal">Dr. Todd Anderson and Dr. Anna Payne are licensed Chiropractic Doctors and Applied Kinesiologists in the State of Minnesota. Information on this website is for general education only. It is not medical advice and does not create a doctor-patient relationship. These statements have not been evaluated by the Food and Drug Administration. If you have or suspect a medical problem, contact your health care provider promptly.</p>
+    <p class="mh-footer-copy">© 2026 Momentum Health &amp; Wellness Minnesota</p>
   </div>
 </footer>
+<!-- /site-footer -->
 
 <!-- ─── SCRIPTS ───────────────────────────────────────── -->
 <script>
-  // Sticky nav shadow
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 20);
-  });
-
-  // Mobile menu
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobile-menu');
-  hamburger.addEventListener('click', () => {
-    mobileMenu.classList.toggle('open');
-  });
-  document.querySelectorAll('.mobile-link').forEach(link => {
-    link.addEventListener('click', () => mobileMenu.classList.remove('open'));
-  });
-
-  // Smooth scroll offset for fixed nav
+  // Smooth scroll offset for the sticky header
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const target = document.querySelector(this.getAttribute('href'));
       if (target) {
         e.preventDefault();
-        const offset = 72;
+        const offset = (document.getElementById('mh-header') || {offsetHeight: 72}).offsetHeight + 8;
         const top = target.getBoundingClientRect().top + window.scrollY - offset;
         window.scrollTo({ top, behavior: 'smooth' });
       }
@@ -2110,35 +2070,43 @@
     observer.observe(el);
   });
 
-  // Contact form → mailto
-  function submitContactForm() {
-    const first   = document.getElementById('cf-first').value.trim();
-    const last    = document.getElementById('cf-last').value.trim();
-    const email   = document.getElementById('cf-email').value.trim();
-    const phone   = document.getElementById('cf-phone').value.trim();
-    const service = document.getElementById('cf-service').value;
-    const message = document.getElementById('cf-message').value.trim();
-    const errEl   = document.getElementById('cf-error');
-
-    if (!first || !email) {
-      errEl.style.display = 'block';
-      return;
-    }
-    errEl.style.display = 'none';
-
-    const subject = encodeURIComponent('New Patient Inquiry — Momentum Health & Wellness MN');
-    const body = encodeURIComponent(
-      'Name: ' + first + ' ' + last + '\n' +
-      'Email: ' + email + '\n' +
-      'Phone: ' + (phone || 'Not provided') + '\n' +
-      'Interested in: ' + (service || 'Not specified') + '\n\n' +
-      'Message:\n' + (message || 'No message provided')
-    );
-
-    window.location.href = 'mailto:doc@drtoddanderson.com?subject=' + subject + '&body=' + body;
-  }
+  // Contact form: posts to the practice's booking API, which emails the office.
+  (function () {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+    const btn = document.getElementById('cf-submit');
+    const status = document.getElementById('cf-status');
+    const ENDPOINT = 'https://momentum-booking.web.app/api/bot/contact';
+    const say = (msg, kind) => { status.textContent = msg; status.className = 'cf-status' + (kind ? ' is-' + kind : ''); };
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      Object.keys(data).forEach(k => { data[k] = String(data[k]).trim(); });
+      if (!data.first || !/^\S+@\S+\.\S{2,}$/.test(data.email)) {
+        say('Please add your first name and a valid email.', 'error');
+        (data.first ? form.elements.email : form.elements.first).focus();
+        return;
+      }
+      btn.disabled = true; btn.textContent = 'Sending...'; say('');
+      try {
+        const res = await fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+        const out = await res.json().catch(() => ({}));
+        if (!res.ok || !out.ok) throw new Error(out.message || 'send_failed');
+        form.reset();
+        btn.textContent = 'Message Sent';
+        say('Thanks, ' + data.first + '. Your message is on its way. We reply within 1 business day.', 'ok');
+        if (typeof gtag === 'function') gtag('event', 'generate_lead', { method: 'contact_form' });
+        setTimeout(() => { btn.disabled = false; btn.textContent = 'Send Message'; }, 4000);
+      } catch (err) {
+        btn.disabled = false; btn.textContent = 'Send Message';
+        status.className = 'cf-status is-error';
+        status.innerHTML = 'Sorry, that didn\'t send. Please call or text <a href="tel:+17637609176">(763) 760-9176</a>, or email <a href="mailto:office@momentumhealthwellnessmn.com">office@momentumhealthwellnessmn.com</a>.';
+      }
+    });
+  })();
 </script>
 
   <script src="/assets/chat-init.js" defer></script>
+<script src="/assets/site.js?v=20261127c" defer></script>
 </body>
 </html>
