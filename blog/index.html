@@ -39,8 +39,8 @@
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Inter', sans-serif;
-      color: #e0e0e0;
-      background: #0d0d0d;
+      color: var(--body);
+      background: var(--paper);
       line-height: 1.6;
       overflow-x: hidden;
     }
@@ -49,15 +49,26 @@
       --gold-light: #E8C97A;
       --gold-dark:  #A07830;
       --black:      #0d0d0d;
-      --charcoal:   #1c1c1c;
-      --card:       #181818;
-      --card2:      #222222;
-      --border:     rgba(255,255,255,0.07);
-      --border-gold: rgba(201,168,76,0.2);
-      --gray-500:   #6B7280;
-      --muted:      #888;
+      --charcoal:   #F4EEE2;
+      --card:       #FFFFFF;
+      --card2:      #F3ECDB;
+      --border:     rgba(26,24,20,0.10);
+      --border-gold: rgba(160,120,48,0.35);
+      --gray-500:   #6E6557;
+      --muted:      #6E6557;
       --white:      #ffffff;
-      --green:      #3ecf8e;
+      --green:      #2E9E6B;
+      /* light theme tokens */
+      --ink:        #1A1814;
+      --body:       #3A352E;
+      --muted:      #6E6557;
+      --faint:      #655C4F;
+      --gold-text:  #7F6124;
+      --gold-deep:  #6E5320;
+      --paper:      #FFFFFF;
+      --cream:      #FAF8F3;
+      --cream-2:    #F4EEE2;
+      --cream-3:    #EFE6D4;
     }
     .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
     .btn {
@@ -69,23 +80,23 @@
     }
     .btn-gold { background: var(--gold); color: var(--black); border-color: var(--gold); }
     .btn-gold:hover { background: var(--gold-dark); border-color: var(--gold-dark); color: var(--white); }
-    .btn-outline { border-color: rgba(255,255,255,0.3); color: var(--white); background: transparent; }
-    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+    .btn-outline { border-color: rgba(26,24,20,0.33); color: var(--ink); background: transparent; }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold-text); }
     .gold-divider { width: 56px; height: 3px; background: var(--gold); border-radius: 2px; }
     .gold-divider.center { margin: 0 auto; }
     .section-label {
       font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em;
-      text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 12px;
+      text-transform: uppercase; color: var(--gold-text); display: block; margin-bottom: 12px;
     }
     .section-heading {
       font-family: 'Playfair Display', serif;
       font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-      font-weight: 700; line-height: 1.2; color: var(--white);
+      font-weight: 700; line-height: 1.2; color: var(--ink);
     }
 
     /* ─── NAV ─── */
     nav {
-      background: #080808; padding: 0 24px;
+      background: var(--paper); padding: 0 24px;
       border-bottom: 1px solid var(--border-gold);
       position: sticky; top: 0; z-index: 100;
     }
@@ -94,14 +105,14 @@
       display: flex; align-items: center; justify-content: space-between; height: 60px;
     }
     .nav-logo { text-decoration: none; }
-    .nav-logo-main { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--white); font-weight: 700; }
-    .nav-logo-sub { font-size: 0.62rem; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; }
-    .nav-phone { font-size: 0.88rem; font-weight: 700; color: var(--gold); text-decoration: none; }
-    .nav-phone:hover { color: var(--gold-light); }
+    .nav-logo-main { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--ink); font-weight: 700; }
+    .nav-logo-sub { font-size: 0.62rem; color: var(--gold-text); letter-spacing: 0.12em; text-transform: uppercase; }
+    .nav-phone { font-size: 0.88rem; font-weight: 700; color: var(--gold-text); text-decoration: none; }
+    .nav-phone:hover { color: var(--gold-text); }
 
     /* ─── BLOG HEADER ─── */
     .blog-header {
-      background: var(--black); padding: 68px 24px 52px; text-align: center;
+      background: var(--paper); padding: 68px 24px 52px; text-align: center;
       border-bottom: 1px solid var(--border-gold); position: relative; overflow: hidden;
     }
     .blog-header::before {
@@ -125,15 +136,15 @@
       background: var(--card); border: 1px solid var(--border); border-top: 3px solid var(--gold);
       border-radius: 10px; padding: 28px 24px; transition: border-color 0.2s;
     }
-    .blog-card:hover { border-color: rgba(201,168,76,0.5); }
+    .blog-card:hover { border-color: rgba(160,120,48,0.8); }
     .blog-card .section-label { margin-bottom: 12px; }
     .blog-card h2 {
-      font-family: 'Playfair Display', serif; color: var(--white); font-size: 1.25rem;
+      font-family: 'Playfair Display', serif; color: var(--ink); font-size: 1.25rem;
       line-height: 1.35; margin-bottom: 12px;
     }
     .blog-card .excerpt { font-size: 0.87rem; color: var(--muted); line-height: 1.7; margin-bottom: 18px; flex: 1; }
     .card-byline {
-      display: flex; align-items: center; gap: 8px; font-size: 0.74rem; color: #777;
+      display: flex; align-items: center; gap: 8px; font-size: 0.74rem; color: var(--muted);
       padding-top: 14px; border-top: 1px solid var(--border);
     }
     .card-byline img { width: 26px; height: 26px; border-radius: 50%; object-fit: cover; border: 1px solid var(--gold); }
@@ -144,15 +155,15 @@
 
     /* ─── FOOTER ─── */
     footer {
-      background: #080808; border-top: 1px solid var(--border-gold);
+      background: var(--cream-3); border-top: 1px solid var(--border-gold);
       padding: 40px 24px; text-align: center;
     }
-    .footer-logo-main { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--white); font-weight: 700; }
-    .footer-logo-sub { font-size: 0.62rem; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 18px; }
+    .footer-logo-main { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--ink); font-weight: 700; }
+    .footer-logo-sub { font-size: 0.62rem; color: var(--gold-text); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 18px; }
     .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 18px; }
-    .footer-links a { color: #555; text-decoration: none; font-size: 0.8rem; transition: color 0.2s; }
-    .footer-links a:hover { color: var(--gold); }
-    .footer-copy { font-size: 0.72rem; color: #333; }
+    .footer-links a { color: var(--muted); text-decoration: none; font-size: 0.8rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold-text); }
+    .footer-copy { font-size: 0.72rem; color: var(--body); }
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 720px) {
