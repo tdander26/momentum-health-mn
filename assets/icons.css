@@ -1,0 +1,91 @@
+/* Momentum Health & Wellness — icon system
+   One icon set for the whole site: line icons on a 24px grid, 2px stroke,
+   round caps, drawn in currentColor. Symbols live in /assets/icons.svg.
+   Usage: <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg>
+   Rules and the full icon list are in STYLE_GUIDE.md. Do not use emoji as icons. */
+
+.icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: -0.14em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  overflow: visible;
+}
+
+/* Icon that sits in front of a short label: nav phone, top bar, contact rows */
+.icon-lead { margin-right: 0.42em; }
+
+/* ── Symptom lists: quiet, no container. The row already has a gold rule. ── */
+.symptom-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  color: var(--gold-deep, #5C4413);
+  font-size: 0;
+}
+.symptom-icon .icon { width: 20px; height: 20px; stroke-width: 1.75; }
+
+/* ── Feature badges: process steps, "why us" rows, credentials ── */
+.step-icon,
+.why-icon,
+.cred-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--gold-deep, #5C4413);
+  background: rgba(201, 168, 76, 0.14);
+  border: 1px solid rgba(160, 120, 48, 0.28);
+  font-size: 0;
+}
+.step-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  margin: 0 auto 18px;
+}
+.step-icon .icon { width: 26px; height: 26px; stroke-width: 1.75; }
+
+/* Numbered steps (replaces 1️⃣ 2️⃣ 3️⃣) */
+.step-num {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.why-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  margin-top: 0;
+}
+.why-icon .icon { width: 22px; height: 22px; stroke-width: 1.75; }
+
+.cred-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+.cred-icon .icon { width: 24px; height: 24px; stroke-width: 1.75; }
+
+/* Sidebar facts on bio pages: icon only, no container */
+.aside-icon {
+  color: var(--gold-deep, #5C4413);
+  font-size: 0;
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+.aside-icon .icon { width: 20px; height: 20px; stroke-width: 1.75; }
+
+/* Footer contact list (home page) */
+.footer-ico { display: inline-flex; padding-top: 0.2em; }
+.footer-ico .icon { width: 16px; height: 16px; }
