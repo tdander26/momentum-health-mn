@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="assets/style.css?v=20261127" />
   <style>
     /* Step headings receive programmatic focus for accessibility; hide the resulting focus ring */
     .wiz-panel h2:focus { outline: none; }
@@ -17,7 +17,7 @@
     .wiz-panelcard .pc-head { margin: 0 0 6px; color: var(--gray-900); font-weight: 600; font-size: 0.98rem; }
     .wiz-panelcard .pc-sub { margin: 0; color: var(--gray-700); font-size: 0.92rem; line-height: 1.55; }
     .wiz-acc { margin-top: 12px; border-top: 1px solid var(--gray-200); padding-top: 10px; }
-    .wiz-acc > summary { cursor: pointer; list-style: none; font-weight: 600; font-size: 0.88rem; color: var(--gold-dark); display: flex; align-items: center; }
+    .wiz-acc > summary { cursor: pointer; list-style: none; font-weight: 600; font-size: 0.88rem; color: var(--gold-deep); display: flex; align-items: center; }
     .wiz-acc > summary::-webkit-details-marker { display: none; }
     .wiz-acc > summary::after { content: "+"; margin-left: auto; font-size: 1.15rem; line-height: 1; }
     .wiz-acc[open] > summary::after { content: "\2212"; }
@@ -27,17 +27,17 @@
     .wiz-acc-body p { margin: 0; font-size: 0.86rem; color: var(--gray-500); line-height: 1.5; }
     .addon-search { margin-bottom: 10px; }
     .addon-list { max-height: 300px; overflow-y: auto; border: 1px solid var(--gray-200); border-radius: 8px; }
-    .addon-group-head { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold-dark); font-weight: 700; padding: 12px 14px 4px; background: var(--gray-100); }
+    .addon-group-head { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold-deep); font-weight: 700; padding: 12px 14px 4px; background: var(--gray-100); }
     .addon-item { display: flex; align-items: center; padding: 11px 16px; cursor: pointer; font-size: 0.9rem; color: var(--gray-700); border-top: 1px solid var(--gray-200); }
     .addon-item:hover { background: var(--gray-100); }
     .addon-item input { width: 18px; height: 18px; flex: none; margin: 0 16px 0 0; }
-    .addon-item .pr { flex: none; width: 42px; text-align: left; font-weight: 700; color: var(--gold-dark); margin-right: 18px; }
+    .addon-item .pr { flex: none; width: 42px; text-align: left; font-weight: 700; color: var(--gold-deep); margin-right: 18px; }
     .addon-item .nm { flex: 1; }
     .addon-item.in-panel { cursor: default; }
     .addon-item.in-panel:hover { background: transparent; }
-    .addon-item .ip-check { flex: none; width: 18px; margin-right: 16px; text-align: center; color: var(--gold-dark); font-weight: 700; }
+    .addon-item .ip-check { flex: none; width: 18px; margin-right: 16px; text-align: center; color: var(--gold-deep); font-weight: 700; }
     .addon-item.in-panel .nm { color: var(--gray-500); }
-    .addon-item .ip-tag { flex: none; font-size: 0.7rem; font-weight: 600; color: var(--gold-dark); margin-left: 12px; white-space: nowrap; }
+    .addon-item .ip-tag { flex: none; font-size: 0.7rem; font-weight: 600; color: var(--gold-deep); margin-left: 12px; white-space: nowrap; }
     .pc-check { display: flex; align-items: center; gap: 11px; cursor: pointer; margin: 0 0 6px; color: var(--gray-900); font-size: 0.98rem; }
     .pc-check input { width: 18px; height: 18px; flex: none; margin: 0; }
     .addon-empty { padding: 16px 14px; color: var(--gray-500); font-size: 0.9rem; }
@@ -46,7 +46,7 @@
     .addon-summary .sum-row[hidden] { display: none; }
     .addon-summary .sum-row > span:last-child { font-weight: 600; color: var(--gray-900); }
     .addon-summary .sum-panel-off { color: var(--gray-500) !important; font-weight: 500 !important; }
-    .addon-summary .sum-total { border-top: 1px solid rgba(201,168,76,0.45); margin-top: 6px; padding-top: 8px; font-size: 1.02rem; }
+    .addon-summary .sum-total { border-top: 1px solid rgba(160,120,48,0.72); margin-top: 6px; padding-top: 8px; font-size: 1.02rem; }
     .addon-summary .sum-total > span { font-weight: 700; color: var(--gray-900); }
     .addon-note { font-size: 0.8rem; color: var(--gray-500); margin: 8px 0 0; line-height: 1.5; }
     .addr-wrap { position: relative; }
@@ -103,7 +103,7 @@
 
   <section class="page-hero">
     <div class="container">
-      <p class="eyebrow" style="color:var(--gold-light)">New Patient Start</p>
+      <p class="eyebrow" style="color:var(--gold-text)">New Patient Start</p>
       <h1>Let's get you set up.</h1>
       <p>Just two quick steps and you're done. We'll walk you through each one.</p>
     </div>
