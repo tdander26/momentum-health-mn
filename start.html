@@ -9,26 +9,26 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/style.css?v=20261127" />
+  <link rel="stylesheet" href="assets/style.css?v=20261127b" />
   <style>
     /* Step headings receive programmatic focus for accessibility; hide the resulting focus ring */
     .wiz-panel h2:focus { outline: none; }
     .wiz-panelcard { background: var(--gray-100); border: 1px solid var(--gray-200); border-left: 3px solid var(--gold); border-radius: 8px; padding: 16px 18px; margin-bottom: 22px; }
     .wiz-panelcard .pc-head { margin: 0 0 6px; color: var(--gray-900); font-weight: 600; font-size: 0.98rem; }
-    .wiz-panelcard .pc-sub { margin: 0; color: var(--gray-700); font-size: 0.92rem; line-height: 1.55; }
+    .wiz-panelcard .pc-sub { margin: 0; color: var(--gray-700); font-size: 0.98rem; line-height: 1.55; }
     .wiz-acc { margin-top: 12px; border-top: 1px solid var(--gray-200); padding-top: 10px; }
-    .wiz-acc > summary { cursor: pointer; list-style: none; font-weight: 600; font-size: 0.88rem; color: var(--gold-deep); display: flex; align-items: center; }
+    .wiz-acc > summary { cursor: pointer; list-style: none; font-weight: 600; font-size: 0.95rem; color: var(--gold-deep); display: flex; align-items: center; }
     .wiz-acc > summary::-webkit-details-marker { display: none; }
     .wiz-acc > summary::after { content: "+"; margin-left: auto; font-size: 1.15rem; line-height: 1; }
     .wiz-acc[open] > summary::after { content: "\2212"; }
     .wiz-acc-body { padding-top: 8px; }
-    .wiz-acc-body h5 { font-family: 'Inter', sans-serif; margin: 12px 0 1px; font-size: 0.9rem; color: var(--gray-900); font-weight: 600; }
+    .wiz-acc-body h5 { font-family: 'Inter', sans-serif; margin: 12px 0 1px; font-size: 0.97rem; color: var(--gray-900); font-weight: 600; }
     .wiz-acc-body h5:first-child { margin-top: 4px; }
-    .wiz-acc-body p { margin: 0; font-size: 0.86rem; color: var(--gray-500); line-height: 1.5; }
+    .wiz-acc-body p { margin: 0; font-size: 0.93rem; color: var(--gray-500); line-height: 1.5; }
     .addon-search { margin-bottom: 10px; }
     .addon-list { max-height: 300px; overflow-y: auto; border: 1px solid var(--gray-200); border-radius: 8px; }
-    .addon-group-head { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold-deep); font-weight: 700; padding: 12px 14px 4px; background: var(--gray-100); }
-    .addon-item { display: flex; align-items: center; padding: 11px 16px; cursor: pointer; font-size: 0.9rem; color: var(--gray-700); border-top: 1px solid var(--gray-200); }
+    .addon-group-head { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold-deep); font-weight: 700; padding: 12px 14px 4px; background: var(--gray-100); }
+    .addon-item { display: flex; align-items: center; padding: 11px 16px; cursor: pointer; font-size: 0.97rem; color: var(--gray-700); border-top: 1px solid var(--gray-200); }
     .addon-item:hover { background: var(--gray-100); }
     .addon-item input { width: 18px; height: 18px; flex: none; margin: 0 16px 0 0; }
     .addon-item .pr { flex: none; width: 42px; text-align: left; font-weight: 700; color: var(--gold-deep); margin-right: 18px; }
@@ -37,27 +37,27 @@
     .addon-item.in-panel:hover { background: transparent; }
     .addon-item .ip-check { flex: none; width: 18px; margin-right: 16px; text-align: center; color: var(--gold-deep); font-weight: 700; }
     .addon-item.in-panel .nm { color: var(--gray-500); }
-    .addon-item .ip-tag { flex: none; font-size: 0.7rem; font-weight: 600; color: var(--gold-deep); margin-left: 12px; white-space: nowrap; }
+    .addon-item .ip-tag { flex: none; font-size: 0.76rem; font-weight: 600; color: var(--gold-deep); margin-left: 12px; white-space: nowrap; }
     .pc-check { display: flex; align-items: center; gap: 11px; cursor: pointer; margin: 0 0 6px; color: var(--gray-900); font-size: 0.98rem; }
     .pc-check input { width: 18px; height: 18px; flex: none; margin: 0; }
-    .addon-empty { padding: 16px 14px; color: var(--gray-500); font-size: 0.9rem; }
+    .addon-empty { padding: 16px 14px; color: var(--gray-500); font-size: 0.97rem; }
     .addon-summary { margin-top: 12px; padding: 13px 16px; background: rgba(201,168,76,0.12); border-radius: 8px; }
-    .addon-summary .sum-row { display: flex; justify-content: space-between; align-items: baseline; font-size: 0.92rem; color: var(--gray-700); padding: 3px 0; }
+    .addon-summary .sum-row { display: flex; justify-content: space-between; align-items: baseline; font-size: 0.98rem; color: var(--gray-700); padding: 3px 0; }
     .addon-summary .sum-row[hidden] { display: none; }
     .addon-summary .sum-row > span:last-child { font-weight: 600; color: var(--gray-900); }
     .addon-summary .sum-panel-off { color: var(--gray-500) !important; font-weight: 500 !important; }
     .addon-summary .sum-total { border-top: 1px solid rgba(160,120,48,0.72); margin-top: 6px; padding-top: 8px; font-size: 1.02rem; }
     .addon-summary .sum-total > span { font-weight: 700; color: var(--gray-900); }
-    .addon-note { font-size: 0.8rem; color: var(--gray-500); margin: 8px 0 0; line-height: 1.5; }
+    .addon-note { font-size: 0.86rem; color: var(--gray-500); margin: 8px 0 0; line-height: 1.5; }
     .addr-wrap { position: relative; }
     .addr-ac { position: absolute; top: 100%; left: 0; right: 0; z-index: 30; background: #fff; border: 1px solid var(--gray-200); border-top: none; border-radius: 0 0 8px 8px; box-shadow: 0 10px 24px rgba(0,0,0,0.12); max-height: 230px; overflow-y: auto; }
     .addr-ac[hidden] { display: none; }
-    .addr-ac .ac-item { padding: 10px 14px; cursor: pointer; font-size: 0.88rem; color: var(--gray-700); border-top: 1px solid var(--gray-100); }
+    .addr-ac .ac-item { padding: 10px 14px; cursor: pointer; font-size: 0.95rem; color: var(--gray-700); border-top: 1px solid var(--gray-100); }
     .addr-ac .ac-item:first-child { border-top: none; }
     .addr-ac .ac-item:hover { background: var(--gray-100); }
-    .prov-or { margin: 20px 0 10px; font-size: 0.88rem; color: var(--gray-500); }
+    .prov-or { margin: 20px 0 10px; font-size: 0.95rem; color: var(--gray-500); }
     .prov-row { display: flex; gap: 12px; flex-wrap: wrap; }
-    .prov-row .btn { flex: 1; min-width: 150px; text-align: center; padding: 12px 18px; font-size: 0.9rem; }
+    .prov-row .btn { flex: 1; min-width: 150px; text-align: center; padding: 12px 18px; font-size: 0.97rem; }
   </style>
   <noscript>
     <style>
@@ -200,7 +200,7 @@
 
           <div class="wiz-privacy">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            <span>Your information is private and protected. We're a HIPAA practice, these details go straight to our office to place your lab order, and we never sell or share them. 😊<br><span style="display:block;margin-top:8px;font-size:0.85rem;color:var(--gray-500);">This is the same secure info you'd give at any front desk.</span></span>
+            <span>Your information is private and protected. We're a HIPAA practice, these details go straight to our office to place your lab order, and we never sell or share them. 😊<br><span style="display:block;margin-top:8px;font-size:0.92rem;color:var(--gray-500);">This is the same secure info you'd give at any front desk.</span></span>
           </div>
 
           <form class="wiz-form" id="labForm" novalidate>
@@ -287,7 +287,7 @@
             <a class="btn btn-outline-dark" href="/">Back to Momentum Health</a>
             <span class="spacer"></span>
           </div>
-          <p style="color:var(--gray-500); font-size:0.9rem; margin-top:18px;">Questions? Call us at <a href="tel:+17637609176">(763) 760-9176</a>, we're happy to help.</p>
+          <p style="color:var(--gray-500); font-size:0.97rem; margin-top:18px;">Questions? Call us at <a href="tel:+17637609176">(763) 760-9176</a>, we're happy to help.</p>
         </div>
 
       </div>

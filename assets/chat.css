@@ -8,13 +8,13 @@
 	--mchat-ink: #0D0D0D;          /* text on gold */
 	--mchat-head: #F4EEE2;         /* header + disclaimer band */
 	--mchat-head-text: #1A1814;
-	--mchat-gold-text: #7F6124;    /* gold for text on light */
-	--mchat-gold-text-deep: #6E5320;
+	--mchat-gold-text: #6B4F17;    /* gold for text on light */
+	--mchat-gold-text-deep: #5C4413;
 	--mchat-panel: #FFFFFF;
 	--mchat-surface: #F4EEE2;
 	--mchat-log-bg: #FAF8F3;
 	--mchat-text: #2A2520;
-	--mchat-text-muted: #6E6557;
+	--mchat-text-muted: #574F43;
 	--mchat-border: rgba(26, 24, 20, 0.10);
 	--mchat-border-gold: rgba(160, 120, 48, 0.35);
 	--mchat-shadow-sm: 0 2px 8px rgba(26, 24, 20, 0.10);
@@ -167,7 +167,7 @@
 }
 
 .mchat-subtitle {
-	font-size: 12px;
+	font-size: 13px;
 	color: var(--mchat-gold-text);
 	opacity: 0.85;
 	margin-top: 2px;
@@ -196,7 +196,7 @@
 .mchat-disclaimer {
 	background: var(--mchat-head);
 	color: var(--mchat-text-muted);
-	font-size: 11px;
+	font-size: 12px;
 	padding: 8px 18px;
 	text-align: center;
 	border-bottom: 1px solid var(--mchat-border);
@@ -320,7 +320,7 @@
 	color: var(--mchat-text);
 	padding: 11px 14px;
 	border-radius: 12px;
-	font-size: 13px;
+	font-size: 14px;
 	font-weight: 500;
 	cursor: pointer;
 	text-align: left;
@@ -374,7 +374,7 @@
 	color: var(--mchat-gold-text);
 	padding: 7px 13px;
 	border-radius: 16px;
-	font-size: 13px;
+	font-size: 14px;
 	font-weight: 500;
 	cursor: pointer;
 	font-family: inherit;
@@ -474,7 +474,7 @@
 	.mchat-popout {
 		right: 76px;
 		max-width: 220px;
-		font-size: 13px;
+		font-size: 14px;
 	}
 }
 
@@ -589,7 +589,7 @@
 	.mchat-header { padding: 12px 14px; }
 	.mchat-avatar { width: 34px; height: 34px; }
 	.mchat-title { font-size: 16px; }
-	.mchat-subtitle { font-size: 11px; }
+	.mchat-subtitle { font-size: 12px; }
 	.mchat-log { padding: 12px 14px; }
 	.mchat-msg { font-size: 14px; max-width: 88%; }
 	.mchat-form { padding: 8px; gap: 6px; }
